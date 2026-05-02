@@ -6,63 +6,34 @@
 <title>森鷗外『舞姫』精読 第１回</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
-    background: #f7f6f3;
-    color: #1a1a1a;
-    min-height: 100vh;
-    padding: 2rem 1rem;
+    background: #f7f6f3; color: #1a1a1a; min-height: 100vh; padding: 2rem 1rem;
   }
-
   .container {
-    max-width: 820px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 16px;
-    padding: 2rem 2rem 2.5rem;
-    border: 0.5px solid #e0ddd6;
+    max-width: 820px; margin: 0 auto; background: #fff;
+    border-radius: 16px; padding: 2rem 2rem 2.5rem; border: 0.5px solid #e0ddd6;
   }
-
   .head { border-bottom: 0.5px solid #e0ddd6; padding-bottom: 1rem; margin-bottom: 1.25rem; }
   .title-main { font-size: 17px; font-weight: 500; color: #1a1a1a; margin-bottom: 3px; }
   .title-sub { font-size: 13px; color: #888; }
-
   .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 0.4rem; font-size: 12px; color: #666; }
   .legend-item { display: flex; align-items: center; gap: 5px; }
   .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
   .hint { font-size: 12px; color: #aaa; margin-bottom: 1.5rem; }
-
   .top-area { display: flex; gap: 1.5rem; align-items: flex-start; }
-
   .tategumi-wrap {
-    display: flex;
-    flex-direction: row-reverse;
-    gap: 0.75rem;
-    flex-shrink: 0;
-    padding: 1rem 0.75rem;
-    background: #f7f6f3;
-    border-radius: 12px;
+    display: flex; flex-direction: row-reverse; gap: 0.75rem; flex-shrink: 0;
+    padding: 1rem 0.75rem; background: #f7f6f3; border-radius: 12px;
   }
-
   .tategumi-col {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-size: 19px;
-    line-height: 2.3;
-    color: #1a1a1a;
-    letter-spacing: 0.12em;
+    writing-mode: vertical-rl; text-orientation: mixed; font-size: 19px;
+    line-height: 2.3; color: #1a1a1a; letter-spacing: 0.12em;
     font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
   }
-
   .hl {
-    cursor: pointer;
-    padding: 1px 3px;
-    border-radius: 3px;
-    transition: opacity 0.12s;
-    text-decoration: underline;
-    text-decoration-style: dotted;
-    text-underline-offset: 3px;
+    cursor: pointer; padding: 1px 3px; border-radius: 3px; transition: opacity 0.12s;
+    text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;
   }
   .hl:hover { opacity: 0.7; }
   .hl.purple { color: #3C3489; background: #CECBF6; text-decoration-color: #7F77DD; }
@@ -70,53 +41,30 @@
   .hl.coral  { color: #712B13; background: #F5C4B3; text-decoration-color: #D85A30; }
   .hl.amber  { color: #633806; background: #FAC775; text-decoration-color: #BA7517; }
   .hl.active { text-decoration-style: solid; outline: 2px solid currentColor; outline-offset: 2px; }
-
   .panel-area { flex: 1; min-width: 0; }
-
   .empty-state {
     font-size: 14px; color: #bbb; line-height: 2.2;
-    padding: 0.75rem 0 0.75rem 1rem;
-    border-left: 2px solid #e0ddd6;
-    margin-bottom: 1rem;
+    padding: 0.75rem 0 0.75rem 1rem; border-left: 2px solid #e0ddd6; margin-bottom: 1rem;
   }
-
   .card {
-    background: #fff;
-    border: 0.5px solid #ccc;
-    border-radius: 12px;
-    padding: 1.1rem 1.25rem;
-    display: none;
-    margin-bottom: 1rem;
+    background: #fff; border: 0.5px solid #ccc; border-radius: 12px;
+    padding: 1.1rem 1.25rem; display: none; margin-bottom: 1rem;
     animation: fadein 0.15s ease;
   }
-  @keyframes fadein {
-    from { opacity: 0; transform: translateY(4px); }
-    to   { opacity: 1; transform: none; }
-  }
-
+  @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
   .card-word { font-size: 18px; font-weight: 500; color: #1a1a1a; margin-bottom: 2px; }
   .card-read { font-size: 12px; color: #888; margin-bottom: 10px; }
   .card-divider { border: none; border-top: 0.5px solid #eee; margin: 8px 0; }
   .card-label { font-size: 10px; font-weight: 500; color: #aaa; letter-spacing: 0.08em; margin-bottom: 4px; }
   .card-body { font-size: 14px; color: #1a1a1a; line-height: 1.8; margin-bottom: 10px; }
+  .card-body ul { padding-left: 1.1em; margin-top: 4px; }
+  .card-body ul li { margin-bottom: 8px; }
   .card-note {
     font-size: 13px; color: #666; line-height: 1.75;
-    background: #f7f6f3; border-radius: 8px;
-    padding: 0.6rem 0.9rem;
-    border-left: 2px solid #ddd;
+    background: #f7f6f3; border-radius: 8px; padding: 0.6rem 0.9rem; border-left: 2px solid #ddd;
   }
-
-  .trans-box {
-    padding: 0.9rem 1rem;
-    background: #f7f6f3;
-    border-radius: 10px;
-    font-size: 13px; color: #555; line-height: 1.95;
-  }
-  .trans-label {
-    font-size: 10px; font-weight: 500; color: #aaa;
-    letter-spacing: 0.08em; margin-bottom: 6px;
-  }
-
+  .trans-box { padding: 0.9rem 1rem; background: #f7f6f3; border-radius: 10px; font-size: 13px; color: #555; line-height: 1.95; }
+  .trans-label { font-size: 10px; font-weight: 500; color: #aaa; letter-spacing: 0.08em; margin-bottom: 6px; }
   @media (max-width: 600px) {
     .container { padding: 1.25rem 1rem 1.75rem; }
     .top-area { flex-direction: column; gap: 1.25rem; }
@@ -130,7 +78,6 @@
     <div class="title-main">森鷗外『舞姫』— 第１回</div>
     <div class="title-sub">冒頭の場面・船上の孤独</div>
   </div>
-
   <div class="legend">
     <span class="legend-item"><span class="legend-dot" style="background:#7F77DD;"></span>文語・助詞</span>
     <span class="legend-item"><span class="legend-dot" style="background:#1D9E75;"></span>場面・情景</span>
@@ -200,9 +147,16 @@
         <div class="card-word">晴れがましきも居た徒なり</div>
         <div class="card-read">はれがましきも いたづらなり</div>
         <hr class="card-divider">
-        <div class="card-label">意味</div>
-        <div class="card-body">「きらびやかに明るいのも、無駄なことに思われる」。現代語訳の「晴れがましいのも無駄なことに思われる」がそのまま対応する。誰もいない船室でひとり照らされている場面。</div>
-        <div class="card-note">豊太郎の孤独感がにじみ出る表現。この一文が冒頭の感情的なピーク。鷗外の文体の見せ場。</div>
+        <div class="card-label">語句の分解</div>
+        <div class="card-body">
+          <ul>
+            <li>「晴れがまし」＋「き」→「き」は形容詞の連体形語尾。後ろに「こと」が省略されており、「晴れがましいことも」という意味。「晴れがましい」は華やかで人目を引くほど明るいこと。お祝いの席や式典のような特別に輝かしい場面を想像させる言葉。</li>
+            <li>「居た徒なり」→「いたづらなり」と読む。「むなしい・無駄だ」という意味の古語。現代語の「いたずら」とは意味が全く違うので注意。</li>
+          </ul>
+        </div>
+        <div class="card-label">意味をまとめると</div>
+        <div class="card-body">せっかく華やかに明るく輝いているのに、誰も見ていないのだから意味がない。現代語訳の「晴れがましいのも無駄なことに思われる」がそのまま対応する。</div>
+        <div class="card-note">豊太郎は「電灯が無駄だ」と言っているようで、実は「自分がここにいることが無駄だ」とも読める。孤独な自己像が電灯に重なる、冒頭の感情的なピーク。</div>
       </div>
 
       <div class="card" id="card-karuta">
