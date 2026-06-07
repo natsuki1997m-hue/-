@@ -92,6 +92,50 @@ body {
 }
 .trans-box { padding: 0.9rem 1rem; background: #f7f6f3; border-radius: 10px; font-size: 13px; color: #555; line-height: 1.95; }
 .trans-label { font-size: 10px; font-weight: 500; color: #aaa; letter-spacing: 0.08em; margin-bottom: 6px; }
+
+/* ===== 助動詞まとめ専用スタイル ===== */
+.jodoshi-section { padding: 0.5rem 0; }
+.jodoshi-section .hint { margin-bottom: 1.5rem; }
+
+.jodoshi-entry {
+  border: 0.5px solid #ccc; border-radius: 12px; margin-bottom: 0.75rem; overflow: hidden;
+  animation: fadein 0.15s ease;
+}
+.jodoshi-entry-head {
+  display: flex; align-items: baseline; gap: 0.75rem;
+  padding: 0.75rem 1.25rem 0.6rem;
+  background: #f7f6f3; border-bottom: 0.5px solid #e0ddd6;
+}
+.jodoshi-term { font-size: 17px; font-weight: 500; color: #1a1a1a; }
+.jodoshi-kaku { font-size: 11px; color: #888; }
+.jodoshi-body { padding: 0.9rem 1.25rem; }
+.jodoshi-imi { font-size: 13px; color: #1a1a1a; line-height: 1.8; margin-bottom: 0.6rem; }
+.jodoshi-rei { font-size: 12px; color: #555; line-height: 1.75; margin-bottom: 0.3rem; }
+.jodoshi-rei .rei-hl { color: #3C3489; font-weight: 500; }
+.cross-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+.cross-tag {
+  font-size: 11px; padding: 2px 8px; border-radius: 10px;
+  border: 0.5px solid #7F77DD; color: #3C3489; background: #EEEDFE;
+}
+
+/* 一覧表 */
+.ichiran-wrap { margin-top: 2rem; padding-top: 1.5rem; border-top: 0.5px solid #e0ddd6; }
+.ichiran-title { font-size: 13px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.75rem; }
+table.ichiran {
+  width: 100%; border-collapse: collapse; font-size: 12px;
+}
+table.ichiran th {
+  font-size: 10px; font-weight: 500; color: #aaa; letter-spacing: 0.08em;
+  padding: 0.5rem 0.75rem; border-bottom: 0.5px solid #e0ddd6; text-align: left;
+}
+table.ichiran td {
+  padding: 0.6rem 0.75rem; border-bottom: 0.5px solid #f0ede8;
+  vertical-align: top; line-height: 1.7; color: #333;
+}
+table.ichiran tr:last-child td { border-bottom: none; }
+table.ichiran tr:hover td { background: #f7f6f3; }
+table.ichiran td.t-jterm { font-weight: 500; color: #3C3489; white-space: nowrap; }
+table.ichiran td.t-cross { color: #888; font-size: 11px; }
 </style>
 </head>
 <body>
@@ -102,6 +146,7 @@ body {
     <button class="tab-btn" onclick="switchTab('kai2',this)">第２回</button>
     <button class="tab-btn" onclick="switchTab('kai3',this)">第３回</button>
     <button class="tab-btn" onclick="switchTab('kai4',this)">第４回</button>
+    <button class="tab-btn" onclick="switchTab('jodoshi',this)">助動詞まとめ</button>
   </div>
 
   <!-- 第1回 -->
@@ -233,6 +278,204 @@ body {
       </div>
     </div>
   </div>
+
+  <!-- 助動詞まとめ -->
+  <div class="tab-content" id="jodoshi">
+    <div class="hint">第１回〜第４回に登場した助動詞を出現順にまとめています。クロスリファレンスで本文中の場所を確認できます。</div>
+    <div class="jodoshi-section">
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">つ（つる）</span>
+          <span class="jodoshi-kaku">完了の助動詞</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜してしまった」という完了を表す。連体形は「つる」で、後ろの名詞を修飾する形になる。「つ」は動作の完了を表し、「たり」（第４回）と対をなす完了の助動詞。</div>
+          <div class="jodoshi-rei">第１回：石炭をば早や積み<span class="rei-hl">果てつ</span>。</div>
+          <div class="jodoshi-rei">第２回：筆に任せて書き記し<span class="rei-hl">つる</span>紀行文</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第１回「果てつ」</span>
+            <span class="cross-tag">第２回「書き記しつる」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">き（しか）</span>
+          <span class="jodoshi-kaku">過去の助動詞「き」已然形 ― 回想・詠嘆</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜であったことよ」という回想・詠嘆のニュアンス。已然形「しか」は文末に置かれ、しみじみとした感慨を表す。連体形「し」（下記）とは形が異なる点に注意。</div>
+          <div class="jodoshi-rei">第２回：五年前の事なり<span class="rei-hl">しか</span>、</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第２回「なりしか」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">き（し）</span>
+          <span class="jodoshi-kaku">過去の助動詞「き」連体形 ― 後ろの名詞を修飾</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜した」という過去を表す連体形。後ろの名詞を修飾する形で使われ、第２回から第４回まで繰り返し登場する。この節の最頻出助動詞。</div>
+          <div class="jodoshi-rei">第２回：港まで<span class="rei-hl">来し</span>頃は</div>
+          <div class="jodoshi-rei">第３回：もてはやされ<span class="rei-hl">し</span>かど ／ 珍しげに<span class="rei-hl">しるしし</span>を</div>
+          <div class="jodoshi-rei">第４回：途に上り<span class="rei-hl">し</span>とき ／ 買ひ<span class="rei-hl">し</span>冊子</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第２回「来し」</span>
+            <span class="cross-tag">第３回「もてはやされし」</span>
+            <span class="cross-tag">第３回「しるしし」</span>
+            <span class="cross-tag">第４回「上りし」</span>
+            <span class="cross-tag">第４回「買ひし」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">けむ</span>
+          <span class="jodoshi-kaku">過去推量の助動詞</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜しただろうか・〜したことだろう」という過去の出来事についての推量・詠嘆を表す。現在から過去を振り返る視点で使われ、後悔や遠い記憶のニュアンスを生む。第２〜４回と繰り返し登場し、鷗外が意図的に使っている表現。</div>
+          <div class="jodoshi-rei">第２回：幾千言をかなし<span class="rei-hl">けむ</span>、</div>
+          <div class="jodoshi-rei">第３回：いかにか見<span class="rei-hl">けむ</span>。</div>
+          <div class="jodoshi-rei">第４回：養ひ得たり<span class="rei-hl">けむ</span>、</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第２回「かなしけむ」</span>
+            <span class="cross-tag">第３回「見けむ」</span>
+            <span class="cross-tag">第４回「養ひ得たりけむ」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">む</span>
+          <span class="jodoshi-kaku">意志の助動詞</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜しよう」という意志・意向を表す。現代語の「〜しよう」にあたる。「とて」と組み合わさり「〜しようとして」という目的の表現になる。</div>
+          <div class="jodoshi-rei">第４回：日記もの<span class="rei-hl">せむ</span>とて</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第４回「ものせむ」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">なり（なる）</span>
+          <span class="jodoshi-kaku">断定の助動詞</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜である」という断定を表す。連体形「なる」は後ろの名詞を修飾したり、「なるは」の形で「〜であるということは」と後ろの理由説明につなぐ。</div>
+          <div class="jodoshi-rei">第４回：白紙のまま<span class="rei-hl">なる</span>は、</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第４回「ままなるは」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">たり</span>
+          <span class="jodoshi-kaku">完了の助動詞（状態継続）</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜した（状態が続いている）」という完了・状態の継続を表す。「つ」と同じ完了の助動詞だが、「たり」は動作の結果としての状態が続いているニュアンスが強い。ここでは「けむ」と組み合わさり過去推量の形になっている。</div>
+          <div class="jodoshi-rei">第４回：養ひ得<span class="rei-hl">たり</span>けむ、</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第４回「養ひ得たり」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">ず</span>
+          <span class="jodoshi-kaku">否定の助動詞</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜ない」という否定を表す。「あらず」は「あり（ある）」の未然形「あら」＋「ず」で、「そうではない」という強い否定になる。前の推測をきっぱり打ち消し、次の展開を引き立てる。</div>
+          <div class="jodoshi-rei">第４回：気象をや養ひ得たりけむ、<span class="rei-hl">あらず</span>、</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第４回「あらず」</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 一覧表 -->
+      <div class="ichiran-wrap">
+        <div class="ichiran-title">助動詞一覧表</div>
+        <table class="ichiran">
+          <thead>
+            <tr>
+              <th>助動詞</th>
+              <th>意味・用法</th>
+              <th>本文の用例</th>
+              <th>出てくる場所</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="t-jterm">つ（つる）</td>
+              <td>完了「〜してしまった」</td>
+              <td>果てつ／書き記しつる</td>
+              <td class="t-cross">第１回・第２回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">き（しか）</td>
+              <td>過去・詠嘆「〜であったことよ」<br><span style="font-size:11px;color:#aaa;">已然形。文末で回想・感慨を表す</span></td>
+              <td>なりしか</td>
+              <td class="t-cross">第２回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">き（し）</td>
+              <td>過去「〜した」<br><span style="font-size:11px;color:#aaa;">連体形。後ろの名詞を修飾する</span></td>
+              <td>来し／もてはやされし／しるしし／上りし／買ひし</td>
+              <td class="t-cross">第２回・第３回・第４回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">けむ</td>
+              <td>過去推量「〜しただろうか」</td>
+              <td>かなしけむ／見けむ／養ひ得たりけむ</td>
+              <td class="t-cross">第２回・第３回・第４回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">む</td>
+              <td>意志「〜しよう」</td>
+              <td>ものせむ</td>
+              <td class="t-cross">第４回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">なり（なる）</td>
+              <td>断定「〜である」<br><span style="font-size:11px;color:#aaa;">連体形「なる」で名詞修飾・理由の導入</span></td>
+              <td>ままなるは</td>
+              <td class="t-cross">第４回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">たり</td>
+              <td>完了（状態継続）「〜した状態だ」<br><span style="font-size:11px;color:#aaa;">「つ」より結果・状態の継続のニュアンスが強い</span></td>
+              <td>養ひ得たり</td>
+              <td class="t-cross">第４回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">ず</td>
+              <td>否定「〜ない」</td>
+              <td>あらず</td>
+              <td class="t-cross">第４回</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 
 <script>
