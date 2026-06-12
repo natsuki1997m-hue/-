@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>森鷗外『舞姫』精読</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  background: #f7f6f3; color: #1a1a1a; min-height: 100vh; padding: 2rem 1rem;
+}
+.container {
+  max-width: 900px; margin: 0 auto; background: #fff;
+  border-radius: 16px; padding: 2rem 2rem 2.5rem; border: 0.5px solid #e0ddd6;
+}
+.head { border-bottom: 0.5px solid #e0ddd6; padding-bottom: 1rem; margin-bottom: 1.25rem; }
+.title-main { font-size: 17px; font-weight: 500; color: #1a1a1a; }
+.tabs { display: flex; gap: 0.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid #e0ddd6; }
+.tab-btn {
+  font-size: 13px; font-weight: 500; padding: 0.5rem 1.1rem;
+  border: none; background: none; cursor: pointer; color: #aaa;
+  border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color 0.15s;
+}
+.tab-btn:hover { color: #555; }
+.tab-btn.active { color: #1a1a1a; border-bottom-color: #1a1a1a; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 0.4rem; font-size: 12px; color: #666; }
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.hint { font-size: 12px; color: #aaa; margin-bottom: 1.25rem; }
+.top-area { display: flex; gap: 1.5rem; align-items: flex-start; }
+
+.tategumi-wrap {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  padding: 1rem 0.9rem;
+  background: #f7f6f3;
+  border-radius: 12px;
+}
+.tl {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 17px;
+  line-height: 2.1;
+  letter-spacing: 0.08em;
+  color: #1a1a1a;
+  white-space: nowrap;
+}
+
+.hl {
+  cursor: pointer; padding: 1px 2px; border-radius: 3px; transition: opacity 0.12s;
+  text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 3px;
+}
+.hl:hover { opacity: 0.7; }
+.hl.purple { color: #3C3489; background: #CECBF6; text-decoration-color: #7F77DD; }
+.hl.teal   { color: #085041; background: #9FE1CB; text-decoration-color: #1D9E75; }
+.hl.coral  { color: #712B13; background: #F5C4B3; text-decoration-color: #D85A30; }
+.hl.amber  { color: #633806; background: #FAC775; text-decoration-color: #BA7517; }
+.hl.active { text-decoration-style: solid; outline: 2px solid currentColor; outline-offset: 2px; }
+
+.panel-area { flex: 1; min-width: 0; }
+.empty-state {
+  font-size: 14px; color: #bbb; line-height: 2.2;
+  padding: 0.75rem 0 0.75rem 1rem; border-left: 2px solid #e0ddd6; margin-bottom: 1rem;
+}
+.card {
+  background: #fff; border: 0.5px solid #ccc; border-radius: 12px;
+  padding: 1.1rem 1.25rem; display: none; margin-bottom: 1rem;
+  animation: fadein 0.15s ease;
+}
+@keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.card-word { font-size: 17px; font-weight: 500; color: #1a1a1a; margin-bottom: 2px; }
+.card-read { font-size: 12px; color: #888; margin-bottom: 10px; }
+.card-divider { border: none; border-top: 0.5px solid #eee; margin: 8px 0; }
+.card-label { font-size: 10px; font-weight: 500; color: #aaa; letter-spacing: 0.08em; margin-bottom: 4px; }
+.card-body { font-size: 13px; color: #1a1a1a; line-height: 1.8; margin-bottom: 10px; }
+.card-body ul { padding-left: 1.1em; margin-top: 4px; }
+.card-body ul li { margin-bottom: 8px; }
+.card-note {
+  font-size: 12px; color: #666; line-height: 1.75;
+  background: #f7f6f3; border-radius: 8px; padding: 0.6rem 0.9rem; border-left: 2px solid #ddd;
+}
+.card-link {
+  font-size: 12px; color: #534AB7; line-height: 1.75;
+  background: #EEEDFE; border-radius: 8px; padding: 0.5rem 0.9rem;
+  margin-top: 8px; border-left: 2px solid #7F77DD;
+}
+.trans-box { padding: 0.9rem 1rem; background: #f7f6f3; border-radius: 10px; font-size: 13px; color: #555; line-height: 1.95; }
+.trans-label { font-size: 10px; font-weight: 500; color: #aaa; letter-spacing: 0.08em; margin-bottom: 6px; }
+
+/* ===== 助動詞まとめ専用スタイル ===== */
+.jodoshi-section { padding: 0.5rem 0; }
+.jodoshi-section .hint { margin-bottom: 1.5rem; }
+
+.jodoshi-entry {
+  border: 0.5px solid #ccc; border-radius: 12px; margin-bottom: 0.75rem; overflow: hidden;
+  animation: fadein 0.15s ease;
+}
+.jodoshi-entry-head {
+  display: flex; align-items: baseline; gap: 0.75rem;
+  padding: 0.75rem 1.25rem 0.6rem;
+  background: #f7f6f3; border-bottom: 0.5px solid #e0ddd6;
+}
+.jodoshi-term { font-size: 17px; font-weight: 500; color: #1a1a1a; }
+.jodoshi-kaku { font-size: 11px; color: #888; }
+.jodoshi-body { padding: 0.9rem 1.25rem; }
+.jodoshi-imi { font-size: 13px; color: #1a1a1a; line-height: 1.8; margin-bottom: 0.6rem; }
+.jodoshi-rei { font-size: 12px; color: #555; line-height: 1.75; margin-bottom: 0.3rem; }
+.jodoshi-rei .rei-hl { color: #3C3489; font-weight: 500; }
+.cross-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; }
+.cross-tag {
+  font-size: 11px; padding: 2px 8px; border-radius: 10px;
+  border: 0.5px solid #7F77DD; color: #3C3489; background: #EEEDFE;
+}
+
+/* 一覧表 */
+.ichiran-wrap { margin-top: 2rem; padding-top: 1.5rem; border-top: 0.5px solid #e0ddd6; }
+.ichiran-title { font-size: 13px; font-weight: 500; color: #1a1a1a; margin-bottom: 0.75rem; }
+table.ichiran {
+  width: 100%; border-collapse: collapse; font-size: 12px;
+}
+table.ichiran th {
+  font-size: 10px; font-weight: 500; color: #aaa; letter-spacing: 0.08em;
+  padding: 0.5rem 0.75rem; border-bottom: 0.5px solid #e0ddd6; text-align: left;
+}
+table.ichiran td {
+  padding: 0.6rem 0.75rem; border-bottom: 0.5px solid #f0ede8;
+  vertical-align: top; line-height: 1.7; color: #333;
+}
+table.ichiran tr:last-child td { border-bottom: none; }
+table.ichiran tr:hover td { background: #f7f6f3; }
+table.ichiran td.t-jterm { font-weight: 500; color: #3C3489; white-space: nowrap; }
+table.ichiran td.t-cross { color: #888; font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="head"><div class="title-main">森鷗外『舞姫』精読</div></div>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('kai1',this)">第１回</button>
+    <button class="tab-btn" onclick="switchTab('kai2',this)">第２回</button>
+    <button class="tab-btn" onclick="switchTab('kai3',this)">第３回</button>
+    <button class="tab-btn" onclick="switchTab('kai4',this)">第４回</button>
+    <button class="tab-btn" onclick="switchTab('jodoshi',this)">助動詞まとめ</button>
+  </div>
+
+  <!-- 第1回 -->
+  <div class="tab-content active" id="kai1">
+    <div class="legend">
+      <span class="legend-item"><span class="legend-dot" style="background:#7F77DD;"></span>文語・助詞</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#1D9E75;"></span>場面・情景</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#D85A30;"></span>感情の見せ場</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#BA7517;"></span>漢語で西洋を表現</span>
+    </div>
+    <div class="hint">色のついた言葉をクリックすると右に解説が出ます</div>
+    <div class="top-area">
+      <div class="tategumi-wrap">
+        <div class="tl"><span class="hl purple" id="k1-woba">石炭をば</span>早や積み<span class="hl purple" id="k1-hatetu">果てつ</span>。</div>
+        <div class="tl"><span class="hl teal" id="k1-chuto">中等室</span>の卓のほとりは<span class="hl purple" id="k1-ito">いと</span>静かにて、</div>
+        <div class="tl"><span class="hl amber" id="k1-shinetsu">熾熱灯</span>の光の<span class="hl coral" id="k1-hare">晴れがましきも居た徒なり</span>。</div>
+        <div class="tl">今宵は夜毎にここに集ひ来る<span class="hl amber" id="k1-karuta">骨牌</span>仲間も「ホテル」に宿りて、</div>
+        <div class="tl">舟に残れるは<span class="hl purple" id="k1-yo">余</span>一人のみなれば</div>
+      </div>
+      <div class="panel-area">
+        <div class="empty-state" id="k1-empty">色のついた言葉をクリックすると<br>ここに解説が表示されます</div>
+        <div class="card" id="k1-card-woba"><div class="card-word">をば</div><div class="card-read">助詞の強調形</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">「を」をさらに強めた助詞。「石炭は（もう積み終えてしまった）」の「は」にあたる強調のニュアンス。</div><div class="card-note">現代語では使わない表現。冒頭の一語目からこの強調形を置くのが鷗外の意図したリズム。</div></div>
+        <div class="card" id="k1-card-hatetu"><div class="card-word">果てつ</div><div class="card-read">完了の助動詞「つ」</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">「〜してしまった」という完了を表す。「早や〜果てつ」で「もうとっくに終わった」というニュアンスになる。</div><div class="card-note">「つ」は文語の完了の助動詞。現代語の「〜てしまった」にあたる。</div><div class="card-link">💡 第２回「書き記しつる」・第４回「養ひ得たり」でも完了の助動詞が出てくるよ</div></div>
+        <div class="card" id="k1-card-chuto"><div class="card-word">中等室</div><div class="card-read">ちゅうとうしつ</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">船の二等船室。一等でも三等でもない中間の部屋。</div><div class="card-note">豊太郎が一等客室を使えない立場であることをさりげなく示す。官費留学生の身分を表す描写。</div></div>
+        <div class="card" id="k1-card-ito"><div class="card-word">いと</div><div class="card-read">副詞「たいへん・非常に」</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">「たいへん・非常に」という意味の古語の副詞。現代語訳の「たいへん静かで」の「たいへん」がこれにあたる。</div><div class="card-note">平安文学（源氏物語など）でよく使われる表現。鷗外が意識的に古典の語を取り込んでいる。</div></div>
+        <div class="card" id="k1-card-shinetsu"><div class="card-word">熾熱灯</div><div class="card-read">しねつとう</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">当時ヨーロッパで普及していた白熱電灯のこと。現代語訳では「白熱電燈」としている。</div><div class="card-note">西洋のものを鷗外が漢語で表現した。西洋文明を漢語に置き換えるのが『舞姫』の文体的な特徴のひとつ。</div></div>
+        <div class="card" id="k1-card-hare"><div class="card-word">晴れがましきも居た徒なり</div><div class="card-read">はれがましきも いたづらなり</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「晴れがまし」＋「き」→「き」は形容詞の連体形語尾。後ろに「こと」が省略されており「晴れがましいことも」という意味。「晴れがましい」は華やかで人目を引くほど明るいこと。</li><li>「居た徒なり」→「いたづらなり」と読む。「むなしい・無駄だ」という意味の古語。現代語の「いたずら」とは意味が全く違うので注意。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">せっかく華やかに明るく輝いているのに、誰も見ていないのだから意味がない。</div><div class="card-note">豊太郎は「電灯が無駄だ」と言っているようで、実は「自分がここにいることが無駄だ」とも読める。孤独な自己像が電灯に重なる、冒頭の感情的なピーク。</div><div class="card-link">💡 第３回「穉（をさな）き」の「き」も同じ連体形だよ</div></div>
+        <div class="card" id="k1-card-karuta"><div class="card-word">骨牌</div><div class="card-read">かるた（こっぱい）</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">トランプ（カードゲーム）のこと。中国語由来の漢語。</div><div class="card-note">「熾熱灯」と同様、西洋のものを漢語で表す鷗外の文体戦略。</div></div>
+        <div class="card" id="k1-card-yo"><div class="card-word">余</div><div class="card-read">よ（一人称「私」）</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">一人称「私」のこと。漢文的な一人称で「われ」より硬く、知識人らしい印象を与える。</div><div class="card-note">鷗外が豊太郎に与えた官僚・知識人としての語り口を象徴する言葉。</div></div>
+        <div class="trans-box"><div class="trans-label">現代語訳</div>石炭はもう積み終えてしまった。二等室のテーブルのある辺りはたいへん静かで、白熱電燈の光の晴れがましいのも無駄なことに思われる。今宵（こよい）は夜毎ここに集ってくる骨牌（かるた）仲間も、みな陸の客館（ホテル）に泊って、舟に残っているのは私一人であるからである。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第2回 -->
+  <div class="tab-content" id="kai2">
+    <div class="legend">
+      <span class="legend-item"><span class="legend-dot" style="background:#7F77DD;"></span>文語・助詞</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#1D9E75;"></span>場面・情景</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#D85A30;"></span>感情の見せ場</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#BA7517;"></span>漢語で西洋を表現</span>
+    </div>
+    <div class="hint">色のついた言葉をクリックすると右に解説が出ます</div>
+    <div class="top-area">
+      <div class="tategumi-wrap">
+        <div class="tl"><span class="hl purple" id="k2-itsutose">五年前（いつとせまへ）の事なりしか</span>、</div>
+        <div class="tl"><span class="hl purple" id="k2-higoro">平生（ひごろ）</span>の<span class="hl purple" id="k2-nozomi">望足りて</span>、<span class="hl teal" id="k2-kanmei">洋行の官命を蒙（かうむ）り</span>、</div>
+        <div class="tl">この<span class="hl teal" id="k2-saigon">セイゴン</span>の<span class="hl teal" id="k2-minato">港まで来し頃は</span>、目に見るもの、</div>
+        <div class="tl">耳に聞くもの、<span class="hl coral" id="k2-hitotsu">一つとして新ならぬはなく</span>、</div>
+        <div class="tl">筆に任せて書き記し<span class="hl purple" id="k2-tsuru">つる</span><span class="hl amber" id="k2-kiko">紀行文</span>日ごとに<span class="hl coral" id="k2-ikusen">幾千言をかなしけむ</span>、</div>
+      </div>
+      <div class="panel-area">
+        <div class="empty-state" id="k2-empty">色のついた言葉をクリックすると<br>ここに解説が表示されます</div>
+        <div class="card" id="k2-card-itsutose"><div class="card-word">五年前（いつとせまへ）の事なりしか</div><div class="card-read">いつとせまえのことなりしか</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「いつとせ」→「五年」の和語読み。漢語「五年（ごねん）」を和語で読んでいる。「まへ」は「前」。</li><li>「なり」→ 断定の助動詞「なり」の連用形。「〜である」という意味。</li><li>「しか」→ 過去の助動詞「き」の已然形。「〜であったことよ」というしみじみとした回想・詠嘆のニュアンスを持つ。「し」（連体形）とは異なり、文末や感動を表す場面で使われる。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「五年前のことであったなあ」ということ。単なる事実の説明ではなく、遠い記憶を懐かしむようなニュアンスが出ている。</div><div class="card-note">「し」と「しか」は同じ過去の助動詞「き」だが形が違う。「し」は連体形で後ろの名詞にかかる（「来し頃は」など）。「しか」は已然形で文末に置かれ回想・詠嘆を表す。漢字「五年」に和語の読みを当てる点も鷗外の文体戦略のひとつ。</div></div>
+        <div class="card" id="k2-card-higoro"><div class="card-word">平生（ひごろ）</div><div class="card-read">ひごろ</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">「ふだん・日ごろ」の意味。「平生の望」で「ずっと抱いていた願い・希望」ということ。</div><div class="card-note">豊太郎にとってヨーロッパ留学がいかに切望していたものかを示す。この一語に人生の夢が込められている。</div></div>
+        <div class="card" id="k2-card-nozomi"><div class="card-word">望足りて</div><div class="card-read">のぞみたりて</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「足り」→ 動詞「足る」の連用形。「満たされる・かなう」という意味。</li><li>「て」→ 接続助詞。次の文につなぐ。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「望が満たされて・願いがかなって」ということ。</div><div class="card-note">現代語でも「事足りる」「満ち足りる」という形で残っている表現。</div></div>
+        <div class="card" id="k2-card-kanmei"><div class="card-word">洋行の官命を蒙り</div><div class="card-read">ようこうのかんめいをこうむり</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">「洋行」は西洋へ渡ること。「官命」は役所からの命令。「蒙る」は「受ける」の謙遜した言い方。</div><div class="card-note">「蒙る」という謙遜表現で、豊太郎が国家・組織に従う官僚であることが示されている。</div></div>
+        <div class="card" id="k2-card-saigon"><div class="card-word">セイゴン</div><div class="card-read">現在のホーチミン市（ベトナム）</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">現在のベトナム・ホーチミン市のこと。当時はフランス領インドシナの主要な港湾都市だった。</div><div class="card-note">鷗外自身が1884年にドイツへ留学する際、実際にサイゴンを経由している。</div></div>
+        <div class="card" id="k2-card-minato"><div class="card-word">港まで来し頃は</div><div class="card-read">みなとまできしころは</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「来し」→「来た」の文語形。「し」は過去の助動詞「き」の連体形。</li><li>「頃は」→「〜の頃は」。後ろの内容につながる。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「サイゴンの港まで来た頃は」ということ。</div><div class="card-note">「し」は過去の助動詞「き」の連体形。文語の過去表現の代表例。</div><div class="card-link">💡 第１回「果てつ」と同じ過去・完了の表現。第３回「もてはやされし」「しるしし」でも同じ「し」が出てくるよ</div></div>
+        <div class="card" id="k2-card-hitotsu"><div class="card-word">一つとして新ならぬはなく</div><div class="card-read">ひとつとして あらたならぬはなく</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">「新ならぬ」＝「新しくない」、「はなく」＝「ものはない」。二重否定で「すべてが新しい」という強い肯定を表す。</div><div class="card-note">二重否定は文語でよく使われる強調表現。「新しくないものが一つもない」と言う方が、驚きと感動がより強く伝わる。</div></div>
+        <div class="card" id="k2-card-tsuru"><div class="card-word">書き記しつる</div><div class="card-read">完了の助動詞「つ」の連体形</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">「つる」は完了の助動詞「つ」の連体形で、後ろの「紀行文」を修飾する。「書き記してきた紀行文」という意味。</div><div class="card-note">第１回の「果てつ」と同じ「つ」。連体形になることで後ろの名詞にかかる。</div><div class="card-link">💡 第１回「果てつ」と同じ完了の助動詞。「つ」が「つる」になって後ろの名詞にかかる形だよ</div></div>
+        <div class="card" id="k2-card-kiko"><div class="card-word">紀行文</div><div class="card-read">きこうぶん</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">旅の見聞を記した文章・日記のこと。</div><div class="card-note">当時の知識人にとって旅の記録を書くことは一般的な教養行為。鷗外自身もドイツ留学中に日記を書き続けており、自伝的な色彩がある。</div></div>
+        <div class="card" id="k2-card-ikusen"><div class="card-word">幾千言をかなしけむ</div><div class="card-read">いくせんげんをかなしけむ</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">「幾千言」は「何千もの言葉」。「かなし」は「重ねた・連ねた」の意。「けむ」は過去推量の助動詞で「〜したことだろう」という意味。</div><div class="card-note">「けむ」という過去推量を使うことで、当時の熱狂が今は遠い記憶になっていることを示す。</div><div class="card-link">💡 第３回「心ある人はいかにか見けむ」でも同じ「けむ」が出てくるよ</div></div>
+        <div class="trans-box"><div class="trans-label">現代語訳</div>五年前の事になるが、年来の希望が適（かな）って、役所から洋行の命を受け、このサイゴンの港まで来た頃は、目に見るもの、耳に聞くもの、一つとして新しくないものはなく、筆に任（まか）せて書き記した紀行文は、毎日毎日、幾千言を連ねたことであろう。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第3回 -->
+  <div class="tab-content" id="kai3">
+    <div class="legend">
+      <span class="legend-item"><span class="legend-dot" style="background:#7F77DD;"></span>文語・助詞</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#1D9E75;"></span>場面・情景</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#D85A30;"></span>感情の見せ場</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#BA7517;"></span>漢語で西洋を表現</span>
+    </div>
+    <div class="hint">色のついた言葉をクリックすると右に解説が出ます</div>
+    <div class="top-area">
+      <div class="tategumi-wrap">
+        <div class="tl">当時の新聞に載せられて、世の人に<span class="hl purple" id="k3-moteha">もてはやされしかど</span>、</div>
+        <div class="tl"><span class="hl coral" id="k3-konnichi">今日になりておもへば</span>、<span class="hl purple" id="k3-osanaki">穉（をさな）き</span>思想、<span class="hl coral" id="k3-hogen">身の程知らぬ放言</span>、</div>
+        <div class="tl"><span class="hl purple" id="k3-saranu">さらぬも尋常（よのつね）</span>の<span class="hl teal" id="k3-doshoku">動植金石</span>、</div>
+        <div class="tl">さては<span class="hl amber" id="k3-fuzoku">風俗抔（など）</span>をさへ珍しげに<span class="hl purple" id="k3-shirushi">しるししを</span>、</div>
+        <div class="tl"><span class="hl coral" id="k3-kokoro">心ある人はいかにか見けむ</span>。</div>
+      </div>
+      <div class="panel-area">
+        <div class="empty-state" id="k3-empty">色のついた言葉をクリックすると<br>ここに解説が表示されます</div>
+        <div class="card" id="k3-card-moteha"><div class="card-word">もてはやされしかど</div><div class="card-read">もてはやされしかど</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「もてはやす」→ もち上げる・褒めそやすという意味の動詞。</li><li>「し」→ 過去の助動詞「き」の連体形。第２回の「来し」と同じ用法。</li><li>「かど」→「けれど」の文語形。逆接の接続詞。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「世の人にもてはやされたけれど」ということ。</div><div class="card-note">「かど」は現代語では「けれど」にあたる。</div><div class="card-link">💡 「し」は第２回「来し」と同じ過去の助動詞「き」の連体形だよ</div></div>
+        <div class="card" id="k3-card-konnichi"><div class="card-word">今日になりておもへば</div><div class="card-read">こんにちになりておもえば</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「今日（こんにち）」→ 今・現在のこと。日付の「きょう」ではなく「現在」という意味。</li><li>「おもへば」→「思えば」の文語形。「ば」は条件を表す接続助詞。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「今になって思えば」ということ。</div><div class="card-note">ここが文章の感情的な転換点。「もてはやされた」という過去の栄光に対して「今思えば」と批判的に振り返る構造になっている。</div></div>
+        <div class="card" id="k3-card-osanaki"><div class="card-word">穉（をさな）き</div><div class="card-read">をさなき</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「穉し（をさなし）」→ 形容詞の終止形。「幼い・未熟だ」という意味。</li><li>「き」→ 形容詞の連体形語尾。後ろの名詞「思想」を修飾する形。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「幼い・未熟な思想」ということ。</div><div class="card-note">第１回の「晴れがましき」の「き」と同じ用法。形容詞の語幹＋「き」で連体形になり、後ろの名詞にかかる。繰り返し出てくるパターンなので覚えておくと読みやすくなる。</div><div class="card-link">💡 第１回「晴れがましき」と同じ「き」だよ。気づいたら文語がだんだん読めるようになってきてる！</div></div>
+        <div class="card" id="k3-card-hogen"><div class="card-word">身の程知らぬ放言</div><div class="card-read">みのほどしらぬほうげん</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">「身の程」は自分の分際・立場のこと。「知らぬ」は「知らない」の文語形。「放言」は無責任な発言のこと。</div><div class="card-note">豊太郎が五年前に書いた記事を、現在の自分が厳しく自己批判している。</div></div>
+        <div class="card" id="k3-card-saranu"><div class="card-word">さらぬも尋常（よのつね）</div><div class="card-read">さらぬも よのつね</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「さらぬも」→「そうでないにしても」という意味。</li><li>「尋常（よのつね）」→「ありふれた・普通の」という意味。現代語の「尋常（じんじょう）」とは読み方も意味もやや違うので注意。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「そうでないにしても、ありふれた普通の」ということ。</div><div class="card-note">「よのつね」という読みは現代語では使わない。漢字「尋常」に和語の読みを当てている点が第２回の「五年前（いつとせまへ）」と同じ鷗外の文体戦略。</div></div>
+        <div class="card" id="k3-card-fuzoku"><div class="card-word">風俗抔（など）をさへ</div><div class="card-read">ふうぞくなど をさへ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「風俗」→ その土地の習慣・風習・生活様式のこと。</li><li>「抔（など）」→「など」の当て字。「〜のようなものも」という意味。</li><li>「をさへ」→「〜をさえも」という意味の助詞。ありふれた風俗のようなものでさえも、という強調。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「風俗のようなものでさえも」ということ。「さらぬも尋常の動植金石」と合わせて、ごく普通のものまで珍しそうに書いていたという自己批判が続く。</div><div class="card-note">「抔」はもともと中国語の文字で、日本語の「など」の音に当てた字。鷗外の漢文的な教養が文字の選択にも表れている。</div></div>
+        <div class="card" id="k3-card-doshoku"><div class="card-word">動植金石</div><div class="card-read">どうしょくきんせき</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">動物・植物・鉱物（金属や石）のこと。自然界のあらゆるものを指す言葉。</div><div class="card-note">当時の博物学的な分類の言葉。「尋常の動植金石」で「ありふれた動植物や鉱物」ということ。珍しくも何ともないものまで旅の記録に書き留めていた、という自己批判の文脈で使われている。</div></div>
+        <div class="card" id="k3-card-shirushi"><div class="card-word">しるししを</div><div class="card-read">しるししを</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「しるし」→ 動詞「しるす（記す）」の連用形。「書き記す」という意味。</li><li>「し」→ 過去の助動詞「き」の連体形。「記した」という意味になる。</li><li>「を」→ ここでは目的格ではなく逆接・詠嘆を表す助詞。「〜のに」「〜というのに」というニュアンス。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「珍しそうに記したというのに（心ある人はどう思っていたか）」ということ。「を」が後ろの「心ある人はいかにか見けむ」につながり、自嘲と後悔のニュアンスを作っている。</div><div class="card-note">「し」は第２・３・４回に繰り返し登場する過去の助動詞「き」の連体形。「しるししを」の「し」も同じ用法。</div><div class="card-link">💡 第２回「来し」・第３回「もてはやされし」と同じ「し」だよ。何度も出てきたね！</div></div>
+        <div class="card" id="k3-card-kokoro"><div class="card-word">心ある人はいかにか見けむ</div><div class="card-read">こころあるひとはいかにかみけむ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「心ある人」→ 思慮ある人・見識ある人。</li><li>「いかにか」→「どのように」という疑問の副詞。</li><li>「見けむ」→「見る」＋過去推量の助動詞「けむ」。第２回の「かなしけむ」と同じ「けむ」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「見識ある人はどのように思っていたことだろうか」ということ。</div><div class="card-note">「けむ」という過去推量で締めくくることで、後悔と自嘲が漂う。</div><div class="card-link">💡 第２回「幾千言をかなしけむ」と同じ「けむ」だよ。鷗外がこの助動詞を意図的に繰り返しているのが面白い</div></div>
+        <div class="trans-box"><div class="trans-label">現代語訳</div>当時の新聞に載せられ、世の人にもてはやされたが、今日になって思えば、幼き思想、身の程知らずの放言、そうでないにしても尋常の目に触れるものすべて、さては風俗などをさえ珍しげに記したのを、心ある人はどのように思っていたことであろうか。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第4回 -->
+  <div class="tab-content" id="kai4">
+    <div class="legend">
+      <span class="legend-item"><span class="legend-dot" style="background:#7F77DD;"></span>文語・助詞</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#1D9E75;"></span>場面・情景</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#D85A30;"></span>感情の見せ場</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#BA7517;"></span>漢語で西洋を表現</span>
+    </div>
+    <div class="hint">色のついた言葉をクリックすると右に解説が出ます</div>
+    <div class="top-area">
+      <div class="tategumi-wrap">
+        <div class="tl">このたびは<span class="hl purple" id="k4-tabi">途に上りしとき</span>、</div>
+        <div class="tl"><span class="hl purple" id="k4-nikki">日記（にっき）ものせむとて</span>買ひし冊子も<span class="hl teal" id="k4-hakushi">まだ白紙のままなるは</span>、</div>
+        <div class="tl"><span class="hl amber" id="k4-doitsu">独逸（ドイツ）</span>にて<span class="hl purple" id="k4-monogakubi">物学びせし</span>間に、</div>
+        <div class="tl">一種の<span class="hl coral" id="k4-nil">「ニル・アドミラリイ」</span>の<span class="hl purple" id="k4-kisho">気象をや養ひ得たりけむ</span>、あらず、</div>
+        <div class="tl"><span class="hl coral" id="k4-arazu">これには別に故（ゆゑ）あり</span>。</div>
+      </div>
+      <div class="panel-area">
+        <div class="empty-state" id="k4-empty">色のついた言葉をクリックすると<br>ここに解説が表示されます</div>
+        <div class="card" id="k4-card-tabi"><div class="card-word">途に上りしとき</div><div class="card-read">みちにのぼりしとき</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「途に上る」→「旅に出る・出発する」という意味の慣用表現。</li><li>「し」→ 過去の助動詞「き」の連体形。第２・３回と同じ用法。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「旅に出た時に」ということ。</div><div class="card-note">「し」は毎回登場する過去の助動詞「き」の連体形。</div></div>
+        <div class="card" id="k4-card-nikki"><div class="card-word">日記ものせむとて</div><div class="card-read">にっきものせむとて</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「のせむ」→「載せよう・書き記そう」の意。「む」は意志を表す助動詞。</li><li>「とて」→「〜しようとして」という目的を表す接続表現。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「日記を書こうとして」ということ。</div><div class="card-note">「む」は文語の意志の助動詞。現代語の「〜しよう」にあたる。</div></div>
+        <div class="card" id="k4-card-hakushi"><div class="card-word">まだ白紙のままなるは</div><div class="card-read">まだはくしのままなるは</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「なる」→ 断定の助動詞「なり」の連体形。「〜である」という意味。</li><li>「は」→「〜であるということは」という意味で、後ろの理由の説明につながる。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「白紙のままであるということは」ということ。</div><div class="card-note">「なるは」という形で理由・原因の問いかけを作るのは文語の典型的な構文。</div></div>
+        <div class="card" id="k4-card-monogakubi"><div class="card-word">物学びせし間に</div><div class="card-read">ものまなびせしあいだに</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「物学び」→「勉学・学問をすること」という意味の名詞。</li><li>「せ」→ サ変動詞「す」の未然形。「する」という意味。</li><li>「し」→ 過去の助動詞「き」の連体形。後ろの「間に」を修飾する。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「ドイツで勉強をしていた間に」ということ。</div><div class="card-note">「せし」はサ変動詞「す」＋過去の助動詞「き」の連体形「し」の組み合わせ。「し」単体（「来し」「上りし」など）と同じ用法。</div><div class="card-link">💡 「し」は第２回「来し」・第３回「もてはやされし」でも登場した過去の助動詞「き」の連体形だよ</div></div>
+        <div class="card" id="k4-card-doitsu"><div class="card-word">独逸（ドイツ）</div><div class="card-read">どいつ</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">ドイツの漢字表記。「独逸」はドイツ語「Deutsch」の音を漢字に当てたもの。</div><div class="card-note">第１回の「熾熱灯」と同様、外来のものを漢字で表す鷗外の文体戦略。</div></div>
+        <div class="card" id="k4-card-nil"><div class="card-word">ニル・アドミラリイ</div><div class="card-read">nil admirari（ラテン語）</div><hr class="card-divider"><div class="card-label">意味</div><div class="card-body">古代ローマの詩人ホラティウスの言葉で「何も驚かない・何事にも心を動かさない」という態度のこと。</div><div class="card-note">鷗外がラテン語をそのままカタカナで引用している。西洋の古典教養を豊太郎（＝鷗外自身）が身につけていることを示す表現。</div></div>
+        <div class="card" id="k4-card-kisho"><div class="card-word">気象をや養ひ得たりけむ</div><div class="card-read">きしょうをややしないえたりけむ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「気象」→ここでは「気質・性格・気風」の意味。</li><li>「をや」→ 疑問・反語を強める助詞。「果たして〜だろうか」というニュアンス。</li><li>「たり」→ 完了の助動詞。第１回の「つ」と同じ完了だが、「たり」は結果の状態が続いているニュアンスが強い。</li><li>「けむ」→ 過去推量。「〜だったのだろうか」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「そういう気質を養い身につけたからだろうか」ということ。</div><div class="card-note">「たり」と「つ」はどちらも完了の助動詞。「つ」は動作の完了、「たり」は結果の状態の継続を表すことが多い。</div></div>
+        <div class="card" id="k4-card-arazu"><div class="card-word">これには別に故あり</div><div class="card-read">これにはべつにゆえあり</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「あらず」→「あり」の未然形＋否定の助動詞「ず」。「そうではない・違う」という意味。</li><li>「故（ゆゑ）」→「理由・わけ・原因」のこと。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「いいや、そういうことではない。これには別の理由がある」ということ。</div><div class="card-note">「あらず」で前の推測をきっぱり否定し、「別に故あり」で次の展開への引きを作る。</div></div>
+        <div class="trans-box"><div class="trans-label">現代語訳</div>こんどの場合は旅の出発に際して日記を記そうと購入した冊子（ノート）も、今だに白紙のままであるということは、独逸（ドイツ）留学中に一種の「ニル・アドミラリイ」の気象、何事にもさして心を動かすことのない気象を養い得たためであろうか。いいや、そういうことではない。これには別の理由がある。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 助動詞まとめ -->
+  <div class="tab-content" id="jodoshi">
+    <div class="hint">第１回〜第４回に登場した助動詞を出現順にまとめています。クロスリファレンスで本文中の場所を確認できます。</div>
+    <div class="jodoshi-section">
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">つ（つる）</span>
+          <span class="jodoshi-kaku">完了の助動詞</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜してしまった」という完了を表す。連体形は「つる」で、後ろの名詞を修飾する形になる。「つ」は動作の完了を表し、「たり」（第４回）と対をなす完了の助動詞。</div>
+          <div class="jodoshi-rei">第１回：石炭をば早や積み<span class="rei-hl">果てつ</span>。</div>
+          <div class="jodoshi-rei">第２回：筆に任せて書き記し<span class="rei-hl">つる</span>紀行文</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第１回「果てつ」</span>
+            <span class="cross-tag">第２回「書き記しつる」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">き（しか）</span>
+          <span class="jodoshi-kaku">過去の助動詞「き」已然形 ― 回想・詠嘆</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜であったことよ」という回想・詠嘆のニュアンス。已然形「しか」は文末に置かれ、しみじみとした感慨を表す。連体形「し」（下記）とは形が異なる点に注意。</div>
+          <div class="jodoshi-rei">第２回：五年前の事なり<span class="rei-hl">しか</span>、</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第２回「なりしか」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">き（し）</span>
+          <span class="jodoshi-kaku">過去の助動詞「き」連体形 ― 後ろの名詞を修飾</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜した」という過去を表す連体形。後ろの名詞を修飾する形で使われ、第２回から第４回まで繰り返し登場する。この節の最頻出助動詞。</div>
+          <div class="jodoshi-rei">第２回：港まで<span class="rei-hl">来し</span>頃は</div>
+          <div class="jodoshi-rei">第３回：もてはやされ<span class="rei-hl">し</span>かど ／ 珍しげに<span class="rei-hl">しるしし</span>を</div>
+          <div class="jodoshi-rei">第４回：途に上り<span class="rei-hl">し</span>とき ／ 買ひ<span class="rei-hl">し</span>冊子 ／ 物学び<span class="rei-hl">せし</span>間に</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第２回「来し」</span>
+            <span class="cross-tag">第３回「もてはやされし」</span>
+            <span class="cross-tag">第３回「しるしし」</span>
+            <span class="cross-tag">第４回「上りし」</span>
+            <span class="cross-tag">第４回「買ひし」</span>
+            <span class="cross-tag">第４回「物学びせし」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">けむ</span>
+          <span class="jodoshi-kaku">過去推量の助動詞</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜しただろうか・〜したことだろう」という過去の出来事についての推量・詠嘆を表す。現在から過去を振り返る視点で使われ、後悔や遠い記憶のニュアンスを生む。第２〜４回と繰り返し登場し、鷗外が意図的に使っている表現。</div>
+          <div class="jodoshi-rei">第２回：幾千言をかなし<span class="rei-hl">けむ</span>、</div>
+          <div class="jodoshi-rei">第３回：いかにか見<span class="rei-hl">けむ</span>。</div>
+          <div class="jodoshi-rei">第４回：養ひ得たり<span class="rei-hl">けむ</span>、</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第２回「かなしけむ」</span>
+            <span class="cross-tag">第３回「見けむ」</span>
+            <span class="cross-tag">第４回「養ひ得たりけむ」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">む</span>
+          <span class="jodoshi-kaku">意志の助動詞</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜しよう」という意志・意向を表す。現代語の「〜しよう」にあたる。「とて」と組み合わさり「〜しようとして」という目的の表現になる。</div>
+          <div class="jodoshi-rei">第４回：日記もの<span class="rei-hl">せむ</span>とて</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第４回「ものせむ」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">なり（なる）</span>
+          <span class="jodoshi-kaku">断定の助動詞</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜である」という断定を表す。連体形「なる」は後ろの名詞を修飾したり、「なるは」の形で「〜であるということは」と後ろの理由説明につなぐ。</div>
+          <div class="jodoshi-rei">第４回：白紙のまま<span class="rei-hl">なる</span>は、</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第４回「ままなるは」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">たり</span>
+          <span class="jodoshi-kaku">完了の助動詞（状態継続）</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜した（状態が続いている）」という完了・状態の継続を表す。「つ」と同じ完了の助動詞だが、「たり」は動作の結果としての状態が続いているニュアンスが強い。ここでは「けむ」と組み合わさり過去推量の形になっている。</div>
+          <div class="jodoshi-rei">第４回：養ひ得<span class="rei-hl">たり</span>けむ、</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第４回「養ひ得たり」</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">ず</span>
+          <span class="jodoshi-kaku">否定の助動詞</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">「〜ない」という否定を表す。「あらず」は「あり（ある）」の未然形「あら」＋「ず」で、「そうではない」という強い否定になる。前の推測をきっぱり打ち消し、次の展開を引き立てる。</div>
+          <div class="jodoshi-rei">第４回：気象をや養ひ得たりけむ、<span class="rei-hl">あらず</span>、</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第４回「あらず」</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 一覧表 -->
+      <div class="ichiran-wrap">
+        <div class="ichiran-title">助動詞一覧表</div>
+        <table class="ichiran">
+          <thead>
+            <tr>
+              <th>助動詞</th>
+              <th>意味・用法</th>
+              <th>本文の用例</th>
+              <th>出てくる場所</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="t-jterm">つ（つる）</td>
+              <td>完了「〜してしまった」</td>
+              <td>果てつ／書き記しつる</td>
+              <td class="t-cross">第１回・第２回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">き（しか）</td>
+              <td>過去・詠嘆「〜であったことよ」<br><span style="font-size:11px;color:#aaa;">已然形。文末で回想・感慨を表す</span></td>
+              <td>なりしか</td>
+              <td class="t-cross">第２回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">き（し）</td>
+              <td>過去「〜した」<br><span style="font-size:11px;color:#aaa;">連体形。後ろの名詞を修飾する</span></td>
+              <td>来し／もてはやされし／しるしし／上りし／買ひし／物学びせし</td>
+              <td class="t-cross">第２回・第３回・第４回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">けむ</td>
+              <td>過去推量「〜しただろうか」</td>
+              <td>かなしけむ／見けむ／養ひ得たりけむ</td>
+              <td class="t-cross">第２回・第３回・第４回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">む</td>
+              <td>意志「〜しよう」</td>
+              <td>ものせむ</td>
+              <td class="t-cross">第４回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">なり（なる）</td>
+              <td>断定「〜である」<br><span style="font-size:11px;color:#aaa;">連体形「なる」で名詞修飾・理由の導入</span></td>
+              <td>ままなるは</td>
+              <td class="t-cross">第４回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">たり</td>
+              <td>完了（状態継続）「〜した状態だ」<br><span style="font-size:11px;color:#aaa;">「つ」より結果・状態の継続のニュアンスが強い</span></td>
+              <td>養ひ得たり</td>
+              <td class="t-cross">第４回</td>
+            </tr>
+            <tr>
+              <td class="t-jterm">ず</td>
+              <td>否定「〜ない」</td>
+              <td>あらず</td>
+              <td class="t-cross">第４回</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+(function() {
+  var groups = {
+    k1: ['woba','hatetu','chuto','ito','shinetsu','hare','karuta','yo'],
+    k2: ['itsutose','higoro','nozomi','kanmei','saigon','minato','hitotsu','tsuru','kiko','ikusen'],
+    k3: ['moteha','konnichi','osanaki','hogen','saranu','doshoku','fuzoku','shirushi','kokoro'],
+    k4: ['tabi','nikki','hakushi','doitsu','monogakubi','nil','kisho','arazu']
+  };
+  Object.keys(groups).forEach(function(prefix) {
+    groups[prefix].forEach(function(key) {
+      var hl = document.getElementById(prefix + '-' + key);
+      if (!hl) return;
+      hl.addEventListener('click', function() {
+        var empty = document.getElementById(prefix + '-empty');
+        if (empty) empty.style.display = 'none';
+        groups[prefix].forEach(function(k) {
+          var c = document.getElementById(prefix + '-card-' + k); if (c) c.style.display = 'none';
+          var h = document.getElementById(prefix + '-' + k); if (h) h.classList.remove('active');
+        });
+        var card = document.getElementById(prefix + '-card-' + key);
+        if (card) card.style.display = 'block';
+        hl.classList.add('active');
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
