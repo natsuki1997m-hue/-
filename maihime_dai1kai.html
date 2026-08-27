@@ -200,6 +200,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
     <button class="tab-btn" onclick="switchTab('kai10',this)">第１０回</button>
     <button class="tab-btn" onclick="switchTab('kai11',this)">第１１回</button>
     <button class="tab-btn" onclick="switchTab('kai12',this)">第１２回</button>
+    <button class="tab-btn" onclick="switchTab('kai13',this)">第１３回</button>
     <button class="tab-btn" onclick="switchTab('jodoshi',this)">助動詞まとめ</button>
     <button class="tab-btn" onclick="switchTab('joshi',this)">助詞まとめ</button>
   </div>
@@ -663,9 +664,57 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
     </div>
   </div>
 
+  <!-- 第13回 -->
+  <div class="tab-content" id="kai13">
+    <div class="legend">
+      <span class="legend-item"><span class="legend-dot" style="background:#7F77DD;"></span>文語・助詞</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#1D9E75;"></span>場面・情景</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#D85A30;"></span>感情の見せ場</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#BA7517;"></span>漢語・明治の制度</span>
+    </div>
+    <div class="hint">色のついた言葉をクリックすると右に解説が出ます</div>
+    <div class="top-area">
+      <div class="tategumi-wrap">
+        <div class="tl"><span class="hl teal" id="k13-juku">十九の歳</span>には<span class="hl amber" id="k13-gakushi">学士の称</span>を受けて、</div>
+        <div class="tl"><span class="hl purple" id="k13-daigakuno">大学の立ちてより</span>その頃までに<span class="hl purple" id="k13-matanaki">またなき名誉なり</span>と<span class="hl purple" id="k13-iware">人にも言はれ</span>、</div>
+        <div class="tl"><span class="hl amber" id="k13-boushou">某省に出仕して</span>、<span class="hl purple" id="k13-kokyonaru">故郷なる母</span>を<span class="hl teal" id="k13-yobimukae">都に呼び迎へ</span>、</div>
+        <div class="tl">楽しき年を送ること<span class="hl purple" id="k13-mitose">三とせばかり</span>、<span class="hl amber" id="k13-kanchou">官長の覚え</span><span class="hl purple" id="k13-kotonari">殊なりしかば</span>、</div>
+        <div class="tl"><span class="hl amber" id="k13-yoko">洋行して</span>一課の事務を<span class="hl purple" id="k13-torishirabeyo">取り調べよとの命</span>を受け、</div>
+        <div class="tl"><span class="hl coral" id="k13-nasamu">我名を成さむも、我家を興さむも</span>、<span class="hl coral" id="k13-imazo">今ぞとおもふ</span><span class="hl coral" id="k13-kokorono">心の勇み立ちて</span>、</div>
+        <div class="tl"><span class="hl teal" id="k13-koeshi">五十を踰えし母</span>に<span class="hl purple" id="k13-wakaruru">別るるをも</span><span class="hl coral" id="k13-samade">さまで悲しとは思はず</span>、</div>
+        <div class="tl"><span class="hl teal" id="k13-harubaru">遥々と家を離れて</span><span class="hl purple" id="k13-kinu">ベルリンの都に来ぬ</span>。</div>
+      </div>
+      <div class="panel-area">
+        <div class="empty-state" id="k13-empty">色のついた言葉をクリックすると<br>ここに解説が表示されます</div>
+        <div class="card" id="k13-card-juku"><div class="card-word">十九の歳</div><div class="card-read">じふくのとし</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「十九」→ 数え年で十九。現在の満年齢では十七〜十八歳にあたる。</li><li>「歳」→「とし」と読む。年齢。</li><li>「に」→ 時を示す格助詞。</li><li>「は」→ 係助詞。この時期を取り立てて主題として示す。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「十九歳のときには」ということ。第13回はここから、豊太郎の栄達が一気に語られていく。</div><div class="card-naze"><span class="card-naze-title">🤔 十九歳の学士がどれほど異例か</span><br>当時の帝国大学は、予備門を経て入学するまでに長い年月がかかるのが普通で、二十代半ばで卒業する者も珍しくなかった。十九で学士になるのは飛び抜けて早い。しかもここは<b>数え年</b>なので、実質は十七、八歳である。第12回で「いつも一級の首にしるされたりし」と書かれた優等生ぶりが、ここで具体的な数字になって現れる。なお作者の鷗外自身も数え十九歳で東京大学医学部を卒業しており、この年齢は鷗外の実人生とそのまま重なる。</div><div class="card-note">数え年は生まれた年を一歳とし、正月ごとに一つ加える数え方。古典に出てくる年齢は原則すべて数え年と考えてよい。</div><div class="card-link">💡 第12回「一級の首にしるされたりし」の結果がこの一行。藩校→予備黌→大学法学部という三段の学歴の到達点にあたる</div></div>
+        <div class="card" id="k13-card-gakushi"><div class="card-word">学士の称</div><div class="card-read">がくしのしよう</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「学士」→ 大学を卒業した者に与えられる称号。</li><li>「の」→ 連体修飾の格助詞。</li><li>「称」→ 称号・呼び名。</li><li>「受けて」→ カ行下二段動詞「受く」の連用形＋接続助詞「て」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「学士という称号を受けて」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 「受く」という動詞がここでも使われている</span><br>現代なら「学士号を取得した」と言うところを、鷗外は「学士の<b>称</b>を<b>受け</b>て」と書く。取りにいったのではなく<b>与えられた</b>ものだという書き方である。第12回の冒頭も「厳しき庭の訓を<b>受け</b>し甲斐に」であった。豊太郎の人生は一貫して「受ける」ことで進んでいく。明治の日本で学士号は極めて希少で、それ自体が身分に近い重みを持っていた。</div><div class="card-note">当時、帝国大学の卒業生は年に数十人程度。今日の学士号とは比べものにならない価値があった。</div><div class="card-link">💡 第12回「受けし甲斐に」と同じ動詞「受く」。二か所を並べると、豊太郎が自分から取りにいく場面がないことがよくわかる</div></div>
+        <div class="card" id="k13-card-daigakuno"><div class="card-word">大学の立ちてより</div><div class="card-read">だいがくのたちてより</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「大学」→ 東京大学。</li><li>「の」→ 格助詞。ここは<b>主格</b>で「大学<b>が</b>」。</li><li>「立ち」→ タ行四段動詞「立つ」の連用形。ここは「創立される・開校する」の意。</li><li>「て」→ 接続助詞。</li><li>「より」→ 起点を示す格助詞。「〜から」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「大学が創立されてから」ということ。東京大学の開校（明治十年）以来、という意味。</div><div class="card-naze"><span class="card-naze-title">🤔 主格の「の」がまた出てきた</span><br>第11回「房奴<b>の</b>来て」、第12回「学問<b>の</b>荒み衰ふる」、そしてここ。いずれも「の」を「が」に置き換えて初めて意味が通る。この回にはもう一つ、後半の「心<b>の</b>勇み立ちて」にも主格の「の」がある。<b>連体形のまとまりの中で主語を示す</b>という同じ形が、三つの回にわたって四度もくり返されていることになる。ここまで来たら、主格の「の」は完全に身についているはず。</div><div class="card-note">東京大学の創立は明治十年（1877）。『舞姫』の設定ではそこから十年ほどしか経っていないので、「開校以来またとない」という評価が成り立つ。</div><div class="card-link">💡 起点の「より」は第６回「港を出でてより」、第12回「幼き比より」と同じ用法（助詞まとめ⑮）</div></div>
+        <div class="card" id="k13-card-matanaki"><div class="card-word">またなき名誉</div><div class="card-read">またなきめいよ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「またなき」→ ク活用の形容詞「またなし（又無し）」の連体形。「二つとない・比類がない」。</li><li>「名誉」→ ほまれ・栄誉。</li><li>「なり」→ 断定の助動詞「なり」の終止形。「〜である」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「またとない名誉である」ということ。大学ができてからこれまでで例のない栄誉だ、という評価。</div><div class="card-naze"><span class="card-naze-title">🤔 これは誰の評価なのか</span><br>この「またなき名誉」は豊太郎の自己評価ではなく、すぐ次の「人にも言はれ」が示すとおり<b>他人の口から出た評価</b>である。第12回の「一級の首にしるされたりし」（名簿に記された）と同じで、豊太郎の価値はいつも外から与えられ、外から語られる。彼自身がそれをどう感じたかは、この段階では一言も書かれていない。</div><div class="card-note">「またなし」は現代語の「またとない」に残っている。「又」＋「無し」で、二度とない・並ぶものがない、の意。</div><div class="card-link">💡 ク活用形容詞の連体形「き」は助動詞「き」（過去）と形が同じ。助動詞まとめ「き（し）」の識別注意も見ておこう</div></div>
+        <div class="card" id="k13-card-iware"><div class="card-word">人にも言はれ</div><div class="card-read">ひとにもいはれ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「と」→ 引用の格助詞。ここまでが人の言葉の内容。</li><li>「人」→ 他人・世間の人。</li><li>「に」→ <b>受身の動作主</b>を示す格助詞。「人<b>に</b>言われる」。</li><li>「も」→ 係助詞。添加。</li><li>「言は」→ ハ行四段動詞「言ふ」の未然形。</li><li>「れ」→ <b>受身</b>の助動詞「る」の連用形。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「（またとない名誉）であると、人にも言われて」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 受身の系譜がここでも続いている</span><br>第８回「われに負はせ」（使役）、第10回「彫りつけられ」（受身）、第12回「しるされ」（受身）、そして第13回「言は<b>れ</b>」。豊太郎は<b>評価される側・語られる側</b>であり続ける。しかもこの回では、この後「命を受け」でもう一度受け取る側に置かれる。栄光の絶頂を描くこの段落でさえ、文法の上で彼が能動の主語に立つのは「今ぞとおもふ」のあたりだけである。</div><div class="card-note">受身の動作主を示す「に」（人<b>に</b>言はれ）は現代語と同じ使い方。文法的にはこの「に」は格助詞。</div><div class="card-link">💡 受身の「る・らる」は助動詞まとめにまとめてある。第３回「載せられて」から続く系譜を確認しよう</div></div>
+        <div class="card" id="k13-card-boushou"><div class="card-word">某省に出仕して</div><div class="card-read">なにがしのしやうにしゆつしして</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「某」→「なにがし」と読む。名前をわざと伏せるときの語。</li><li>「省」→ 中央官庁。</li><li>「に」→ 場所・所属を示す格助詞。</li><li>「出仕し」→ サ行変格活用「出仕す」の連用形。役所に勤めること。</li><li>「て」→ 接続助詞。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「某省に勤めることになって」ということ。豊太郎が官僚になる。</div><div class="card-naze"><span class="card-naze-title">🤔 なぜ省の名を伏せるのか</span><br>「某省」とぼかすのは、実在の官庁を特定させないための配慮であると同時に、この物語を<b>誰にでも起こりうる出来事</b>として読ませるための書き方でもある。鷗外自身は陸軍省の官費留学生としてドイツへ渡っており、内容は限りなく自伝に近い。それでも名を伏せることで、作品は身の上話ではなく小説として立つ。読者は「どこかの省の、ある優秀な青年の話」として読むことになる。</div><div class="card-note">「某」は「それがし」とも読むが、ここは「なにがし」。人にも場所にも使える便利な語。</div><div class="card-link">💡 第12回「大学法学部」で示された官僚への道が、ここで実際に始まる。学歴が進路に直結する構造を確認しよう</div></div>
+        <div class="card" id="k13-card-kokyonaru"><div class="card-word">故郷なる母</div><div class="card-read">こきやうなるはは</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「故郷」→ ふるさと。</li><li>「なる」→ 断定の助動詞「なり」の連体形。ただしここは「〜である」ではなく<b>「〜にある・〜にいる」という存在（所在）</b>の意味。</li><li>「母」→ 豊太郎の母。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「故郷<b>にいる</b>母」ということ。「故郷である母」ではないので注意。</div><div class="card-naze"><span class="card-naze-title">🤔 「なり」のもう一つの顔——存在の「なり」</span><br>断定の「なり」は「AはBなり（AはBである）」が基本だが、体言に付いて連体形「なる」になったとき、<b>「〜にある・〜にいる」</b>という所在を表すことがある。もともと「〜に＋あり」が縮まってできた用法である。「故郷なる母」は「故郷<b>にいる</b>母」。訳を間違えやすい代表例なので、ここで一度整理しておきたい。<b>見分け方は、上の体言が場所を表しているかどうか</b>。「都なる人」「山なる寺」なども同じ形である。</div><div class="card-note">第１回「余一人のみなれば」の「なれ」は本来の断定。同じ助動詞でも、上に来る語によって意味が変わることを押さえたい。</div><div class="card-link">💡 断定の「なり」はこの作品で頻出（助動詞まとめ「なり（なる）」）。用法の違いに注意して読み比べよう</div></div>
+        <div class="card" id="k13-card-yobimukae"><div class="card-word">都に呼び迎へ</div><div class="card-read">みやこによびむかへ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「都」→ 東京。</li><li>「に」→ 帰着点を示す格助詞。</li><li>「呼び」→ バ行四段動詞「呼ぶ」の連用形。</li><li>「迎へ」→ ハ行下二段動詞「迎ふ」の連用形。ここで文をいったん切って下へ続ける<b>中止法</b>。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「（母を）都へ呼び迎えて」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 呼び迎える／別れる——同じ段落に置かれた対</span><br>第12回で「東京に出でて」と故郷を離れた豊太郎が、ここでは逆に母を都へ呼び寄せる。離れていた母子がようやく一緒に暮らす——それが次の「楽しき年」の中身である。ところがその暮らしはわずか三年で終わり、豊太郎は今度は母を残してドイツへ発つ。<b>呼び迎える</b>と<b>別るる</b>という対の動作が、同じ一文のなかに並べて置かれている。母が都に来たのは息子のためであり、その息子が去っていく。</div><div class="card-note">「呼び迎ふ」は複合動詞。第１回「集ひ来る」、第９回「喚び起す」と同じ作り方。</div><div class="card-link">💡 この三年が母子にとって最後の時間になる。第12回「一人子の我を力になして世を渡る母」の姿と重ねて読みたい</div></div>
+        <div class="card" id="k13-card-mitose"><div class="card-word">三とせばかり</div><div class="card-read">みとせばかり</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「三とせ」→ 三年。「とせ」は年を数える語（ひととせ・ふたとせ・みとせ）。</li><li>「ばかり」→ <b>副助詞</b>。ここは「〜ほど・〜くらい」という<b>おおよその程度</b>を表す。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「三年ほど」ということ。母と暮らした年月の長さ。</div><div class="card-naze"><span class="card-naze-title">🤔 「ばかり」の二つの意味</span><br>副助詞「ばかり」には、①<b>程度・分量</b>「〜ほど・〜くらい」と、②<b>限定</b>「〜だけ」の二つがある。現代語の「ばかり」は②の限定が中心だが、古文では①の程度が非常に多い。ここは「三年ほど」であって「三年だけ」ではない。ただしこの場面では、結果として「たった三年で終わってしまった」という含みも生まれ、①の裏に②の余韻が漂う。楽しい時間の短さが、あとから効いてくる書き方である。</div><div class="card-note">「とせ」は「年」の古い数え方。「ひととせ（一年）」「ふたとせ（二年）」のように使う。</div><div class="card-link">💡 程度を表す言い方は第６回「早や二十日あまりを経ぬ」の「あまり」とも近い。数量表現をまとめて覚えたい（助詞まとめ㉕）</div></div>
+        <div class="card" id="k13-card-kanchou"><div class="card-word">官長の覚え</div><div class="card-read">くわんちやうのおぼえ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「官長」→ 役所の長官。豊太郎の上司。</li><li>「の」→ 連体修飾の格助詞。「官長<b>からの</b>」。</li><li>「覚え」→ ヤ行下二段動詞「覚ゆ」の連用形が名詞になったもの。<b>目上からの評価・信任</b>のこと。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「長官からの覚え（評価・信任）」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 「覚え」という語の重み</span><br>現代語の「覚え」は記憶のことだが、古文の「覚え」は<b>目上の人からどう思われているか</b>という評判・信任を指す。「覚えめでたし」の形でよく使われ、宮仕えの世界ではこの「覚え」が出世のすべてを決めた。ここで豊太郎の留学が実現するのも、彼の学力そのものではなく<b>長官の覚えが格別だったから</b>である。第12回から続く流れを並べてみると、「一級の首にしるされ」→「またなき名誉と言はれ」→「官長の覚え殊なり」——<b>他人の評価が次の評価を呼び、道が勝手に開けていく</b>構造がはっきり見える。</div><div class="card-note">「覚え」は『源氏物語』などにも頻出する重要語。「人の覚え」「時の覚え」などの形で使われる。</div><div class="card-link">💡 この「の」は連体修飾。同じ回の「大学の立ちて」「心の勇み立ちて」は主格。三つを見比べると「の」の識別の練習になる</div></div>
+        <div class="card" id="k13-card-kotonari"><div class="card-word">殊なりしかば</div><div class="card-read">ことなりしかば</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「殊なり」→ ナリ活用の形容動詞「殊なり」の連用形。「格別だ・並でない」。</li><li>「しか」→ 過去の助動詞「き」の<b>已然形</b>。</li><li>「ば」→ 已然形に接続する接続助詞。<b>順接確定条件</b>で「〜ので」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「（長官の覚えが）格別だったので」ということ。次の洋行の命令につながる理由を示す。</div><div class="card-naze"><span class="card-naze-title">🤔 「しかど」と「しかば」——一字違いで意味が反転する</span><br>第３回に「もてはやされ<b>しかど</b>」（もてはやされた<b>けれども</b>）があった。あちらは已然形「しか」＋<b>ど</b>で<b>逆接</b>。ここは已然形「しか」＋<b>ば</b>で<b>順接</b>（〜ので）。同じ「しか」に何が付くかだけで、前後の関係が正反対になる。<b>已然形＋ば＝順接（〜ので）／已然形＋ど＝逆接（〜けれども）</b>——この対はテストの定番でもあるので、ここで確実に押さえておきたい。</div><div class="card-note">「殊なり」は形容動詞。連用形が「殊なり」の形になるので断定の助動詞「なり」と紛らわしいが、「格別だ」と訳せるかどうかで判断できる。</div><div class="card-link">💡 已然形＋「ば」は第10回「彫りつけられたれば」、第11回「あるべければ」と同じ（助詞まとめ⑤）。已然形＋「ど」は第12回「喪ひつれど」（助詞まとめ⑱）</div></div>
+        <div class="card" id="k13-card-yoko"><div class="card-word">洋行して</div><div class="card-read">やうかうして</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「洋行」→ 西洋へ行くこと。明治期に生まれた語。</li><li>「して」→ サ行変格活用「す」の連用形＋接続助詞「て」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「西洋へ行って」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 「洋行」という言葉が背負っていたもの</span><br>明治の日本で「洋行」は単なる海外旅行ではなく、<b>国家が選んだ者だけに許される特権</b>だった。帰国すれば要職が約束され、社会的地位が決定的に変わる。第４回で「洋行の命を受け」と一度出てきた語がここで再び現れ、その経緯が明かされる。豊太郎にとってこれは人生最大の栄達であり、だからこそ次の「心の勇み立ちて」につながっていく。そして——この洋行が彼の人生を壊すことになる。読者はそれをすでに知っている。</div><div class="card-note">「洋行」は現代ではほとんど使わない語だが、明治大正の文章では頻出する。</div><div class="card-link">💡 第４回「洋行の命を受け、このサイゴンの港まで来し頃は」と対応する。第４回は帰りの船、ここは行きの決定。物語の時間が結び合わされている</div></div>
+        <div class="card" id="k13-card-torishirabeyo"><div class="card-word">取り調べよとの命</div><div class="card-read">とりしらべよとのめい</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「取り調べよ」→ ヤ行下二段動詞「取り調ぶ」の<b>命令形</b>。「調査せよ」。</li><li>「と」→ 引用の格助詞。命令の言葉をそのまま引用している。</li><li>「の」→ 連体修飾の格助詞。</li><li>「命」→「めい」。命令。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「取り調べよ、という命令」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 命令形がそのまま引用されている</span><br>「取り調べるようにという命令」と要約せず、<b>命令の言葉そのもの</b>を「取り調べよ」という命令形のまま引用している。これによって、上から下される言葉の硬さと、有無を言わせない調子が、そのまま文章に残る。豊太郎はこの言葉を受け取るだけで、応じるかどうかを問われてすらいない。第４回で「洋行の命を受け」と書かれていた、その「命」の中身がここで初めて具体的な言葉として示される。</div><div class="card-note">「〜よ」は下二段・上二段動詞の命令形。四段動詞の命令形は「〜へ」「〜け」などになる。活用の種類を確かめる練習に使える。</div><div class="card-link">💡 引用の「と」は第10回「さはあらじと思へど」、第12回「豊太郎といふ名」と同じ格助詞（助詞まとめ⑲）</div></div>
+        <div class="card" id="k13-card-nasamu"><div class="card-word">我名を成さむも、我家を興さむも</div><div class="card-read">わがなをなさむも、わがいへををこさむも</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「我名」→ 自分の名声。「我家」→ 自分の家。</li><li>「成さ」「興さ」→ ともにサ行四段動詞「成す」「興す」の未然形。</li><li>「む」→ <b>意志</b>の助動詞。「〜しよう」。</li><li>「も」→ 係助詞。二つ重ねて並列する。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「自分の名を上げるのも、家を再興するのも」ということ。次の「今ぞ」に続く。</div><div class="card-naze"><span class="card-naze-title">🤔 ここで「む」がついに強い意志になる</span><br>この作品の「む」をたどってみよう。第４回「日記ものせ<b>む</b>とて」（書こうと思って）、第６回「誰にか見せ<b>む</b>」（誰に見せられようか＝反語）、第８回「此恨を銷せ<b>む</b>」（どうすれば消せるのか）、第11回「綴りて見<b>む</b>」（綴ってみよう）——どれも弱い意志か反語だった。ところが第13回の「成さ<b>む</b>」「興さ<b>む</b>」は、二つ並べて畳み掛ける<b>まぎれもない強い意志</b>である。『舞姫』全体を通して、豊太郎がこれほどはっきり「〜しよう」と言い切る場面はここしかない。<b>功名心の絶頂</b>が、この二つの「む」に凝縮されている。</div><div class="card-note">「我家を興さむ」は、父を失って傾いた家を自分の力で立て直すという意味。第12回「父をば早く喪ひつれど」を受けている。</div><div class="card-link">💡 「む」の変化は助動詞まとめ「む」で一覧できる。第11回までの弱い「む」と読み比べると、この回の異質さがはっきりする</div></div>
+        <div class="card" id="k13-card-imazo"><div class="card-word">今ぞとおもふ</div><div class="card-read">いまぞとおもふ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「今」→ この時。</li><li>「ぞ」→ <b>係助詞</b>。強く指し示して「今こそ」。</li><li>「と」→ 引用の格助詞。</li><li>「おもふ」→ ハ行四段動詞「思ふ」の連体形。下の「心」にかかる。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「今こそその時だ、と思う」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 係助詞「ぞ」と、結びが現れない理由</span><br>係助詞「ぞ」は本来、文末を<b>連体形</b>で結ぶ（係り結び）。ところがここでは「今ぞ」のすぐ下に引用の「と」が来てしまい、結ぶべき述語が現れない。「今ぞ（その時なれ）と思ふ」のように補って読む形で、これを<b>結びの省略</b>という。心の中の言葉や会話では結びが省かれることが多く、かえって勢いが出る。ここでも「今こそだ！」と言い切らないまま次へなだれ込む調子が、そのまま豊太郎の高揚を伝えている。</div><div class="card-note">係助詞「ぞ・なむ・や・か」は連体形で結び、「こそ」は已然形で結ぶ。第５回「学問こそ〜多かれ」が已然形結びの例。</div><div class="card-link">💡 係り結びは助詞まとめ⑨「か・や」、⑬「こそ」、㉔「ぞ」にまとめてある。三つを並べて確認しよう</div></div>
+        <div class="card" id="k13-card-kokorono"><div class="card-word">心の勇み立ちて</div><div class="card-read">こころのいさみたちて</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「心」→ 気持ち。</li><li>「の」→ 格助詞。ここは<b>主格</b>で「心<b>が</b>」。</li><li>「勇み立ち」→ タ行四段動詞「勇み立つ」の連用形。奮い立つ・意気込む。</li><li>「て」→ 接続助詞。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「心が勇み立って」ということ。豊太郎の高揚が頂点に達する。</div><div class="card-naze"><span class="card-naze-title">🤔 主語はやはり豊太郎ではない</span><br>「我勇み立ちて」ではなく「心<b>の</b>勇み立ちて」。奮い立ったのは<b>心</b>であって、豊太郎自身は主語に立たない。第８回の「悩みが主語」、第12回の「学問が主語」と同じ書き方が、栄達の場面でもそのまま使われている。喜びも野心も、彼の内側で勝手に起こる出来事として描かれる。この一貫した書き方は、のちに豊太郎が「自分は流されただけだ」と語る自己認識にそのままつながっていく。</div><div class="card-note">この回の主格の「の」は「大学の立ちて」と合わせて二つ。第11回・第12回から数えると四つめになる。</div><div class="card-link">💡 助詞まとめ㉑「の（連体修飾・主格・同格）」で三用法を整理してある。置き換えテスト（の／が／である）で確認しよう</div></div>
+        <div class="card" id="k13-card-koeshi"><div class="card-word">五十を踰えし母</div><div class="card-read">ごじふをこえしはは</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「五十」→ 五十歳。</li><li>「を」→ 対象を示す格助詞。</li><li>「踰え」→ ヤ行下二段動詞「踰ゆ」の連用形。「越える」。</li><li>「し」→ 過去の助動詞「き」の連体形。下の「母」にかかる。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「五十歳を越えた母」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 なぜここで初めて年齢が書かれるのか</span><br>ここまで母の年齢は一度も語られなかった。<b>別れの場面で初めて</b>「五十を踰えし」と記されるのは、この年齢の母を一人残していくという事実を読者に突きつけるためである。当時の五十歳は現在よりはるかに老年に近い。しかも夫はなく、頼れる子は一人だけ。第12回「一人子の我を力になして世を渡る母」がここで具体的な年齢を与えられ、そのすぐ後の「さまで悲しとは思はず」の冷たさが際立つように置かれている。</div><div class="card-note">「踰ゆ」は「越ゆ」と同じ意味だが、「踰」の字を使うのは漢籍風の表記。年齢を越える意で使われる。</div><div class="card-link">💡 母についての記述は第12回と第13回にしかない。二か所を続けて読むと、母がどう描かれてきたかが見渡せる</div></div>
+        <div class="card" id="k13-card-wakaruru"><div class="card-word">別るるをも</div><div class="card-read">わかるるをも</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「別るる」→ ラ行下二段動詞「別る」の<b>連体形</b>。ここは下に体言がなく、そのまま「別れること」という名詞のはたらきをする<b>準体法</b>。</li><li>「を」→ 対象を示す格助詞。</li><li>「も」→ 係助詞。「〜さえも」という強調。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「別れること<b>さえも</b>」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 準体法——連体形がそのまま名詞になる</span><br>古文では連体形がそのまま「〜こと・〜もの」という名詞のはたらきをすることがあり、これを<b>準体法</b>という。「別るる<b>を</b>」で「別れる<b>ことを</b>」となる。現代語に訳すときは「こと」を補う必要がある。そして「をも」は「〜さえも」。<b>母と別れることさえも悲しくなかった</b>——「さえも」があることで、本来なら最も悲しいはずのことが平然と扱われている、その異様さが強調される。</div><div class="card-note">準体法は第１回「舟に残れるは」（残っているのは）にも出ている。連体形で終わっていたら「こと・もの・ひと」を補えないか考えるとよい。</div><div class="card-link">💡 「をも」＝格助詞「を」＋係助詞「も」。第５回「浮世のうきふしをも知りたり」、第８回「山色をも見せず」と同じ形（助詞まとめ⑥・㉓）</div></div>
+        <div class="card" id="k13-card-samade"><div class="card-word">さまで悲しとは思はず</div><div class="card-read">さまでかなしとはおもはず</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「さまで」→ 副詞。「そこまで・それほどまでに」。</li><li>「悲し」→ シク活用の形容詞「悲し」の終止形。</li><li>「と」→ 引用の格助詞。</li><li>「は」→ 係助詞。取り立てて否定を強める。</li><li>「思は」→ ハ行四段動詞「思ふ」の未然形。</li><li>「ず」→ 打消の助動詞「ず」の連用形。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「それほど悲しいとは思わなかった」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 この一句が『舞姫』全体で持つ意味</span><br>五十を越えた母を一人残して外国へ発つ——それを「さまで悲しとは思はず」と書く。ここは豊太郎が<b>最も冷たく、同時に最も生き生きとしている</b>瞬間である。功名心が悲しみを押しのけてしまっている。<br><br>そして読者はすでに第１回から第11回までで、船室にうずくまり「腸日ごとに九廻す」と苦しむ彼の姿を見てしまっている。<b>この高揚がどこへ行き着くかを知った上で読む</b>ように仕組まれているのが『舞姫』の構造で、だからこの一句は残酷なほどよく効く。</div><div class="card-note">「さまで〜ず」で「それほど〜ない」という呼応。「さ（そう）」＋「まで」からできた副詞。</div><div class="card-link">💡 第１回〜第11回の「今」の豊太郎と、この第13回の豊太郎を並べてみよう。同じ人物の落差こそが『舞姫』の骨格そのもの</div></div>
+        <div class="card" id="k13-card-harubaru"><div class="card-word">遥々と家を離れて</div><div class="card-read">はるばるといへをはなれて</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「遥々」→「はるばる」。遠く遠く、はるかに。</li><li>「と」→ 副詞をつくる格助詞。「遥々と」で状態を表す。</li><li>「家」→ 我が家・家庭。</li><li>「を」→ 対象を示す格助詞。</li><li>「離れ」→ ラ行下二段動詞「離る」の連用形。</li><li>「て」→ 接続助詞。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「はるばると家を離れて」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 豊太郎の移動はいつも「離れる」ことである</span><br>第12回で故郷を離れて東京へ、第13回で家を離れてベルリンへ。そのたびに母が後ろに残される。しかもどちらの移動も自分から望んだものではなく、進学と官命によって起こった。<b>「遥々と」という距離を示す語がここで初めて出てくる</b>ことで、今度の別れがこれまでとは桁違いのものであることが示される。東京と故郷なら帰れるが、ベルリンはそうではない。</div><div class="card-note">「遥々」は同じ語を重ねた畳語。「早々」「代々」などと同じ作り方で、状態を強める働きをする。</div><div class="card-link">💡 第６回「ブリンヂイシイの港を出でてより」の帰路と、この往路とが対をなす。行きと帰りで豊太郎はまったく別人になっている</div></div>
+        <div class="card" id="k13-card-kinu"><div class="card-word">ベルリンの都に来ぬ</div><div class="card-read">ベルリンのみやこにきぬ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「ベルリン」→ ドイツ帝国の首都。</li><li>「の」→ 連体修飾の格助詞。</li><li>「都」→ 首都。</li><li>「に」→ 帰着点を示す格助詞。</li><li>「来」→ カ行変格活用動詞「来（く）」の連用形「来（き）」。</li><li>「ぬ」→ <b>完了</b>の助動詞「ぬ」の終止形。「〜てしまった・〜た」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「ベルリンの都にやって来た」ということ。ここで物語の舞台がついにドイツへ移る。</div><div class="card-naze"><span class="card-naze-title">🤔 ★最重要の識別——完了の「ぬ」と打消の「ぬ」</span><br>「ぬ」には二つあり、意味がまったく逆になる。<b>完了</b>の「ぬ」は<b>連用形</b>に付き、終止形が「ぬ」（〜てしまった）。<b>打消</b>の「ず」は<b>未然形</b>に付き、その連体形が「ぬ」（〜ない）。ここは「来（き）」というカ変の<b>連用形</b>に付いているので<b>完了</b>である。「来なかった」ではなく「来た」。<b>見分け方は、上が連用形か未然形か</b>——これに尽きる。第６回「早や二十日あまりを経<b>ぬ</b>」も同じ完了の「ぬ」だった。</div><div class="card-note">打消の「ぬ」の例はこの作品にも多い（第２回「一つとして新ならぬはなく」など）。二つを並べて確認しておきたい。</div><div class="card-link">💡 完了の「ぬ」は助動詞まとめ「ぬ」に第６回の例と合わせて載せてある。第14回からはベルリンでの日々が始まる</div></div>
+        <div class="trans-box"><div class="trans-label">現代語訳</div>十九歳で学士の称号を受けて、大学開校以来例のない名誉であると人にも言われ、某省に仕える身となってからは、故郷の母を都に呼び迎えて、三年ほど楽しい毎日を送った。役所の長官の覚えも特に目出たかったので、洋行して一課の事務を取り調べるようにという命令を受けるに到り、自分が出世するのも、家を興（おこ）すのもこの時にありと思う心が勇み立って、五十歳をこえた母と別れるのもさほど悲しいとも思わず、遠く家を離れて、はるばる伯林（べるりん）の都にやって来たのである。</div>
+      </div>
+    </div>
+  </div>
+
   <!-- 助動詞まとめ -->
   <div class="tab-content" id="jodoshi">
-    <div class="hint">第１回〜第１２回に登場した助動詞を出現順にまとめています。クロスリファレンスで本文中の場所を確認できます。</div>
+    <div class="hint">第１回〜第１３回に登場した助動詞を出現順にまとめています。クロスリファレンスで本文中の場所を確認できます。</div>
     <div class="jodoshi-section">
 
       <div class="jodoshi-entry">
@@ -692,10 +741,14 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <span class="jodoshi-kaku">過去の助動詞「き」已然形 ― 回想・詠嘆</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">「〜であったことよ」という回想・詠嘆のニュアンス。已然形「しか」は文末に置かれ、しみじみとした感慨を表す。連体形「し」（下記）とは形が異なる点に注意。</div>
+          <div class="jodoshi-imi">「〜であったことよ」という回想・詠嘆のニュアンス。已然形「しか」は文末に置かれ、しみじみとした感慨を表す。連体形「し」（下記）とは形が異なる点に注意。★已然形なので接続助詞が付く形も多い。<strong>「しか＋ど」＝逆接（〜したけれども）／「しか＋ば」＝順接（〜したので）</strong>で、一字違いで前後の関係が反転する。第３回「もてはやされ<strong>しかど</strong>」と第13回「殊なり<strong>しかば</strong>」を並べて覚えるとよい。</div>
           <div class="jodoshi-rei">第２回：五年前の事なり<span class="rei-hl">しか</span>、</div>
+          <div class="jodoshi-rei">第３回：もてはやされ<span class="rei-hl">しかど</span>（〜されたけれども＝<strong>逆接</strong>）</div>
+          <div class="jodoshi-rei">第１３回：官長の覚え殊なり<span class="rei-hl">しかば</span>（〜だったので＝<strong>順接</strong>）</div>
           <div class="cross-tags">
             <span class="cross-tag">第２回「なりしか」</span>
+            <span class="cross-tag">第３回「しかど」＝逆接</span>
+            <span class="cross-tag">第１３回「しかば」＝順接</span>
           </div>
         </div>
       </div>
@@ -712,6 +765,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第４回：途に上り<span class="rei-hl">し</span>とき ／ 買ひ<span class="rei-hl">し</span>冊子 ／ 物学び<span class="rei-hl">せし</span>間に</div>
           <div class="jodoshi-rei">第５回：西に航<span class="rei-hl">せし</span>昔の我</div>
           <div class="jodoshi-rei">第１２回：受け<span class="rei-hl">し</span>甲斐に ／ あり<span class="rei-hl">し</span>日も ／ 通ひ<span class="rei-hl">し</span>ときも ／ 入り<span class="rei-hl">し</span>後も ／ しるされたり<span class="rei-hl">し</span>に</div>
+          <div class="jodoshi-rei">第１３回：五十を踰え<span class="rei-hl">し</span>母に別るるをも</div>
           <div class="cross-tags">
             <span class="cross-tag">第２回「来し」</span>
             <span class="cross-tag">第３回「もてはやされし」</span>
@@ -723,6 +777,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <span class="cross-tag">第１２回「受けし」</span>
             <span class="cross-tag">第１２回「ありし」「通ひし」「入りし」</span>
             <span class="cross-tag">第１２回「たりしに」</span>
+            <span class="cross-tag">第１３回「踰えし母」</span>
           </div>
         </div>
       </div>
@@ -751,16 +806,18 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <span class="jodoshi-kaku">意志の助動詞</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">「〜しよう」という意志・意向を表す。現代語の「〜しよう」にあたる。「とて」と組み合わさり「〜しようとして」という目的の表現になる。反語的に「〜できようか（いや、できない）」という用法もある。第６回「誰にか見せむ」・第10回「いかにしてか銷せむ」は、係助詞「か」の<strong>係り結び</strong>を受けた<strong>連体形</strong>（形は終止形と同じ「む」）で、いずれも反語。また否定版の推量は「じ」（〜ないだろう）で、第10回では「なりな<strong>む</strong>」⇔「さはあら<strong>じ</strong>」と肯定・否定の推量が対で登場する。</div>
+          <div class="jodoshi-imi">「〜しよう」という意志・意向を表す。現代語の「〜しよう」にあたる。「とて」と組み合わさり「〜しようとして」という目的の表現になる。反語的に「〜できようか（いや、できない）」という用法もある。第６回「誰にか見せむ」・第10回「いかにしてか銷せむ」は、係助詞「か」の<strong>係り結び</strong>を受けた<strong>連体形</strong>（形は終止形と同じ「む」）で、いずれも反語。また否定版の推量は「じ」（〜ないだろう）で、第10回では「なりな<strong>む</strong>」⇔「さはあら<strong>じ</strong>」と肯定・否定の推量が対で登場する。★第１３回「我名を成さ<strong>む</strong>も、我家を興さ<strong>む</strong>も」は、この作品で唯一といってよい<strong>強い意志</strong>の「む」。第４回「ものせむとて」（弱い意志）、第６回「誰にか見せむ」（反語）、第８回「いかにしてか銷せむ」（反語）、第11回「綴りて見む」（試みの意志）と弱い形が続いたあとに、二つ並べて畳み掛ける言い切りが現れる。<strong>功名心の絶頂</strong>が助動詞一つの調子に表れている箇所で、「む」の用法を比較する材料としては最適。</div>
           <div class="jodoshi-rei">第４回：日記もの<span class="rei-hl">せむ</span>とて</div>
           <div class="jodoshi-rei">第６回：誰にか見<span class="rei-hl">せむ</span>。</div>
           <div class="jodoshi-rei">第10回：いかにしてか此恨を銷（せう）<span class="rei-hl">せむ</span>。</div>
           <div class="jodoshi-rei">第１１回：その概略を文に綴りて見<span class="rei-hl">む</span>。</div>
+          <div class="jodoshi-rei">第１３回：我名を成さ<span class="rei-hl">む</span>も、我家を興さ<span class="rei-hl">む</span>も（<strong>強い意志</strong>：〜しよう）</div>
           <div class="cross-tags">
             <span class="cross-tag">第４回「ものせむ」</span>
             <span class="cross-tag">第６回「見せむ」</span>
             <span class="cross-tag">第10回「銷せむ」</span>
             <span class="cross-tag">第１１回「綴りて見む」</span>
+            <span class="cross-tag">第１３回「成さむ」「興さむ」＝強い意志</span>
           </div>
         </div>
       </div>
@@ -771,7 +828,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <span class="jodoshi-kaku">断定の助動詞</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">「〜である」という断定を表す。連体形「なる」は後ろの名詞を修飾したり、「なるは」の形で「〜であるということは」と後ろの理由説明につなぐ。未然形「なら」＋「ば」で仮定、已然形「なれ」＋「ば」で理由を表す。第1回から第10回まで、この節で最も幅広い形で登場する助動詞。</div>
+          <div class="jodoshi-imi">「〜である」という断定を表す。連体形「なる」は後ろの名詞を修飾したり、「なるは」の形で「〜であるということは」と後ろの理由説明につなぐ。未然形「なら」＋「ば」で仮定、已然形「なれ」＋「ば」で理由を表す。第1回から第13回まで、この節で最も幅広い形で登場する助動詞。★第１３回「故郷<strong>なる</strong>母」は、断定ではなく<strong>存在（所在）</strong>の用法で「故郷<strong>にいる</strong>母」の意。もともと「〜に＋あり」が縮まってできた形で、<strong>上の体言が場所を表しているとき</strong>にこの意味になる。「都なる人」「山なる寺」も同じ。「故郷である母」と訳すと意味が通らないので、訳し分けの練習にちょうどよい。</div>
           <div class="jodoshi-rei">第１回：余一人のみ<span class="rei-hl">なれば</span></div>
           <div class="jodoshi-rei">第２回：五年前の事<span class="rei-hl">なり</span>しか、</div>
           <div class="jodoshi-rei">第４回：白紙のまま<span class="rei-hl">なる</span>は、</div>
@@ -779,6 +836,8 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第６回：日記の成らぬ縁故<span class="rei-hl">なる</span>。</div>
           <div class="jodoshi-rei">第７回：世の常<span class="rei-hl">ならば</span> ／ 航海の習<span class="rei-hl">なるに</span> ／ 悩ましたれば<span class="rei-hl">なり</span>。</div>
           <div class="jodoshi-rei">第10回：外の恨<span class="rei-hl">なり</span>せば、</div>
+          <div class="jodoshi-rei">第１３回：またなき名誉<span class="rei-hl">なり</span>と人にも言はれ（断定：〜である）</div>
+          <div class="jodoshi-rei">第１３回：故郷<span class="rei-hl">なる</span>母を都に呼び迎へ（<strong>存在</strong>：故郷<strong>にいる</strong>母）</div>
           <div class="cross-tags">
             <span class="cross-tag">第１回「のみなれば」</span>
             <span class="cross-tag">第２回「なりしか」</span>
@@ -789,6 +848,8 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <span class="cross-tag">第７回「なるに」</span>
             <span class="cross-tag">第７回「たればなり」</span>
             <span class="cross-tag">第10回「なりせば」</span>
+            <span class="cross-tag">第１３回「名誉なり」＝断定</span>
+            <span class="cross-tag">第１３回「故郷なる母」＝存在</span>
           </div>
         </div>
       </div>
@@ -831,6 +892,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第６回：日記の成ら<span class="rei-hl">ぬ</span>縁故 ／ <span class="rei-hl">あらず</span>、</div>
           <div class="jodoshi-rei">第７回：人知ら<span class="rei-hl">ぬ</span>恨に</div>
           <div class="jodoshi-rei">第８回：山色をも見せ<span class="rei-hl">ず</span> ／ 心を留めさせ<span class="rei-hl">ず</span>、</div>
+          <div class="jodoshi-rei">第１３回：さまで悲しとは思は<span class="rei-hl">ず</span>（未然形「思は」＋ず）</div>
           <div class="cross-tags">
             <span class="cross-tag">第２回「新ならぬ」</span>
             <span class="cross-tag">第３回「知らぬ」「さらぬ」</span>
@@ -839,6 +901,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <span class="cross-tag">第６回「成らぬ」「あらず」</span>
             <span class="cross-tag">第７回「人知らぬ」</span>
             <span class="cross-tag">第８回「見せず」「留めさせず」</span>
+            <span class="cross-tag">第１３回「思はず」</span>
           </div>
         </div>
       </div>
@@ -849,10 +912,12 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <span class="jodoshi-kaku">完了の助動詞</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">「〜してしまった」という完了を表す。「つ」が意志的・動作的な完了を表すのに対し、「ぬ」は自然な成り行きの完了を表すことが多い。</div>
+          <div class="jodoshi-imi">「〜してしまった」という完了を表す。「つ」が意志的・動作的な完了を表すのに対し、「ぬ」は自然な成り行きの完了を表すことが多い。★<strong>最重要の識別</strong>：完了の「ぬ」は<strong>連用形</strong>に付き（終止形が「ぬ」）、打消の「ず」は<strong>未然形</strong>に付いてその連体形が「ぬ」になる。意味は正反対なので、<strong>上が連用形か未然形か</strong>だけで見分ける。第13回「ベルリンの都に来<strong>ぬ</strong>」はカ変の連用形「来（き）」に付いているので完了で、「来なかった」ではなく「来た」。同じ回の「思は<strong>ず</strong>」（未然形＋ず）と並べて確認したい。</div>
           <div class="jodoshi-rei">第６回：早や二十日あまりを<span class="rei-hl">経ぬ</span>。</div>
+          <div class="jodoshi-rei">第１３回：遥々と家を離れてベルリンの都に<span class="rei-hl">来ぬ</span>。（やって来た）</div>
           <div class="cross-tags">
             <span class="cross-tag">第６回「経ぬ」</span>
+            <span class="cross-tag">第１３回「来ぬ」</span>
           </div>
         </div>
       </div>
@@ -909,11 +974,13 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第３回：新聞に載せ<span class="rei-hl">られ</span>て ／ もてはやさ<span class="rei-hl">れ</span>しかど、</div>
           <div class="jodoshi-rei">第10回：彫りつけ<span class="rei-hl">られ</span>たれば</div>
           <div class="jodoshi-rei">第１２回：一級の首にしるさ<span class="rei-hl">れ</span>たりしに</div>
+          <div class="jodoshi-rei">第１３回：またなき名誉なりと人にも言は<span class="rei-hl">れ</span>（人に言われて）</div>
           <div class="cross-tags">
             <span class="cross-tag">第３回「載せられて」</span>
             <span class="cross-tag">第３回「もてはやされし」</span>
             <span class="cross-tag">第10回「彫りつけられ」</span>
             <span class="cross-tag">第１２回「しるされ」</span>
+            <span class="cross-tag">第１３回「言はれ」</span>
           </div>
         </div>
       </div>
@@ -1018,13 +1085,13 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
               <td class="t-jterm">き（しか）</td>
               <td>過去・詠嘆「〜であったことよ」<br><span style="font-size:11px;color:#aaa;">已然形。文末で回想・感慨を表す</span></td>
               <td>なりしか</td>
-              <td class="t-cross">第２回</td>
+              <td class="t-cross">第２回・第３回・第13回</td>
             </tr>
             <tr>
               <td class="t-jterm">き（し）</td>
               <td>過去「〜した」<br><span style="font-size:11px;color:#aaa;">連体形。後ろの名詞を修飾する</span></td>
               <td>来し／もてはやされし／しるしし／上りし／買ひし／物学びせし／航せし</td>
-              <td class="t-cross">第２〜５回・第１２回</td>
+              <td class="t-cross">第２〜５回・第12・13回</td>
             </tr>
             <tr>
               <td class="t-jterm">けむ</td>
@@ -1036,13 +1103,13 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
               <td class="t-jterm">む</td>
               <td>意志「〜しよう」<br><span style="font-size:11px;color:#aaa;">反語「〜できようか（いや、できない）」の用法も</span></td>
               <td>ものせむ／見せむ／銷せむ／綴りて見む</td>
-              <td class="t-cross">第４回・第６回・第10回・第11回</td>
+              <td class="t-cross">第４・６・10・11・13回</td>
             </tr>
             <tr>
               <td class="t-jterm">なり（なる）</td>
               <td>断定「〜である」<br><span style="font-size:11px;color:#aaa;">なら＋ば＝仮定／なれ＋ば＝理由／なる＝連体形</span></td>
               <td>のみなれば／なりしか／ままなるは／我ならず／縁故なる／ならば／なるに／たればなり／なりせば</td>
-              <td class="t-cross">第１・２・４・５・６・７・10回</td>
+              <td class="t-cross">第１・２・４〜７・10・13回</td>
             </tr>
             <tr>
               <td class="t-jterm">たり</td>
@@ -1054,13 +1121,13 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
               <td class="t-jterm">ず</td>
               <td>否定「〜ない」<br><span style="font-size:11px;color:#aaa;">連体形は「ぬ」で後ろの名詞を修飾。「をも／にも〜ず」は「〜さえも…ない」の強い否定</span></td>
               <td>新ならぬ／知らぬ／さらぬ／あらず／我ならず／飽き足らぬ／成らぬ／人知らぬ／見せず／留めさせず</td>
-              <td class="t-cross">第２・３・４・５・６・７・８回</td>
+              <td class="t-cross">第２〜８回・第13回</td>
             </tr>
             <tr>
               <td class="t-jterm">ぬ</td>
               <td>完了「〜してしまった」<br><span style="font-size:11px;color:#aaa;">「つ」より自然な成り行きの完了</span></td>
               <td>経ぬ</td>
-              <td class="t-cross">第６回</td>
+              <td class="t-cross">第６回・第13回</td>
             </tr>
             <tr>
               <td class="t-jterm">せば</td>
@@ -1084,7 +1151,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
               <td class="t-jterm">る・らる</td>
               <td>受身「〜される」</td>
               <td>載せられて／もてはやされし／彫りつけられ</td>
-              <td class="t-cross">第３・10・12回</td>
+              <td class="t-cross">第３・10・12・13回</td>
             </tr>
             <tr>
               <td class="t-jterm">り</td>
@@ -1124,7 +1191,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
   </div>
 
   <div class="tab-content" id="joshi">
-    <div class="hint">第１回〜第１２回に登場した助詞を出現順にまとめています。係り結び・「ば」の仮定と確定・逆接の「に」など、現代語と違う使い方に特に注目してください。</div>
+    <div class="hint">第１回〜第１３回に登場した助詞を出現順にまとめています。係り結び・「ば」の仮定と確定・逆接の「に」など、現代語と違う使い方に特に注目してください。</div>
     <div class="jodoshi-section">
 
       <!-- ① をば -->
@@ -1177,6 +1244,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第10回：これ<span class="rei-hl">のみは</span>余りに深く</div>
           <div class="jodoshi-rei">第１１回：今宵<span class="rei-hl">は</span>あたりに人も無し</div>
           <div class="jodoshi-rei">第１２回：太田豊太郎といふ名<span class="rei-hl">は</span>いつも一級の首に（長い一文の主題を提示する「は」）</div>
+          <div class="jodoshi-rei">第１３回：十九の歳に<span class="rei-hl">は</span>（時期の取り立て） ／ さまで悲しと<span class="rei-hl">は</span>思はず（否定を強める）</div>
           <div class="cross-tags">
             <span class="cross-tag">第１回「今宵は」</span>
             <span class="cross-tag">第４回「このたびは」「なるは」</span>
@@ -1186,6 +1254,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <span class="cross-tag">第10回「これのみは」</span>
             <span class="cross-tag">第１１回「今宵は」</span>
             <span class="cross-tag">第１２回「といふ名は」</span>
+            <span class="cross-tag">第１３回「歳には」「悲しとは」</span>
           </div>
         </div>
       </div>
@@ -1217,18 +1286,20 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <span class="jodoshi-kaku">接続助詞 ― 順接確定条件「〜ので / 〜すると」</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">古文最重要ポイントの一つ。<strong>已然形</strong>に付く「ば」は「〜ので（原因・理由）」または「〜すると（きっかけ・発見）」という<strong>確定条件</strong>を表す。下の「ば（未然形）」と合わせて、「未然形＋ば＝仮定」「已然形＋ば＝確定」と対で整理するとよい。</div>
+          <div class="jodoshi-imi">古文最重要ポイントの一つ。<strong>已然形</strong>に付く「ば」は「〜ので（原因・理由）」または「〜すると（きっかけ・発見）」という<strong>確定条件</strong>を表す。下の「ば（未然形）」と合わせて、「未然形＋ば＝仮定」「已然形＋ば＝確定」と対で整理するとよい。★さらに<strong>已然形＋「ば」＝順接（〜ので）／已然形＋「ど」＝逆接（〜けれども）</strong>という対もある。第３回「もてはやされ<strong>しかど</strong>」と第13回「殊なり<strong>しかば</strong>」は、どちらも過去「き」の已然形「しか」に付いた形で、一字違いで前後の関係が正反対になる。テストの定番。</div>
           <div class="jodoshi-rei">第１回：余一人のみなれ<span class="rei-hl">ば</span>（一人だけなので ← 断定「なり」已然形「なれ」＋ば）</div>
           <div class="jodoshi-rei">第３回：今日になりておもへ<span class="rei-hl">ば</span>（今になって思うと ← 「思ふ」已然形「思へ」＋ば）</div>
           <div class="jodoshi-rei">第７回：悩ましたれ<span class="rei-hl">ば</span>なり（悩ませているからである ← 「たり」已然形「たれ」＋ば）</div>
           <div class="jodoshi-rei">第10回：彫りつけられたれ<span class="rei-hl">ば</span>（刻み込まれているので）</div>
           <div class="jodoshi-rei">第１１回：猶程もあるべけれ<span class="rei-hl">ば</span>（まだ時間があるはずなので ← 「べし」已然形「べけれ」＋ば）</div>
+          <div class="jodoshi-rei">第１３回：官長の覚え殊なりしか<span class="rei-hl">ば</span>（覚えが格別だったので ← 「き」已然形「しか」＋ば）</div>
           <div class="cross-tags">
             <span class="cross-tag">第１回「なれば」</span>
             <span class="cross-tag">第３回「おもへば」</span>
             <span class="cross-tag">第７回「たればなり」</span>
             <span class="cross-tag">第10回「られたれば」</span>
             <span class="cross-tag">第１１回「べければ」</span>
+            <span class="cross-tag">第１３回「しかば」</span>
           </div>
         </div>
       </div>
@@ -1248,6 +1319,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第10回：心地すがすがしく<span class="rei-hl">も</span>なりなむ</div>
           <div class="jodoshi-rei">第１１回：あたりに人<span class="rei-hl">も</span>無し ／ 猶程<span class="rei-hl">も</span>あるべければ</div>
           <div class="jodoshi-rei">第１２回：ありし日<span class="rei-hl">も</span> ／ 通ひしとき<span class="rei-hl">も</span> ／ 入りし後<span class="rei-hl">も</span>（三つ重ねて一つの述語へ）</div>
+          <div class="jodoshi-rei">第１３回：人に<span class="rei-hl">も</span>言はれ（添加） ／ 我名を成さむ<span class="rei-hl">も</span>、我家を興さむ<span class="rei-hl">も</span>（並列） ／ 別るる<span class="rei-hl">をも</span>（〜さえも）</div>
           <div class="cross-tags">
             <span class="cross-tag">第１回「仲間も」</span>
             <span class="cross-tag">第５回「ところも」「をも」×2</span>
@@ -1255,6 +1327,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <span class="cross-tag">第10回「くも」</span>
             <span class="cross-tag">第１１回「人も無し」「程も」</span>
             <span class="cross-tag">第１２回「日も」「ときも」「後も」</span>
+            <span class="cross-tag">第１３回「人にも」「成さむも」「別るるをも」</span>
           </div>
         </div>
       </div>
@@ -1395,7 +1468,8 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-imi">時間・場所の起点「〜から」を表す。「〜てより」の形で「〜してから・〜して以来」となる。現代語の「〜より」は比較（〜より大きい）が主だが、古語では起点が基本用法。帰国の船旅でブリンディシ港を出てから「早や二十日あまり」が過ぎたという時間感覚が一語でわかる。</div>
           <div class="jodoshi-rei">第６回：ブリンヂイシイの港を出でて<span class="rei-hl">より</span>、早や二十日あまりを経ぬ。（港を出てから）</div>
           <div class="jodoshi-rei">第１２回：幼き比<span class="rei-hl">より</span>厳しき庭の訓を受けし（幼いころから）</div>
-          <div class="cross-tags"><span class="cross-tag">第６回「出でてより」</span><span class="cross-tag">第１２回「幼き比より」</span></div>
+          <div class="jodoshi-rei">第１３回：大学の立ちて<span class="rei-hl">より</span>その頃までに（大学が創立されてから）</div>
+          <div class="cross-tags"><span class="cross-tag">第６回「出でてより」</span><span class="cross-tag">第１２回「幼き比より」</span><span class="cross-tag">第１３回「立ちてより」</span></div>
         </div>
       </div>
 
@@ -1464,11 +1538,13 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第９回：一点の翳<span class="rei-hl">と</span>のみなりたれど（〜だけになってしまったが）</div>
           <div class="jodoshi-rei">第10回：さはあらじ<span class="rei-hl">と</span>思へど（そうはなるまい<strong>と</strong>思うが）</div>
           <div class="jodoshi-rei">第１２回：太田豊太郎<span class="rei-hl">と</span>いふ名（〜という名。引用の「と」＋「いふ」）</div>
+          <div class="jodoshi-rei">第１３回：またなき名誉なり<span class="rei-hl">と</span>人にも言はれ ／ 取り調べよ<span class="rei-hl">と</span>の命 ／ 今ぞ<span class="rei-hl">と</span>おもふ（いずれも引用）</div>
           <div class="cross-tags">
             <span class="cross-tag">第８回「すともいふべき」</span>
             <span class="cross-tag">第９回「翳とのみ」</span>
             <span class="cross-tag">第10回「さはあらじと」</span>
             <span class="cross-tag">第１２回「豊太郎といふ名」</span>
+            <span class="cross-tag">第１３回「なりと」「よとの命」「今ぞと」</span>
           </div>
         </div>
       </div>
@@ -1518,11 +1594,14 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第11回：電気線<span class="rei-hl">の</span>鍵 ／ その概略（連体修飾：〜の）</div>
           <div class="jodoshi-rei">第１２回：学問<span class="rei-hl">の</span>荒み衰ふることなく（<strong>主格</strong>：学問<strong>が</strong>荒み衰える）</div>
           <div class="jodoshi-rei">第１２回：一人子<span class="rei-hl">の</span>我を力になして（<strong>同格</strong>：ひとりっ子<strong>である</strong>私）</div>
+          <div class="jodoshi-rei">第１３回：大学<span class="rei-hl">の</span>立ちてより（<strong>主格</strong>：大学<strong>が</strong>創立されてから） ／ 心<span class="rei-hl">の</span>勇み立ちて（<strong>主格</strong>：心<strong>が</strong>）</div>
+          <div class="jodoshi-rei">第１３回：官長<span class="rei-hl">の</span>覚え ／ 学士<span class="rei-hl">の</span>称 ／ ベルリン<span class="rei-hl">の</span>都（いずれも連体修飾）</div>
           <div class="cross-tags">
             <span class="cross-tag">全回「〜の〜」連体修飾</span>
             <span class="cross-tag">第11回「房奴の来て」＝主格</span>
             <span class="cross-tag">第１２回「学問の」＝主格</span>
             <span class="cross-tag">第１２回「一人子の我」＝同格</span>
+            <span class="cross-tag">第１３回「大学の」「心の」＝主格</span>
           </div>
         </div>
       </div>
@@ -1540,12 +1619,14 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第10回：詩<span class="rei-hl">に</span>詠じ歌<span class="rei-hl">に</span>よめる（変換先：詩という形に）</div>
           <div class="jodoshi-rei">第11回：あたり<span class="rei-hl">に</span>人も無し（場所） ／ その概略を文<span class="rei-hl">に</span>綴りて見む（変換先：文章という形に）</div>
           <div class="jodoshi-rei">第１２回：受けし甲斐<span class="rei-hl">に</span>（原因・理由：〜のおかげで） ／ 一級の首<span class="rei-hl">に</span>（帰着点） ／ 力<span class="rei-hl">に</span>なして（〜として）</div>
+          <div class="jodoshi-rei">第１３回：人<span class="rei-hl">に</span>言はれ（<strong>受身の動作主</strong>） ／ 某省<span class="rei-hl">に</span>出仕して（所属） ／ 母<span class="rei-hl">に</span>別るる（相手） ／ ベルリンの都<span class="rei-hl">に</span>来ぬ（帰着点）</div>
           <div class="cross-tags">
             <span class="cross-tag">第１回「舟に」</span>
             <span class="cross-tag">第２回「目に」「耳に」</span>
             <span class="cross-tag">第10回「詩に」「歌に」</span>
             <span class="cross-tag">第11回「あたりに」「文に」</span>
             <span class="cross-tag">第１２回「甲斐に」「首に」「力に」</span>
+            <span class="cross-tag">第１３回「人に言はれ」「都に来ぬ」</span>
           </div>
         </div>
       </div>
@@ -1562,11 +1643,45 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第９回：我心<span class="rei-hl">を</span>苦しむ（他動詞用法：私の心を苦しめる）</div>
           <div class="jodoshi-rei">第11回：電気線の鍵<span class="rei-hl">を</span>捩る ／ その概略<span class="rei-hl">を</span>文に綴りて見む</div>
           <div class="jodoshi-rei">第１２回：厳しき庭の訓<span class="rei-hl">を</span>受けし ／ 一人子の我<span class="rei-hl">を</span>力になして ／ 世<span class="rei-hl">を</span>渡る母</div>
+          <div class="jodoshi-rei">第１３回：我名<span class="rei-hl">を</span>成さむ ／ 我家<span class="rei-hl">を</span>興さむ ／ 五十<span class="rei-hl">を</span>踰えし母 ／ 家<span class="rei-hl">を</span>離れて</div>
           <div class="cross-tags">
             <span class="cross-tag">第８回「此恨を」</span>
             <span class="cross-tag">第９回「我心を」</span>
             <span class="cross-tag">第11回「鍵を」「概略を」</span>
             <span class="cross-tag">第１２回「訓を」「我を」「世を」</span>
+            <span class="cross-tag">第１３回「我名を」「我家を」「家を」</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㈩ ぞ -->
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">ぞ</span>
+          <span class="jodoshi-kaku">係助詞 ― 強調「〜こそ」（係り結び：連体形で結ぶ）</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">強く指し示して取り立てる係助詞。文末を<strong>連体形</strong>で結ぶ（係り結び）。第13回「<strong>今ぞ</strong>とおもふ」は「今こそ（その時だ）」の意だが、「今ぞ」のすぐ下に引用の「と」が来てしまうため、<strong>結ぶべき述語が現れない</strong>。「今ぞ（その時なれ）と思ふ」のように補って読む形で、これを<strong>結びの省略</strong>という。心内語や会話では結びが省かれることが多く、言い切らないぶん、かえって勢いが出る。ここでも「今こそだ！」という昂ぶりがそのまま伝わってくる。<br><br>係り結びの基本は<strong>「ぞ・なむ・や・か」→連体形／「こそ」→已然形</strong>。この作品では「か」（⑨）と「こそ」（⑬）がすでに登場しており、「ぞ」で三つめになる。</div>
+          <div class="jodoshi-rei">第１３回：我名を成さむも、我家を興さむも、今<span class="rei-hl">ぞ</span>とおもふ心の勇み立ちて（今こそ、と思う心が）</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第１３回「今ぞと」＝結びの省略</span>
+            <span class="cross-tag">⑨「か・や」・⑬「こそ」と並べて確認</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ㈪ ばかり -->
+      <div class="jodoshi-entry">
+        <div class="jodoshi-entry-head">
+          <span class="jodoshi-term">ばかり</span>
+          <span class="jodoshi-kaku">副助詞 ― 程度「〜ほど」／限定「〜だけ」</span>
+        </div>
+        <div class="jodoshi-body">
+          <div class="jodoshi-imi">副助詞「ばかり」には①<strong>程度・分量</strong>「〜ほど・〜くらい」と、②<strong>限定</strong>「〜だけ」の二つがある。現代語の「ばかり」は②の限定が中心だが、<strong>古文では①の程度が非常に多い</strong>ので、まず「〜ほど」で訳してみるとよい。第13回「楽しき年を送ること<strong>三とせばかり</strong>」は①で「三年ほど」。ただしこの場面では、結果として「たった三年で終わってしまった」という含みも生まれ、①の裏に②の余韻が漂う。母と暮らした時間の短さが、あとから効いてくる書き方になっている。</div>
+          <div class="jodoshi-rei">第１３回：楽しき年を送ること三とせ<span class="rei-hl">ばかり</span>、（三年ほど）</div>
+          <div class="cross-tags">
+            <span class="cross-tag">第１３回「三とせばかり」</span>
+            <span class="cross-tag">第６回「二十日あまり」と数量表現を比較</span>
           </div>
         </div>
       </div>
@@ -1582,19 +1697,19 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <tr>
               <td class="t-jterm">の</td>
               <td>格助詞：連体修飾「〜の」／<strong>主格「〜が」</strong><br><span style="font-size:11px;color:#aaa;">「の」を「が」に替えて通れば主格→本文㉑参照</span></td>
-              <td>中等室の卓のほとり／熾熱灯の光／<strong>房奴の来て・学問の（＝が）</strong>／<strong>一人子の我（＝である）</strong></td>
+              <td>熾熱灯の光／<strong>房奴の来て・学問の・大学の・心の（＝が）</strong>／<strong>一人子の我（＝である）</strong></td>
               <td class="t-cross">全回</td>
             </tr>
             <tr>
               <td class="t-jterm">を（格助詞）</td>
               <td>格助詞：対象「〜を」<br><span style="font-size:11px;color:#aaa;">「をば」＝を＋は／「をも」＝を＋も（〜をさえも）。「我心を苦しむ」の「苦しむ」は他動詞用法（苦しめる）→本文㉓参照</span></td>
-              <td>石炭をば ／ 父をば ／ 我心を苦しむ ／ 概略を文に綴りて ／ 世を渡る母</td>
+              <td>石炭をば ／ 父をば ／ 我心を苦しむ ／ 世を渡る母 ／ 我名を成さむ ／ 別るるをも</td>
               <td class="t-cross">全回</td>
             </tr>
             <tr>
               <td class="t-jterm">に（格助詞）</td>
               <td>格助詞：場所・時・対象・変換先「〜に」<br><span style="font-size:11px;color:#aaa;">体言＋「に」＝格助詞／連体形＋「に」＝逆接の接続助詞→本文㉒参照</span></td>
-              <td>目に見るもの ／ 舟に残れる ／ 詩に詠じ ／ 文に綴りて ／ 受けし甲斐に ／ 力になして</td>
+              <td>目に見るもの ／ 舟に残れる ／ 文に綴りて ／ 受けし甲斐に ／ 人に言はれ ／ 都に来ぬ</td>
               <td class="t-cross">全回</td>
             </tr>
             <tr>
@@ -1612,14 +1727,14 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <tr>
               <td class="t-jterm">と（格）</td>
               <td>格助詞：引用・比喩・結果「〜と」</td>
-              <td>雲の如く ／ さはあらじと思へど ／ 翳とのみ ／ 豊太郎といふ名</td>
-              <td class="t-cross">第８〜10回・第１２回</td>
+              <td>雲の如く ／ さはあらじと思へど ／ 豊太郎といふ名 ／ 取り調べよとの命</td>
+              <td class="t-cross">第８〜10回・第12・13回</td>
             </tr>
             <tr>
               <td class="t-jterm">から・より（比較）</td>
               <td>古文に「から」（起点）はほぼなし。「より」が起点・比較両用</td>
-              <td>出でてより ／ 幼き比より（ともに起点）</td>
-              <td class="t-cross">第６回・第１２回</td>
+              <td>出でてより ／ 幼き比より ／ 大学の立ちてより（すべて起点）</td>
+              <td class="t-cross">第６回・第12・13回</td>
             </tr>
             <tr>
               <td class="t-jterm">が（格・主語）</td>
@@ -1707,7 +1822,8 @@ function switchTab(id, btn) {
     k9: ['imawa','kori','kage','tonominaritaredo','gotoni','kagami','kagirinaki','kaiky','yobiokoshite','ikudo','waregakokoroo'],
     k10: ['ikani','moshi','nariseba','shi','kokochi','narinam','korenomiwa','hori','sahaara','toomohedo'],
     k11: ['koyoi','atarini','bodo','kite','denki','hodomo','ide','sonogairyaku','gairyaku','funi','tsuduri'],
-    k12: ['osanaki','niwa','ukeshi','chichiwoba','ushinai','gakumonno','susami','kyuhan','arishi','yobiko','kayoishi','daigaku','irishi','ota','ikkyu','shirusare','hitorigo','chikara','yowowataru','nagusami']
+    k12: ['osanaki','niwa','ukeshi','chichiwoba','ushinai','gakumonno','susami','kyuhan','arishi','yobiko','kayoishi','daigaku','irishi','ota','ikkyu','shirusare','hitorigo','chikara','yowowataru','nagusami'],
+    k13: ['juku','gakushi','daigakuno','matanaki','iware','boushou','kokyonaru','yobimukae','mitose','kanchou','kotonari','yoko','torishirabeyo','nasamu','imazo','kokorono','koeshi','wakaruru','samade','harubaru','kinu']
   };
   Object.keys(groups).forEach(function(prefix) {
     groups[prefix].forEach(function(key) {
