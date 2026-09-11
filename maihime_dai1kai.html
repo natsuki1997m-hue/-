@@ -31,6 +31,20 @@ body {
 .legend-item { display: flex; align-items: center; gap: 5px; }
 .legend-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 .hint { font-size: 12px; color: #aaa; margin-bottom: 1.25rem; }
+/* 表示切り替え（本文／単語に区切る） */
+.view-toggle { display: flex; gap: 0.4rem; margin: 0 0 0.9rem; }
+.view-btn {
+  font-size: 12px; padding: 0.32rem 0.8rem; border: 0.5px solid #d8d5cd;
+  background: #fff; border-radius: 999px; cursor: pointer; color: #888;
+  transition: all 0.15s;
+}
+.view-btn:hover { color: #555; }
+.view-btn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+.kg { color: #cbc7bf; padding: 0 1px; }   /* 単語の切れめ（スラッシュ） */
+.fz { color: #3C3489; }                   /* 付属語（助詞・助動詞） */
+.kgw { cursor: pointer; padding: 1px 2px; border-radius: 3px; transition: background 0.12s; }
+.kgw:hover { background: #ece9e2; }
+.kgw.active { background: #ece9e2; outline: 2px solid currentColor; outline-offset: 2px; }
 .top-area { display: flex; gap: 1.5rem; align-items: flex-start; }
 
 .tategumi-wrap {
@@ -201,6 +215,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
     <button class="tab-btn" onclick="switchTab('kai11',this)">第１１回</button>
     <button class="tab-btn" onclick="switchTab('kai12',this)">第１２回</button>
     <button class="tab-btn" onclick="switchTab('kai13',this)">第１３回</button>
+    <button class="tab-btn" onclick="switchTab('kai14',this)">第１４回</button>
     <button class="tab-btn" onclick="switchTab('jodoshi',this)">助動詞まとめ</button>
     <button class="tab-btn" onclick="switchTab('joshi',this)">助詞まとめ</button>
   </div>
@@ -712,9 +727,55 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
     </div>
   </div>
 
+  <!-- 第14回 -->
+  <div class="tab-content" id="kai14">
+    <div class="legend">
+      <span class="legend-item"><span class="legend-dot" style="background:#7F77DD;"></span>文語・助詞</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#1D9E75;"></span>場面・情景</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#D85A30;"></span>感情の見せ場</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#BA7517;"></span>漢語で西洋を表現</span>
+    </div>
+    <div class="view-toggle">
+      <button class="view-btn active" onclick="setView14('honbun',this)">本文</button>
+      <button class="view-btn" onclick="setView14('kugiri',this)">単語に区切る</button>
+    </div>
+    <div class="hint" id="k14-hint">色のついた言葉をクリックすると右に解説が出ます</div>
+    <div class="top-area">
+      <div class="tategumi-wrap" id="k14-honbun">
+        <div class="tl">余は<span class="hl purple" id="k14-moko">模糊たる</span><span class="hl coral" id="k14-koumyou">功名の念</span>と、<span class="hl amber" id="k14-kensoku">検束</span>に<span class="hl purple" id="k14-naretaru">慣れたる勉強力</span><span class="hl purple" id="k14-toowo">とを持ちて</span>、</div>
+        <div class="tl"><span class="hl teal" id="k14-tachimachi">忽ち</span>この<span class="hl amber" id="k14-yoroppa">欧羅巴</span>の<span class="hl teal" id="k14-shindaito">新大都の中央に</span><span class="hl purple" id="k14-tateri">立てり</span>。</div>
+        <div class="tl"><span class="hl coral" id="k14-nanra">何等の光彩ぞ</span>、<span class="hl purple" id="k14-imu">我目を射むとするは</span>。</div>
+        <div class="tl"><span class="hl coral" id="k14-shikitaku">何等の色沢ぞ</span>、<span class="hl coral" id="k14-mayowasamu">我心を迷はさむとするは</span>。</div>
+      </div>
+      <div class="tategumi-wrap" id="k14-kugiri" style="display:none;">
+        <div class="tl"><span class="kgn">余</span><span class="kg">／</span><span class="kgn fz">は</span><span class="kg">／</span><span class="kgw" data-c="moko">模糊たる</span><span class="kg">／</span><span class="kgw" data-c="koumyou">功名</span><span class="kg">／</span><span class="kgw fz" data-c="koumyou">の</span><span class="kg">／</span><span class="kgw" data-c="koumyou">念</span><span class="kg">／</span><span class="kgw fz" data-c="toowo">と</span>、<span class="kgw" data-c="kensoku">検束</span><span class="kg">／</span><span class="kgw fz" data-c="kensoku">に</span><span class="kg">／</span><span class="kgw" data-c="naretaru">慣れ</span><span class="kg">／</span><span class="kgw fz" data-c="naretaru">たる</span><span class="kg">／</span><span class="kgw" data-c="naretaru">勉強力</span><span class="kg">／</span><span class="kgw fz" data-c="toowo">と</span><span class="kg">／</span><span class="kgw fz" data-c="toowo">を</span><span class="kg">／</span><span class="kgw" data-c="toowo">持ち</span><span class="kg">／</span><span class="kgw fz" data-c="toowo">て</span>、</div>
+        <div class="tl"><span class="kgw" data-c="tachimachi">忽ち</span><span class="kg">／</span><span class="kgn">この</span><span class="kg">／</span><span class="kgw" data-c="yoroppa">欧羅巴</span><span class="kg">／</span><span class="kgw fz" data-c="yoroppa">の</span><span class="kg">／</span><span class="kgw" data-c="shindaito">新大都</span><span class="kg">／</span><span class="kgw fz" data-c="shindaito">の</span><span class="kg">／</span><span class="kgw" data-c="shindaito">中央</span><span class="kg">／</span><span class="kgw fz" data-c="shindaito">に</span><span class="kg">／</span><span class="kgw" data-c="tateri">立て</span><span class="kg">／</span><span class="kgw fz" data-c="tateri">り</span>。</div>
+        <div class="tl"><span class="kgw" data-c="nanra">何等</span><span class="kg">／</span><span class="kgw fz" data-c="nanra">の</span><span class="kg">／</span><span class="kgw" data-c="nanra">光彩</span><span class="kg">／</span><span class="kgw fz" data-c="nanra">ぞ</span>、<span class="kgw" data-c="imu">我目</span><span class="kg">／</span><span class="kgw fz" data-c="imu">を</span><span class="kg">／</span><span class="kgw" data-c="imu">射</span><span class="kg">／</span><span class="kgw fz" data-c="imu">む</span><span class="kg">／</span><span class="kgw fz" data-c="imu">と</span><span class="kg">／</span><span class="kgw" data-c="imu">する</span><span class="kg">／</span><span class="kgw fz" data-c="imu">は</span>。</div>
+        <div class="tl"><span class="kgw" data-c="shikitaku">何等</span><span class="kg">／</span><span class="kgw fz" data-c="shikitaku">の</span><span class="kg">／</span><span class="kgw" data-c="shikitaku">色沢</span><span class="kg">／</span><span class="kgw fz" data-c="shikitaku">ぞ</span>、<span class="kgw" data-c="mayowasamu">我心</span><span class="kg">／</span><span class="kgw fz" data-c="mayowasamu">を</span><span class="kg">／</span><span class="kgw" data-c="mayowasamu">迷はさ</span><span class="kg">／</span><span class="kgw fz" data-c="mayowasamu">む</span><span class="kg">／</span><span class="kgw fz" data-c="mayowasamu">と</span><span class="kg">／</span><span class="kgw" data-c="mayowasamu">する</span><span class="kg">／</span><span class="kgw fz" data-c="mayowasamu">は</span>。</div>
+      </div>
+      <div class="panel-area">
+        <div class="empty-state" id="k14-empty">色のついた言葉をクリックすると<br>ここに解説が表示されます</div>
+        <div class="card" id="k14-card-moko"><div class="card-word">模糊たる</div><div class="card-read">もこたる</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「模糊」→ ぼんやりとして、はっきりしないさま。</li><li>「たる」→ <b>タリ活用の形容動詞</b>「模糊たり」の連体形。下の「功名の念」にかかる。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「漠然とした（功名の念）」ということ。はっきりした形を持たない、ぼんやりした出世欲。</div><div class="card-naze"><span class="card-naze-title">🤔 ★識別注意——この一文に「たる」が二つある</span><br>この一文には「模糊<b>たる</b>功名の念」と「検束に慣れ<b>たる</b>勉強力」という、形の同じ「たる」が二回出てくる。ところがこの二つは<b>まったくの別物</b>である。<br>　・「模糊<b>たる</b>」＝<b>タリ活用の形容動詞</b>「模糊たり」の連体形。「模糊」という漢語に「たり」が付いて一語の形容動詞になっている。<br>　・「慣れ<b>たる</b>」＝<b>完了・存続の助動詞</b>「たり」の連体形。動詞「慣る」の連用形「慣れ」に付いている。<br>見分け方は<b>上が漢語（体言）か、動詞の連用形か</b>。漢語＋たる＝形容動詞、連用形＋たる＝助動詞。一文の中に両方が並ぶ、めったにない例である。</div><div class="card-note">タリ活用の形容動詞は「漠然たり」「堂々たり」「悠々たり」のように、漢語に「たり」が付いてできる。現代語の「漠然<b>たる</b>」「堂々<b>たる</b>」にそのまま残っている。</div><div class="card-link">💡 ナリ活用の形容動詞は第13回「殊なりしかば」。<b>ナリ活用（和語につく）とタリ活用（漢語につく）</b>を対にして覚えたい</div></div>
+        <div class="card" id="k14-card-koumyou"><div class="card-word">功名の念</div><div class="card-read">こうみやうのねん</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「功名」→ 手柄を立てて名を上げること。立身出世。</li><li>「の」→ 連体修飾の格助詞。</li><li>「念」→ 思い・願い。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「出世したいという思い」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 第13回の功名心が、輪郭を失っている</span><br>第13回で「我名を成さむも、我家を興さむも、今ぞ」と燃え上がった功名心が、ベルリンに着いてもそのまま続いている。ただし今度は<b>「模糊たる」＝漠然とした</b>と形容されている。日本にいたときは「名を成す」「家を興す」と具体的だったものが、異国に立った途端に輪郭を失うのである。<br><br>そして豊太郎がベルリンに持ってきたものは、<b>この漠然とした功名心と勉強力の二つだけ</b>。金も人脈も、自分がここで何をしたいのかという中身もない。それ以外に何も持たない青年として、彼はヨーロッパの街の真ん中に立つ。</div><div class="card-note">「功名」は「こうみょう」とも「こうめい」とも読むが、古文では「こうみやう」。</div><div class="card-link">💡 第13回「我名を成さむも、我家を興さむも」と読み比べよう。同じ功名心が、日本とベルリンでどう形を変えるか</div></div>
+        <div class="card" id="k14-card-kensoku"><div class="card-word">検束</div><div class="card-read">けんそく</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「検束」→ 自分を取り締まり、律すること。行動や気持ちを引き締めて自由にさせないこと。</li><li>「に」→ 対象を示す格助詞。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「自分を厳しく律すること」ということ。現代語の「検束」（警察が身柄を拘束する）とは意味がずれるので注意。</div><div class="card-naze"><span class="card-naze-title">🤔 なぜ「検束」が肯定的に語られるのか</span><br>ここは<b>自分で自分を律する</b>という意味である。第12回「厳しき庭の訓を受けし甲斐に」から始まった豊太郎の育ち方——与えられた規律に従い続けることで優等生であり続けた——が、この一語に凝縮されている。<br><br>ちくま文庫の現代語訳が「<b>自分を拘束することに慣れた</b>勉学への意欲」と訳しているとおり、彼の学力は自発的な探究心ではなく<b>従順さ</b>に支えられてきた。だからこそ、この後ベルリンの自由な空気の中で崩れていくことになる。ここは第14回でいちばん重要な一語かもしれない。</div><div class="card-note">新潮文庫はこの語に注を付けている。現代語の語感とずれるので、授業では必ず確認しておきたい語。</div><div class="card-link">💡 第12回「厳しき庭の訓」、第13回「官長の覚え殊なりしかば」と並べると、豊太郎が「従うことで評価されてきた人」であることが見える</div></div>
+        <div class="card" id="k14-card-naretaru"><div class="card-word">慣れたる勉強力</div><div class="card-read">なれたるべんきやうりよく</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「慣れ」→ ラ行下二段動詞「慣る」の連用形。</li><li>「たる」→ <b>完了・存続</b>の助動詞「たり」の連体形。ここは<b>存続</b>で「〜ている」。</li><li>「勉強力」→ 学問に打ち込む力。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「（自分を律することに）慣れてしまっている勉学の力」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 「慣れたる」——身についてしまった、ということ</span><br>「たり」は完了・存続の助動詞で、ここは<b>存続</b>。「慣れた」という一時の出来事ではなく、<b>慣れた状態がずっと続いている</b>ことを表す。つまり自分を律することがすっかり習い性になっていて、もう疑いもしない。<br><br>そしてこの「慣れ<b>たる</b>」は、直前の「模糊<b>たる</b>」とまぎらわしい。<b>上が動詞の連用形（慣れ）なら助動詞、上が漢語（模糊）なら形容動詞</b>——と見分ける。同じ一文に両方が出てくるので、識別の練習にはうってつけの箇所である。</div><div class="card-note">「勉強」は現代語と同じ字だが、「勉強力」という語は今は使わない。「学問に向かう力」の意。</div><div class="card-link">💡 完了・存続の「たり」は第４回「養ひ得たりけむ」、第10回「彫りつけられたれば」と同じ（助動詞まとめ「たり」）</div></div>
+        <div class="card" id="k14-card-toowo"><div class="card-word">とを持ちて</div><div class="card-read">とをもちて</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「と」→ <b>並列</b>の格助詞。「AとB<b>と</b>」の形で二つを並べる。</li><li>「を」→ 対象を示す格助詞。</li><li>「持ち」→ タ行四段動詞「持つ」の連用形。</li><li>「て」→ 接続助詞。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「（功名の念と勉強力との）二つを持って」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 古文の並列は「AとBと」——後ろにも「と」が付く</span><br>現代語なら「AとBを持って」と言うところを、古文では<b>「AとBとを」</b>と、<b>後ろの語にも「と」を付ける</b>。ここも「功名の念<b>と</b>、検束に慣れたる勉強力<b>と</b>を持ちて」で、二つめの「と」が並列を締めくくっている。現代語訳では消えてしまうので、原文を読むときだけ意識すればよい。<br><br>内容の上でも大事な一文である。豊太郎がベルリンに持ってきたものは<b>この二つだけ</b>。この「たった二つ」を並列の「と」がきっちり数え上げているところに、彼の手持ちの少なさが表れている。</div><div class="card-note">「AとBと」の形は現代語にも「AとBとを比較する」のように、硬い文章の中に残っている。</div><div class="card-link">💡 引用の「と」（第13回「取り調べよとの命」）、比喩の「と」（第８回「雲の如く」）と用法を並べて確認しよう（助詞まとめ⑲）</div></div>
+        <div class="card" id="k14-card-tachimachi"><div class="card-word">忽ち</div><div class="card-read">たちまち</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「忽ち」→ 副詞。あっという間に・すぐに。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「たちまち・またたく間に」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 時間を飛ばす一語</span><br>第13回の終わりで日本を発ち、この「忽ち」ひとつでもうベルリンの中央に立っている。長い船旅も、途中の経緯も、すべて省かれる。<b>回想の速度がここで一気に上がり</b>、読者は豊太郎と一緒にいきなり異国の街の真ん中に放り出される。<br><br>ちくま文庫はこれを「<b>何はさて措き</b>」と訳している。「何もかも措いておいて、とにかく」という勢いをうまく写した訳で、原文の「忽ち」が単なる時間の速さではなく<b>気持ちの前のめり</b>でもあることが伝わる。</div><div class="card-note">新潮文庫は「忽」に「たちま」とルビを振っている。現代語でも使う語だが、音読のときに確認しておきたい。</div><div class="card-link">💡 第６回「早や二十日あまりを経ぬ」の「早や」と同じく、一語で時間の感覚を操作する語</div></div>
+        <div class="card" id="k14-card-yoroppa"><div class="card-word">欧羅巴</div><div class="card-read">ヨオロッパ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「欧羅巴」→「ヨオロッパ」と読む。Europe の音を漢字で写した<b>当て字</b>。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「ヨーロッパ」のこと。</div><div class="card-naze"><span class="card-naze-title">🤔 漢語で西洋を書く——おなじみの手法がここでも</span><br>第１回「熾熱灯」（白熱電灯）、第４回「独逸」、第８回「瑞西」「伊太利」、第11回「電気線の鍵」「房奴」——鷗外は一貫して<b>西洋のものを漢字で書く</b>。「欧羅巴」もその一つで、音を漢字で写した当て字である。<br><br>この回は「欧羅巴」「新大都」「光彩」「色沢」と漢語が並び、<b>これから描かれる街の華やかさを、あえて硬い漢語で受け止めよう</b>とする文体になっている。目がくらむような光景を、漢学で育った青年の言葉で書き留めている——その緊張感がこの回の文体の面白さである。</div><div class="card-note">同じ当て字に「亜米利加」「仏蘭西」「伯林（ベルリン）」などがある。ちくま文庫の現代語訳も「伯林」と書いて「べるりん」とルビを振っている。</div><div class="card-link">💡 第11回「電気線の鍵」「房奴」のカードと読み比べると、鷗外の当て字の使い方がよくわかる</div></div>
+        <div class="card" id="k14-card-shindaito"><div class="card-word">新大都の中央に</div><div class="card-read">しんだいとのちゆうおうに</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「新大都」→ 新しい大都市。ベルリンを指す。</li><li>「の」→ 連体修飾の格助詞。</li><li>「中央」→ 中心。</li><li>「に」→ 場所を示す格助詞。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「新興の大都市の中心に」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 なぜ「新」大都なのか</span><br>ベルリンは1871年のドイツ統一で、プロイセン王国の首都から<b>ドイツ帝国の首都</b>になったばかりだった。豊太郎が訪れた1880年代は、まさに急成長のただ中にある。パリやロンドンのような古い都ではなく、<b>できたばかりの巨大都市</b>である。<br><br>そして日本も、明治維新から二十年ほどの新しい国だった。<b>新しい国から来た青年が、新しい帝国の首都に立つ</b>——この重なりが「新大都」の一語に込められている。</div><div class="card-note">ドイツ帝国の成立は1871年、明治維新は1868年。ほぼ同時期に生まれた二つの新しい国家である。</div><div class="card-link">💡 第12回「<b>旧</b>藩の学館」の「旧」と、ここの「<b>新</b>」。豊太郎は古い日本から新しいヨーロッパへ移動している</div></div>
+        <div class="card" id="k14-card-tateri"><div class="card-word">立てり</div><div class="card-read">たてり</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「立て」→ タ行四段動詞「立つ」の<b>已然形</b>。</li><li>「り」→ <b>完了・存続</b>の助動詞「り」の終止形。ここは存続で「〜している」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「立っている」ということ。長く続いた回想の文が、ここで一度ぴたりと止まる。</div><div class="card-naze"><span class="card-naze-title">🤔 「り」の接続は「サ未四已」で覚える</span><br>完了・存続の助動詞「り」は、接続がとても限られている。<b>サ変動詞の未然形</b>と<b>四段動詞の已然形</b>にしか付かない。これを頭文字で<b>「サ未四已（さみしい）」</b>と覚えるのが定番である。ここは四段動詞「立つ」の已然形「立て」に付いているので、正しく「り」がくる。<br><br>意味は<b>存続</b>で、「立った」という一瞬ではなく<b>「立っている」という状態</b>。しかも文末が「立てり」と<b>終止形</b>で言い切られる。第13回から一息に続いてきた長い文が、ここでいったん止まり、次の瞬間から感嘆の文が始まる。<b>文の切れ目が、そのまま場面の切り替わり</b>になっている。</div><div class="card-note">已然形「立て」は「立て<b>ば</b>」の「立て」と同じ形。「立ち<b>て</b>」（連用形＋接続助詞「て」）とは別物なので注意。</div><div class="card-link">💡 「り」は第１回「舟に残れる」、第10回「詩に詠じ歌によめる」と同じ助動詞。あちらは連体形「る」、ここは終止形「り」（助動詞まとめ「り」）</div></div>
+        <div class="card" id="k14-card-nanra"><div class="card-word">何等の光彩ぞ</div><div class="card-read">なんらのくわうさいぞ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「何等」→ どれほどの・なんという。程度をたずねる語。</li><li>「の」→ 連体修飾の格助詞。</li><li>「光彩」→ 美しく輝く光。</li><li>「ぞ」→ <b>係助詞</b>。強く指し示す。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「なんという光彩だろうか」ということ。感嘆の叫び。</div><div class="card-naze"><span class="card-naze-title">🤔 倒置＋結びの省略——第13回「今ぞ」の応用編</span><br>ふつうの語順に直すと<b>「我目を射むとするは、何等の光彩ぞ」</b>＝「私の目を射ようとするのは、なんという光彩なのか」となる。それをひっくり返して、<b>感嘆の部分を先に叫んでいる</b>のがこの文である。まず「なんという光彩か！」と声が出て、それから「私の目を射ようとしているのは」と続く。<b>語順が心の動きの順番になっている</b>。<br><br>しかも係助詞「ぞ」が出ているのに、結びの連体形が現れない。第13回「今<b>ぞ</b>とおもふ」と同じ<b>結びの省略</b>で、「何等の光彩ぞ（ある）」と補って読む。<b>倒置と省略が重なって、言葉が追いつかないほどの驚き</b>が表現されている。</div><div class="card-note">次の「何等の色沢ぞ、我心を迷はさむとするは。」もまったく同じ形。二つ並べることで、驚きが畳み掛けられる。</div><div class="card-link">💡 係助詞「ぞ」と結びの省略は第13回「今ぞとおもふ」で扱った（助詞まとめ㉔）。あちらは心内語、こちらは感嘆——同じ省略でも効果が違う</div></div>
+        <div class="card" id="k14-card-imu"><div class="card-word">我目を射むとするは</div><div class="card-read">わがめをいむとするは</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「我目」→ 私の目。</li><li>「を」→ 対象を示す格助詞。</li><li>「射」→ ヤ行上一段動詞「射る」の未然形。</li><li>「む」→ 助動詞「む」。ここは<b>「〜しようとする」</b>という、これから起ころうとする動きを表す。</li><li>「とする」→ 格助詞「と」＋サ変動詞「す」の連体形。「む＋とす」で「〜しようとする」。</li><li>「は」→ 係助詞。下に体言がなく、そのまま「〜するもの<b>は</b>」という<b>準体法</b>。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「私の目を射ようとするものは」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 主語は豊太郎ではなく「光彩」</span><br>「射る」のは光彩の側であり、豊太郎は<b>射られる側</b>である。第８回「われに負はせ」（使役）、第10回「彫りつけられ」（受身）、第12回「しるされ」（受身）、第13回「人にも言はれ」（受身）と続いてきた、<b>豊太郎を「される側」に置く書き方</b>が、ベルリン到着の場面でもそのまま続く。街の光が彼を射る。彼はただ立っているだけである。<br><br>なお「射る」は<b>ヤ行上一段活用</b>（い・い・いる・いる・いれ・いよ）という珍しい活用で、未然形が「射（い）」。だから「射<b>む</b>」で「射よう」となる。</div><div class="card-note">上一段活用の動詞は数が少ないので、「ひ・い・き・に・み・ゐる」（干る・射る・鋳る・着る・似る・煮る・見る・居る・率る）と語呂で覚えるのが定番。</div><div class="card-link">💡 「む＋とす」は第４回「日記ものせむとて」の「む＋とて」と近い形。助動詞まとめ「む」も見ておこう</div></div>
+        <div class="card" id="k14-card-shikitaku"><div class="card-word">何等の色沢ぞ</div><div class="card-read">なんらのしきたくぞ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「何等」→ どれほどの・なんという。</li><li>「色沢」→ 色つや。あざやかな色合い。</li><li>「ぞ」→ 係助詞。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「なんという色つやだろうか」ということ。前の文とまったく同じ形の感嘆。</div><div class="card-naze"><span class="card-naze-title">🤔 「光彩」と「色沢」——光と色の二段構え</span><br>前の文が<b>光</b>（光彩）、この文が<b>色</b>（色沢）。まったく同じ形の文を二つ並べて、ベルリンの街が豊太郎に与える衝撃を光と色に分けて描いている。<b>対句</b>の手法で、第２回「目に見るもの、耳に聞くもの」、第９回「文読むごとに、物見るごとに」と同じ、鷗外が好む畳み掛けである。<br><br>そして狙われる場所も対になっている。光彩は<b>目</b>を射り、色沢は<b>心</b>を迷わせる。<b>外から内へ</b>——衝撃が一段深いところまで入っていく構成になっている。</div><div class="card-note">「色沢」は現代語ではまず使わない語。新潮文庫は「しきたく」とルビを振り、ちくま文庫の現代語訳は「色彩」と訳している。</div><div class="card-link">💡 対句の畳み掛けは第２回・第９回でも見た。並べて読むと、鷗外の文章のリズムがつかめる</div></div>
+        <div class="card" id="k14-card-mayowasamu"><div class="card-word">我心を迷はさむとするは</div><div class="card-read">わがこころをまよはさむとするは</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「我心」→ 私の心。</li><li>「を」→ 対象を示す格助詞。</li><li>「迷はさ」→ サ行四段動詞「<b>迷はす</b>」の未然形。「迷わせる」という<b>他動詞</b>。</li><li>「む」→ 「〜しようとする」。</li><li>「とする」→ 「む＋とす」で「〜しようとする」。</li><li>「は」→ 係助詞（準体法）。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「私の心を迷わせようとするものは」ということ。第14回の結び。</div><div class="card-naze"><span class="card-naze-title">🤔 ここが『舞姫』の本当の始まり</span><br>「迷ふ」（自動詞：自分が迷う）ではなく「迷は<b>す</b>」（他動詞：相手を迷わせる）。主語は色沢であって豊太郎ではない。<b>「我心を苦しむ」（第９回）とまったく同じ構文</b>で、あちらは懐旧の情が心を苦しめ、こちらは街の色が心を迷わせる。<br><br>そして何より、<b>この「迷ひ」がこれから始まる物語そのもの</b>である。ベルリンの光と色に心を迷わされた青年が、やがてエリスと出会い、道を踏み外していく。第１回から第11回まで船室で苦しんでいたあの悩みは、この瞬間に始まったのだ。<b>ここが『舞姫』の本当の始まり</b>と言ってよい。</div><div class="card-note">自動詞「迷ふ」と他動詞「迷はす」の対。「苦しむ／苦しましむ」「悩む／悩ます」など、古文には自他の対がよく出てくる。</div><div class="card-link">💡 第９回「我心を苦しむ」と並べて読もう。<b>悩みや外界が主語になる構文</b>が、この作品を一貫して支えている</div></div>
+        <div class="trans-box"><div class="trans-label">現代語訳</div>私は漠然たる功名の念と、自分を拘束することに慣れた勉学への意欲を持って、何はさて措（お）き、このヨーロッパの新しい大都の中心部に立った。わが眼（め）を射ようとするのは、いかなるものの光彩であろうか！　わが心を迷わそうとするのは、いかなるものの色彩であろうか！</div>
+      </div>
+    </div>
+  </div>
+
   <!-- 助動詞まとめ -->
   <div class="tab-content" id="jodoshi">
-    <div class="hint">第１回〜第１３回に登場した助動詞を出現順にまとめています。クロスリファレンスで本文中の場所を確認できます。</div>
+    <div class="hint">第１回〜第１４回に登場した助動詞を出現順にまとめています。クロスリファレンスで本文中の場所を確認できます。</div>
     <div class="jodoshi-section">
 
       <div class="jodoshi-entry">
@@ -812,12 +873,14 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第10回：いかにしてか此恨を銷（せう）<span class="rei-hl">せむ</span>。</div>
           <div class="jodoshi-rei">第１１回：その概略を文に綴りて見<span class="rei-hl">む</span>。</div>
           <div class="jodoshi-rei">第１３回：我名を成さ<span class="rei-hl">む</span>も、我家を興さ<span class="rei-hl">む</span>も（<strong>強い意志</strong>：〜しよう）</div>
+          <div class="jodoshi-rei">第１４回：我目を射<span class="rei-hl">む</span>とするは ／ 我心を迷はさ<span class="rei-hl">む</span>とするは（「む＋とす」で<strong>〜しようとする</strong>）</div>
           <div class="cross-tags">
             <span class="cross-tag">第４回「ものせむ」</span>
             <span class="cross-tag">第６回「見せむ」</span>
             <span class="cross-tag">第10回「銷せむ」</span>
             <span class="cross-tag">第１１回「綴りて見む」</span>
             <span class="cross-tag">第１３回「成さむ」「興さむ」＝強い意志</span>
+            <span class="cross-tag">第１４回「射むとする」「迷はさむとする」</span>
           </div>
         </div>
       </div>
@@ -860,13 +923,14 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <span class="jodoshi-kaku">完了の助動詞（状態継続）</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">「〜した(状態が続いている)」という完了・状態の継続を表す。「つ」と同じ完了の助動詞だが、「たり」は動作の結果としての状態が続いているニュアンスが強い。已然形「たれ」＋「ば」で「〜してしまっているので」（理由）、「たれ」＋「ど」で「〜したけれど」（逆接）となる。第９回「一点の翳とのみ<strong>なりたれど</strong>」は、動詞「成る」連用形＋「たり」已然形＋「ど」＝「なってしまっているけれど」。この「なり」は<strong>断定の助動詞ではなくラ行四段動詞「成る」</strong>なので識別に注意（断定なら体言に直接付くが、ここは「翳と＋成り」という変化の表現）。「たり」が入ることで「翳になった状態が今も続いている」ことまで表される。</div>
+          <div class="jodoshi-imi">「〜した(状態が続いている)」という完了・状態の継続を表す。「つ」と同じ完了の助動詞だが、「たり」は動作の結果としての状態が続いているニュアンスが強い。已然形「たれ」＋「ば」で「〜してしまっているので」（理由）、「たれ」＋「ど」で「〜したけれど」（逆接）となる。第９回「一点の翳とのみ<strong>なりたれど</strong>」は、動詞「成る」連用形＋「たり」已然形＋「ど」＝「なってしまっているけれど」。この「なり」は<strong>断定の助動詞ではなくラ行四段動詞「成る」</strong>なので識別に注意（断定なら体言に直接付くが、ここは「翳と＋成り」という変化の表現）。「たり」が入ることで「翳になった状態が今も続いている」ことまで表される。★<strong>識別注意</strong>：<strong>タリ活用の形容動詞</strong>の連体形も「〜たる」になるので紛らわしい。第14回には「模糊<strong>たる</strong>功名の念」（タリ活用形容動詞「模糊たり」）と「検束に慣れ<strong>たる</strong>勉強力」（完了・存続の助動詞）が<strong>同じ一文に並んでいる</strong>。見分け方は<strong>上が漢語（体言）か、動詞の連用形か</strong>。漢語＋たる＝形容動詞、連用形＋たる＝助動詞。</div>
           <div class="jodoshi-rei">第４回：養ひ得<span class="rei-hl">たり</span>けむ、</div>
           <div class="jodoshi-rei">第５回：浮世のうきふしをも知り<span class="rei-hl">たり</span> ／ 悟り得<span class="rei-hl">たり</span></div>
           <div class="jodoshi-rei">第７回：悩まし<span class="rei-hl">たれば</span>なり。</div>
           <div class="jodoshi-rei">第９回：一点の翳とのみなり<span class="rei-hl">たれど</span>、</div>
           <div class="jodoshi-rei">第10回：彫りつけられ<span class="rei-hl">たれば</span></div>
           <div class="jodoshi-rei">第１２回：一級の首にしるされ<span class="rei-hl">たり</span>しに、（記されている状態が続いていた）</div>
+          <div class="jodoshi-rei">第１４回：検束に慣れ<span class="rei-hl">たる</span>勉強力（慣れている状態が続いている）</div>
           <div class="cross-tags">
             <span class="cross-tag">第４回「養ひ得たり」</span>
             <span class="cross-tag">第５回「知りたり」「悟り得たり」</span>
@@ -874,6 +938,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <span class="cross-tag">第９回「なりたれど」</span>
             <span class="cross-tag">第10回「彫りつけられたれば」</span>
             <span class="cross-tag">第１２回「しるされたりし」</span>
+            <span class="cross-tag">第１４回「慣れたる」</span>
           </div>
         </div>
       </div>
@@ -991,12 +1056,14 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <span class="jodoshi-kaku">完了・存続の助動詞</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">「〜している・〜してある」という存続、または「〜した」という完了を表す。連体形「る」の形で後ろの名詞や語句にかかる。サ変動詞の未然形・四段動詞の已然形に接続する。</div>
+          <div class="jodoshi-imi">「〜している・〜してある」という存続、または「〜した」という完了を表す。連体形「る」の形で後ろの名詞や語句にかかる。サ変動詞の未然形・四段動詞の已然形に接続する。この接続は頭文字をとって<strong>「サ未四已（さみしい）」</strong>と覚えるのが定番。第14回「立て<strong>り</strong>」は四段動詞「立つ」の已然形「立て」に付いた<strong>終止形</strong>で、第１回「残れ<strong>る</strong>」・第10回「よめ<strong>る</strong>」の連体形と形を比べておきたい。</div>
           <div class="jodoshi-rei">第１回：舟に残れ<span class="rei-hl">る</span>は余一人のみなれば</div>
           <div class="jodoshi-rei">第10回：詩に詠じ歌によめ<span class="rei-hl">る</span>後は</div>
+          <div class="jodoshi-rei">第１４回：忽ちこの欧羅巴の新大都の中央に立て<span class="rei-hl">り</span>。（<strong>終止形</strong>：立っている）</div>
           <div class="cross-tags">
             <span class="cross-tag">第１回「残れる」</span>
             <span class="cross-tag">第10回「よめる」</span>
+            <span class="cross-tag">第１４回「立てり」＝終止形</span>
           </div>
         </div>
       </div>
@@ -1103,7 +1170,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
               <td class="t-jterm">む</td>
               <td>意志「〜しよう」<br><span style="font-size:11px;color:#aaa;">反語「〜できようか（いや、できない）」の用法も</span></td>
               <td>ものせむ／見せむ／銷せむ／綴りて見む</td>
-              <td class="t-cross">第４・６・10・11・13回</td>
+              <td class="t-cross">第４・６・10・11・13・14回</td>
             </tr>
             <tr>
               <td class="t-jterm">なり（なる）</td>
@@ -1115,7 +1182,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
               <td class="t-jterm">たり</td>
               <td>完了（状態継続）「〜した状態だ」<br><span style="font-size:11px;color:#aaa;">たれ＋ば＝理由／たれ＋ど＝逆接</span></td>
               <td>養ひ得たり／知りたり／悟り得たり／悩ましたれば／なりたれど／彫りつけられたれば</td>
-              <td class="t-cross">第４・５・７・９・10・12回</td>
+              <td class="t-cross">第４・５・７・９・10・12・14回</td>
             </tr>
             <tr>
               <td class="t-jterm">ず</td>
@@ -1157,7 +1224,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
               <td class="t-jterm">り</td>
               <td>完了・存続「〜している・〜した」<br><span style="font-size:11px;color:#aaa;">連体形「る」で後ろにかかる</span></td>
               <td>残れる／よめる</td>
-              <td class="t-cross">第１・10回</td>
+              <td class="t-cross">第１・10・14回</td>
             </tr>
             <tr>
               <td class="t-jterm">べし</td>
@@ -1191,7 +1258,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
   </div>
 
   <div class="tab-content" id="joshi">
-    <div class="hint">第１回〜第１３回に登場した助詞を出現順にまとめています。係り結び・「ば」の仮定と確定・逆接の「に」など、現代語と違う使い方に特に注目してください。</div>
+    <div class="hint">第１回〜第１４回に登場した助詞を出現順にまとめています。係り結び・「ば」の仮定と確定・逆接の「に」など、現代語と違う使い方に特に注目してください。</div>
     <div class="jodoshi-section">
 
       <!-- ① をば -->
@@ -1245,6 +1312,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第１１回：今宵<span class="rei-hl">は</span>あたりに人も無し</div>
           <div class="jodoshi-rei">第１２回：太田豊太郎といふ名<span class="rei-hl">は</span>いつも一級の首に（長い一文の主題を提示する「は」）</div>
           <div class="jodoshi-rei">第１３回：十九の歳に<span class="rei-hl">は</span>（時期の取り立て） ／ さまで悲しと<span class="rei-hl">は</span>思はず（否定を強める）</div>
+          <div class="jodoshi-rei">第１４回：我目を射むとする<span class="rei-hl">は</span> ／ 我心を迷はさむとする<span class="rei-hl">は</span>（連体形＋「は」＝<strong>準体法</strong>。「〜するもの<strong>は</strong>」）</div>
           <div class="cross-tags">
             <span class="cross-tag">第１回「今宵は」</span>
             <span class="cross-tag">第４回「このたびは」「なるは」</span>
@@ -1255,6 +1323,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <span class="cross-tag">第１１回「今宵は」</span>
             <span class="cross-tag">第１２回「といふ名は」</span>
             <span class="cross-tag">第１３回「歳には」「悲しとは」</span>
+            <span class="cross-tag">第１４回「射むとするは」＝準体法</span>
           </div>
         </div>
       </div>
@@ -1528,23 +1597,25 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
       <!-- ⑲ と（比喩・引用） -->
       <div class="jodoshi-entry">
         <div class="jodoshi-entry-head">
-          <span class="jodoshi-term">と（比喩・引用・結果）</span>
-          <span class="jodoshi-kaku">格助詞 ― 比喩「〜のように」/ 引用「〜と」/ 結果「〜となる」</span>
+          <span class="jodoshi-term">と（比喩・引用・結果・並列）</span>
+          <span class="jodoshi-kaku">格助詞 ― 比喩「〜のように」/ 引用「〜と」/ 結果「〜となる」/ <strong>並列「AとBと」</strong></span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">格助詞「と」には複数の用法がある。①比喩：連体形＋「の如く」の前に用いる（「雲の如く」）。②結果：「〜とのみなりたれど」は「〜だけになってしまった」という変化の結果。③引用：「さはあらじと思へど」は「そうはなるまいと思うが」という引用。④引用・内容＋強調：第８回「九廻す<strong>と</strong>もいふべき」の「と」は「言ふ」の内容を受ける引用の「と」で、そこに係助詞「も」が重なって「〜<strong>とでも</strong>言うべき（ほどの）」という誇張気味の強調表現になる。「腸が毎日九回ねじれ回る——とでも言うしかない痛み」という、言葉にできないほどの苦痛を表す言い回し。</div>
+          <div class="jodoshi-imi">格助詞「と」には複数の用法がある。①比喩：連体形＋「の如く」の前に用いる（「雲の如く」）。②結果：「〜とのみなりたれど」は「〜だけになってしまった」という変化の結果。③引用：「さはあらじと思へど」は「そうはなるまいと思うが」という引用。★<strong>並列</strong>：第14回「功名の念<strong>と</strong>、検束に慣れたる勉強力<strong>と</strong>を持ちて」のように、古文では<strong>「AとBと」と後ろの語にも「と」を付ける</strong>。現代語なら「AとBを」と言うところなので、訳では消えてしまう。原文を読むときだけ意識すればよい。<br><br>④引用・内容＋強調：第８回「九廻す<strong>と</strong>もいふべき」の「と」は「言ふ」の内容を受ける引用の「と」で、そこに係助詞「も」が重なって「〜<strong>とでも</strong>言うべき（ほどの）」という誇張気味の強調表現になる。「腸が毎日九回ねじれ回る——とでも言うしかない痛み」という、言葉にできないほどの苦痛を表す言い回し。</div>
           <div class="jodoshi-rei">第８回：一抹の雲の如く我心を掠めて（雲のように）</div>
           <div class="jodoshi-rei">第８回：腸日ごとに九廻す<span class="rei-hl">と</span>もいふべき惨痛（〜とも言うべき）</div>
           <div class="jodoshi-rei">第９回：一点の翳<span class="rei-hl">と</span>のみなりたれど（〜だけになってしまったが）</div>
           <div class="jodoshi-rei">第10回：さはあらじ<span class="rei-hl">と</span>思へど（そうはなるまい<strong>と</strong>思うが）</div>
           <div class="jodoshi-rei">第１２回：太田豊太郎<span class="rei-hl">と</span>いふ名（〜という名。引用の「と」＋「いふ」）</div>
           <div class="jodoshi-rei">第１３回：またなき名誉なり<span class="rei-hl">と</span>人にも言はれ ／ 取り調べよ<span class="rei-hl">と</span>の命 ／ 今ぞ<span class="rei-hl">と</span>おもふ（いずれも引用）</div>
+          <div class="jodoshi-rei">第１４回：功名の念<span class="rei-hl">と</span>、検束に慣れたる勉強力<span class="rei-hl">と</span>を持ちて（<strong>並列</strong>：AとBとを）</div>
           <div class="cross-tags">
             <span class="cross-tag">第８回「すともいふべき」</span>
             <span class="cross-tag">第９回「翳とのみ」</span>
             <span class="cross-tag">第10回「さはあらじと」</span>
             <span class="cross-tag">第１２回「豊太郎といふ名」</span>
             <span class="cross-tag">第１３回「なりと」「よとの命」「今ぞと」</span>
+            <span class="cross-tag">第１４回「念と〜力とを」＝並列</span>
           </div>
         </div>
       </div>
@@ -1620,6 +1691,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第11回：あたり<span class="rei-hl">に</span>人も無し（場所） ／ その概略を文<span class="rei-hl">に</span>綴りて見む（変換先：文章という形に）</div>
           <div class="jodoshi-rei">第１２回：受けし甲斐<span class="rei-hl">に</span>（原因・理由：〜のおかげで） ／ 一級の首<span class="rei-hl">に</span>（帰着点） ／ 力<span class="rei-hl">に</span>なして（〜として）</div>
           <div class="jodoshi-rei">第１３回：人<span class="rei-hl">に</span>言はれ（<strong>受身の動作主</strong>） ／ 某省<span class="rei-hl">に</span>出仕して（所属） ／ 母<span class="rei-hl">に</span>別るる（相手） ／ ベルリンの都<span class="rei-hl">に</span>来ぬ（帰着点）</div>
+          <div class="jodoshi-rei">第１４回：検束<span class="rei-hl">に</span>慣れたる（対象） ／ 新大都の中央<span class="rei-hl">に</span>立てり（場所）</div>
           <div class="cross-tags">
             <span class="cross-tag">第１回「舟に」</span>
             <span class="cross-tag">第２回「目に」「耳に」</span>
@@ -1627,6 +1699,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <span class="cross-tag">第11回「あたりに」「文に」</span>
             <span class="cross-tag">第１２回「甲斐に」「首に」「力に」</span>
             <span class="cross-tag">第１３回「人に言はれ」「都に来ぬ」</span>
+            <span class="cross-tag">第１４回「検束に」「中央に」</span>
           </div>
         </div>
       </div>
@@ -1644,12 +1717,14 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第11回：電気線の鍵<span class="rei-hl">を</span>捩る ／ その概略<span class="rei-hl">を</span>文に綴りて見む</div>
           <div class="jodoshi-rei">第１２回：厳しき庭の訓<span class="rei-hl">を</span>受けし ／ 一人子の我<span class="rei-hl">を</span>力になして ／ 世<span class="rei-hl">を</span>渡る母</div>
           <div class="jodoshi-rei">第１３回：我名<span class="rei-hl">を</span>成さむ ／ 我家<span class="rei-hl">を</span>興さむ ／ 五十<span class="rei-hl">を</span>踰えし母 ／ 家<span class="rei-hl">を</span>離れて</div>
+          <div class="jodoshi-rei">第１４回：我目<span class="rei-hl">を</span>射むとする ／ 我心<span class="rei-hl">を</span>迷はさむとする（どちらも他動詞の対象）</div>
           <div class="cross-tags">
             <span class="cross-tag">第８回「此恨を」</span>
             <span class="cross-tag">第９回「我心を」</span>
             <span class="cross-tag">第11回「鍵を」「概略を」</span>
             <span class="cross-tag">第１２回「訓を」「我を」「世を」</span>
             <span class="cross-tag">第１３回「我名を」「我家を」「家を」</span>
+            <span class="cross-tag">第１４回「我目を」「我心を」</span>
           </div>
         </div>
       </div>
@@ -1661,10 +1736,12 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <span class="jodoshi-kaku">係助詞 ― 強調「〜こそ」（係り結び：連体形で結ぶ）</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">強く指し示して取り立てる係助詞。<br><br>まず<strong>係り結び</strong>の基本。ふつう文は<strong>終止形</strong>で終わる（花あ<strong>り</strong>。）が、文の途中に係助詞が入ると<strong>文末の形が変わる</strong>。この変わった文末を<strong>結び</strong>という。<strong>「ぞ・なむ・や・か」→連体形</strong>（花<strong>ぞ</strong>あ<strong>る</strong>。）、<strong>「こそ」→已然形</strong>（花<strong>こそ</strong>あ<strong>れ</strong>。）。この作品では第５回「学問<strong>こそ</strong>〜多か<strong>れ</strong>」が已然形結び、第６回「誰に<strong>か</strong>見せ<strong>む</strong>」が連体形結びで、どちらも結びがそろっている。<br><br>ところが第13回「今<strong>ぞ</strong>とおもふ」は、係助詞「ぞ」が出ているのに<strong>すぐ下が引用の「と」</strong>で、結ぶべき連体形の述語が書かれていない。これを<strong>結びの省略</strong>という。補うなら「今ぞ（その時<strong>なる</strong>）と思ふ」＝「今こそ（その時だ）と思う」。補うときも<strong>連体形</strong>にするのは、「ぞ」が連体形で結ぶ決まりだから。心内語や会話では最後まで言い切らずに切れることが多く、<strong>言い切らないぶん勢いが出る</strong>。現代語の「今だ！」「今こそ！」と同じ感覚である。<br><br>係り結びを見つけたら、まず<strong>結びを探す</strong>。見つからなければ省略を疑う——という手順で読むとよい。</div>
+          <div class="jodoshi-imi">強く指し示して取り立てる係助詞。<br><br>まず<strong>係り結び</strong>の基本。ふつう文は<strong>終止形</strong>で終わる（花あ<strong>り</strong>。）が、文の途中に係助詞が入ると<strong>文末の形が変わる</strong>。この変わった文末を<strong>結び</strong>という。<strong>「ぞ・なむ・や・か」→連体形</strong>（花<strong>ぞ</strong>あ<strong>る</strong>。）、<strong>「こそ」→已然形</strong>（花<strong>こそ</strong>あ<strong>れ</strong>。）。この作品では第５回「学問<strong>こそ</strong>〜多か<strong>れ</strong>」が已然形結び、第６回「誰に<strong>か</strong>見せ<strong>む</strong>」が連体形結びで、どちらも結びがそろっている。<br><br>ところが第13回「今<strong>ぞ</strong>とおもふ」は、係助詞「ぞ」が出ているのに<strong>すぐ下が引用の「と」</strong>で、結ぶべき連体形の述語が書かれていない。これを<strong>結びの省略</strong>という。補うなら「今ぞ（その時<strong>なる</strong>）と思ふ」＝「今こそ（その時だ）と思う」。補うときも<strong>連体形</strong>にするのは、「ぞ」が連体形で結ぶ決まりだから。心内語や会話では最後まで言い切らずに切れることが多く、<strong>言い切らないぶん勢いが出る</strong>。現代語の「今だ！」「今こそ！」と同じ感覚である。<br><br>係り結びを見つけたら、まず<strong>結びを探す</strong>。見つからなければ省略を疑う——という手順で読むとよい。<br><br>第14回「何等の光彩<strong>ぞ</strong>、我目を射むとするは。」は、これに<strong>倒置</strong>が重なった形。ふつうの語順なら「我目を射むとするは、何等の光彩<strong>ぞ</strong>（ある）」で、感嘆の部分を先に出している。<strong>倒置と結びの省略が重なることで、言葉が追いつかないほどの驚き</strong>が表現されている。</div>
           <div class="jodoshi-rei">第１３回：我名を成さむも、我家を興さむも、今<span class="rei-hl">ぞ</span>とおもふ心の勇み立ちて（今こそ、と思う心が）</div>
+          <div class="jodoshi-rei">第１４回：何等の光彩<span class="rei-hl">ぞ</span>、我目を射むとするは。／ 何等の色沢<span class="rei-hl">ぞ</span>、我心を迷はさむとするは。（<strong>倒置＋結びの省略</strong>）</div>
           <div class="cross-tags">
             <span class="cross-tag">第１３回「今ぞと」＝結びの省略</span>
+            <span class="cross-tag">第１４回「何等の光彩ぞ」＝倒置＋省略</span>
             <span class="cross-tag">⑨「か・や」・⑬「こそ」と並べて確認</span>
           </div>
         </div>
@@ -1727,8 +1804,8 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <tr>
               <td class="t-jterm">と（格）</td>
               <td>格助詞：引用・比喩・結果「〜と」</td>
-              <td>雲の如く ／ さはあらじと思へど ／ 豊太郎といふ名 ／ 取り調べよとの命</td>
-              <td class="t-cross">第８〜10回・第12・13回</td>
+              <td>雲の如く ／ さはあらじと思へど ／ 豊太郎といふ名 ／ 念と力と（並列）</td>
+              <td class="t-cross">第８〜10回・第12〜14回</td>
             </tr>
             <tr>
               <td class="t-jterm">から・より（比較）</td>
@@ -1803,6 +1880,20 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
 </div>
 
 <script>
+function setView14(mode, btn) {
+  document.querySelectorAll('#kai14 .view-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  var h = document.getElementById('k14-honbun');
+  var k = document.getElementById('k14-kugiri');
+  var hint = document.getElementById('k14-hint');
+  if (mode === 'kugiri') {
+    h.style.display = 'none'; k.style.display = 'flex';
+    hint.innerHTML = '「／」が単語の切れめです。語をクリックすると右に解説が出ます。<span style="color:#3C3489;">紫の語</span>が付属語（助詞・助動詞）、黒が自立語。';
+  } else {
+    h.style.display = 'flex'; k.style.display = 'none';
+    hint.textContent = '色のついた言葉をクリックすると右に解説が出ます';
+  }
+}
 function switchTab(id, btn) {
   document.querySelectorAll('.tab-content').forEach(function(el) { el.classList.remove('active'); });
   document.querySelectorAll('.tab-btn').forEach(function(el) { el.classList.remove('active'); });
@@ -1823,8 +1914,31 @@ function switchTab(id, btn) {
     k10: ['ikani','moshi','nariseba','shi','kokochi','narinam','korenomiwa','hori','sahaara','toomohedo'],
     k11: ['koyoi','atarini','bodo','kite','denki','hodomo','ide','sonogairyaku','gairyaku','funi','tsuduri'],
     k12: ['osanaki','niwa','ukeshi','chichiwoba','ushinai','gakumonno','susami','kyuhan','arishi','yobiko','kayoishi','daigaku','irishi','ota','ikkyu','shirusare','hitorigo','chikara','yowowataru','nagusami'],
-    k13: ['juku','gakushi','daigakuno','matanaki','iware','boushou','kokyonaru','yobimukae','mitose','kanchou','kotonari','yoko','torishirabeyo','nasamu','imazo','kokorono','koeshi','wakaruru','samade','harubaru','kinu']
+    k13: ['juku','gakushi','daigakuno','matanaki','iware','boushou','kokyonaru','yobimukae','mitose','kanchou','kotonari','yoko','torishirabeyo','nasamu','imazo','kokorono','koeshi','wakaruru','samade','harubaru','kinu'],
+    k14: ['moko','koumyou','kensoku','naretaru','toowo','tachimachi','yoroppa','shindaito','tateri','nanra','imu','shikitaku','mayowasamu']
   };
+  // 第14回：区切り表示の語をクリックしても同じカードを開く
+  (function() {
+    var k14 = groups.k14 || [];
+    document.querySelectorAll('#k14-kugiri .kgw').forEach(function(w) {
+      var key = w.getAttribute('data-c');
+      if (!key) return;
+      w.addEventListener('click', function() {
+        var empty = document.getElementById('k14-empty');
+        if (empty) empty.style.display = 'none';
+        k14.forEach(function(k) {
+          var c = document.getElementById('k14-card-' + k); if (c) c.style.display = 'none';
+          var h = document.getElementById('k14-' + k); if (h) h.classList.remove('active');
+        });
+        document.querySelectorAll('#k14-kugiri .kgw').forEach(function(x) { x.classList.remove('active'); });
+        var card = document.getElementById('k14-card-' + key);
+        if (card) card.style.display = 'block';
+        w.classList.add('active');
+        var hl = document.getElementById('k14-' + key); if (hl) hl.classList.add('active');
+      });
+    });
+  })();
+
   Object.keys(groups).forEach(function(prefix) {
     groups[prefix].forEach(function(key) {
       var hl = document.getElementById(prefix + '-' + key);
