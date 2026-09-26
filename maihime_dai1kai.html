@@ -216,6 +216,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
     <button class="tab-btn" onclick="switchTab('kai12',this)">第１２回</button>
     <button class="tab-btn" onclick="switchTab('kai13',this)">第１３回</button>
     <button class="tab-btn" onclick="switchTab('kai14',this)">第１４回</button>
+    <button class="tab-btn" onclick="switchTab('kai15',this)">第１５回</button>
     <button class="tab-btn" onclick="switchTab('jodoshi',this)">助動詞まとめ</button>
     <button class="tab-btn" onclick="switchTab('joshi',this)">助詞まとめ</button>
   </div>
@@ -773,9 +774,46 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
     </div>
   </div>
 
+  <!-- 第15回 -->
+  <div class="tab-content" id="kai15">
+    <div class="legend">
+      <span class="legend-item"><span class="legend-dot" style="background:#7F77DD;"></span>文語・助詞</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#1D9E75;"></span>場面・情景</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#D85A30;"></span>感情の見せ場</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#BA7517;"></span>漢語で西洋を表現</span>
+    </div>
+    <div class="hint">色のついた言葉をクリックすると右に解説が出ます</div>
+    <div class="top-area">
+      <div class="tategumi-wrap">
+        <div class="tl"><span class="hl amber" id="k15-bodaijuka">菩提樹下</span><span class="hl purple" id="k15-yakusuru">と訳するときは</span>、</div>
+        <div class="tl"><span class="hl teal" id="k15-yuusei">幽静なる境</span><span class="hl purple" id="k15-narubeku">なるべく</span><span class="hl purple" id="k15-omowarure">思はるれど</span>、</div>
+        <div class="tl">この<span class="hl teal" id="k15-taidou">大道髪の如き</span><span class="hl amber" id="k15-unter">ウンテル、デン、リンデン</span><span class="hl purple" id="k15-kite">に来て</span></div>
+        <div class="tl"><span class="hl purple" id="k15-ryouhen">両辺なる</span><span class="hl amber" id="k15-ishidatami">石だたみの人道</span><span class="hl purple" id="k15-yuku">を行く</span></div>
+        <div class="tl"><span class="hl teal" id="k15-kumigumi">隊々の士女</span>を<span class="hl coral" id="k15-miyo">見よ</span>。</div>
+      </div>
+      <div class="panel-area">
+        <div class="empty-state" id="k15-empty">色のついた言葉をクリックすると<br>ここに解説が表示されます</div>
+        <div class="card" id="k15-card-bodaijuka"><div class="card-word">菩提樹下</div><div class="card-read">ぼだいじゆか</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「菩提樹」→ 仏教で、釈迦がその木の下で悟りを開いたとされる木。ここではドイツ語 <b>Linde（リンデ）</b>の訳語として使われている。</li><li>「下」→「か」と音読みする。「〜のもと・〜の下」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「菩提樹の下」ということ。通りの名 <b>Unter den Linden</b>（＝菩提樹の木々の下で）を、そのまま漢語に直訳した形。</div><div class="card-naze"><span class="card-naze-title">🤔 なぜ「菩提樹下」と訳すと静かな場所に思えるのか</span><br>日本人にとって「菩提樹」は<b>仏教の木</b>である。釈迦が悟りを開いた木であり、日本では寺の境内に植えられる木でもある。だから「菩提樹下」と漢語で書かれると、寺の木陰のような、人けのない<b>ひっそりとした場所</b>が思い浮かぶ。<br><br>ところが実物のウンテル・デン・リンデンは、ベルリンでいちばんにぎやかな大通りだった。<b>訳語が連れてくるイメージと、目の前の現実とがずれている。</b>鷗外はまず読者に「静かな場所」を想像させておき、すぐ後の「思はるれど」でそれをひっくり返す。第15回の一文は、まるごとこの「ずれ」の上に組み立てられている。</div><div class="card-note">「下」を「か」と読むのは漢語の音読み。「樹下（じゅか）」「城下（じょうか）」「門下（もんか）」と同じ。新潮文庫は「ぼだいじゅか」とルビを振っている。なお日本の寺に植えられている菩提樹は、実はリンデンと同じシナノキの仲間で、釈迦の菩提樹（インドボダイジュ）とは別の木である。</div><div class="card-link">💡 第14回「欧羅巴」と同じく、西洋のものを漢語で書く手法。ただし今回は「漢語に訳すとどう聞こえるか」ということ自体が話題になっている</div></div>
+        <div class="card" id="k15-card-yakusuru"><div class="card-word">と訳するときは</div><div class="card-read">とやくするときは</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「と」→ 引用（内容）の格助詞。「菩提樹下」という訳語を受ける。</li><li>「訳する」→ <b>サ行変格活用</b>の動詞「訳す」の<b>連体形</b>。下の「とき」にかかる。</li><li>「とき」→ 名詞。</li><li>「は」→ 係助詞。「〜ときには」と取り立てる。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「『菩提樹下』と訳すときには」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 「訳する」——漢語＋「す」のサ変動詞</span><br>「訳す」は漢語「訳」に「す」が付いてできたサ変動詞で、文語では<b>訳せ・訳し・訳す・訳する・訳すれ・訳せよ</b>と活用する。ここは下に名詞「とき」が来るので<b>連体形「訳する」</b>。<br><br>現代語では「訳さない・訳します」のように五段活用で使うことが多いので、「訳する」という形は少し古めかしく感じる。「愛す（愛する）」「察す（察する）」「欲す（欲する）」なども同じ仲間である。<br><br>もう一つ注目したいのは、語り手が<b>翻訳する人の目</b>で街を見ていること。豊太郎は通りの名をまず頭の中で日本語に置き換え、それから実物と見比べている。異国に着いたばかりの人間の、ごく自然な心の動きがそのまま文になっている。</div><div class="card-note">「ときは」は、ちくま文庫の訳では「訳すと」。仮定のように「もし〜と訳すならば」と取ってもよい。</div><div class="card-link">💡 サ変動詞は第13回「出仕して」「洋行して」、第14回「射むとする」の「する」（連体形）にも出ている。引用の「と」は助詞まとめ⑲</div></div>
+        <div class="card" id="k15-card-yuusei"><div class="card-word">幽静なる境</div><div class="card-read">いうせいなるさかひ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「幽静なる」→ <b>ナリ活用の形容動詞</b>「幽静なり」の連体形。「奥深く、ひっそりと静かだ」。下の「境」にかかる。</li><li>「境」→「さかひ」と読む。ここは境界ではなく<b>「場所・ところ」</b>の意。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「ひっそりと静かな場所」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 ★識別注意——「幽静なる境なるべく」には「なる」が二つある</span><br>すぐ続けて「幽静<b>なる</b>境<b>なる</b>べく」と、「なる」が二回出てくる。形は同じでも正体は違う。<br>　・「幽静<b>なる</b>」→ 形容動詞「幽静なり」の<b>活用語尾</b>（「幽静なる」で一語）<br>　・「境<b>なる</b>」→ 名詞に付いた<b>断定の助動詞「なり」</b><br><br>見分け方は、<b>上に「とても」を付けてみる</b>こと。「とても幽静だ」は言えるので形容動詞。「とても境だ」は言えないので、こちらは名詞＋断定の助動詞である。<b>上が性質・状態を表す語なら形容動詞、上が名詞なら助動詞</b>と覚えておくとよい。<br><br>さらに第15回には、このあと「両辺<b>なる</b>」（存在の「なり」）も出てくる。一文の中に三種類の「なる」がそろっている、識別練習にうってつけの回である。</div><div class="card-note">「境」は現代語でも「佳境」「心境」「環境」などに「場所・状態」の意味で残っている。「幽静」は漢詩文でよく使われる語で、俗世から離れた静かな場所をいう。</div><div class="card-link">💡 第14回「模糊たる」はタリ活用の形容動詞、今回の「幽静なる」はナリ活用の形容動詞。どちらも漢語＋活用語尾という作りを比べてみよう</div></div>
+        <div class="card" id="k15-card-narubeku"><div class="card-word">なるべく</div><div class="card-read">なるべく</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「なる」→ <b>断定</b>の助動詞「なり」の<b>連体形</b>。「〜である」。</li><li>「べく」→ <b>推量</b>の助動詞「べし」の<b>連用形</b>。「〜にちがいない・〜だろう」。下の「思はるれ」に続く。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「（静かな場所）であるにちがいないと」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 ★接続——なぜ「なり＋べし」ではなく「なる＋べし」なのか</span><br>「べし」は原則として<b>終止形</b>に付く助動詞である（行く<b>べし</b>・見る<b>べし</b>）。それなら断定の「なり」にも終止形で付いて「なり<b>べし</b>」になりそうだが、実際は「なる<b>べし</b>」になる。<br><br>理由は、「なり」が<b>ラ変型</b>の活用（なら・なり／に・なり・なる・なれ・なれ）をするからである。<b>「べし」はラ変型の語には連体形に付く</b>という例外がある。ラ変動詞「あり」も同じで、「あり＋べし」は「ある<b>べし</b>」になる。第11回「猶程も<b>ある</b>べければ」がまさにその形だった。<br><br>★もう一つの落とし穴。現代語の「なるべく（できるだけ）」とは<b>まったく別もの</b>である。現代語の副詞「なるべく」は動詞「成る」＋「べし」から生まれた語で、ここの「なるべく」を「できるだけ」と訳すと意味が通らなくなる。</div><div class="card-note">「べく思ふ」は「〜だろうと思う」という決まった言い方。「べく」は連用形なので、下の動詞「思はる」にそのまま続いている。</div><div class="card-link">💡 「べし」は第８回「いふべき」（当然・適当）、第11回「あるべければ」（推量）に続いて三度目。今回も推量（助動詞まとめ「べし」）</div></div>
+        <div class="card" id="k15-card-omowarure"><div class="card-word">思はるれど</div><div class="card-read">おもはるれど</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「思は」→ ハ行四段動詞「思ふ」の未然形。</li><li>「るれ」→ 助動詞「る」の<b>已然形</b>。ここは<b>自発</b>「自然と〜される」。</li><li>「ど」→ 已然形に付く接続助詞。<b>逆接確定条件</b>「〜けれども」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「（静かな場所であろうと）自然に思われるけれども」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 ★「る・らる」の四つの意味——ここで初めて「自発」が出た</span><br>助動詞「る・らる」には<b>受身・尊敬・可能・自発</b>の四つの意味がある。この作品でここまで出てきた「る」は、「載せ<b>られ</b>」「もてはやさ<b>れ</b>」「彫りつけ<b>られ</b>」「しるさ<b>れ</b>」「言は<b>れ</b>」と、<b>すべて受身</b>だった。<br><br>ところがこの「思は<b>るれ</b>」は受身ではない。「思ふ・偲ぶ・嘆く・泣く」など<b>心の動きを表す動詞</b>に付いたときは、<b>自発</b>「自然とそう思われる・そう思わずにはいられない」になることが多い。誰かに無理に思わされるのではなく、<b>「菩提樹下」という言葉を聞けば誰でもひとりでにそう思う</b>、ということである。<br><br>そして「ど」。ここで文の流れがくるりと反転する。「静かな所だろうと思われる<b>けれども</b>——このウンテル・デン・リンデンに来て、人の群れを見てごらん」。<b>予想と現実の落差</b>を、この一字が作っている。</div><div class="card-note">「る」は下二段型に活用する（れ・れ・る・るる・るれ・れよ）。已然形「るれ」＋「ど」で「るれど」。第13回「別るるをも」の「るる」は動詞「別る」の活用語尾で、助動詞ではないので混同しないこと。</div><div class="card-link">💡 第10回「さはあらじと<b>思へど</b>」と見比べよう。あちらは自分が「思う」、こちらは自然と「思われる」。逆接の「ど」は助詞まとめ⑱、「る」は助動詞まとめ「る・らる」</div></div>
+        <div class="card" id="k15-card-taidou"><div class="card-word">大道髪の如き</div><div class="card-read">だいだうかみのごとき</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「大道」→ 大通り。</li><li>「髪」→ 髪の毛。</li><li>「の」→ 格助詞。「髪<b>の</b>如き」で「髪のような」。</li><li>「如き」→ <b>比況</b>の助動詞「ごとし」の<b>連体形</b>。下の「ウンテル、デン、リンデン」にかかる。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「大通りが髪の毛のようにまっすぐ伸びている（ウンテル・デン・リンデン）」ということ。ちくま文庫はこれを「まっすぐに伸び走っている」と訳している。</div><div class="card-naze"><span class="card-naze-title">🤔 なぜ巨大な大通りを「髪」にたとえるのか</span><br>髪の毛は細く、どこまでもまっすぐに伸びる。約1.3キロも一直線に続く大通りを端から眺めると、遠くに行くほど細くなり、一本の髪の毛のように見える。<b>いちばん大きなもの（大道）を、いちばん細いもの（髪）にたとえる</b>意外さが、この比喩の面白さである。<br><br>形にも注目したい。「大道」と「髪」のあいだには助詞がない。ふつうなら「大道<b>の</b>髪の如くなる」とでも言うところを、漢文を書き下したように<b>ぎゅっと詰めて</b>いる。語を切り詰めた硬い調子が、まっすぐな大通りの姿とよく合っている。<br><br>もう一つ。第８回・第９回の「如く」は、悩みや懐旧の情という<b>心の中のもの</b>をたとえていた。今回初めて、<b>目に見える外の景色</b>が比喩で描かれる。回想が船室の中の苦しみから、ベルリンの街へと大きく開けていく。</div><div class="card-note">ちくま文庫の注によると、ウンテル・デン・リンデンは長さ約1300メートル、幅60.3メートル。歩道・車道・騎馬道・散歩道を四列の菩提樹（リンデン）で区切った公園式の道路だった。</div><div class="card-link">💡 「ごとし」は第８回「一抹の雲の如く」、第９回「影、響の如く」ではどちらも連用形「如く」だった。今回は初めて連体形「如き」で、下の名詞にかかる（助動詞まとめ「ごとし」）</div></div>
+        <div class="card" id="k15-card-unter"><div class="card-word">ウンテル、デン、リンデン</div><div class="card-read">ウンテル、デン、リンデン</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>ドイツ語 <b>Unter den Linden</b>。</li><li>「Unter（ウンテル）」→「〜の下で」。</li><li>「den（デン）」→ 定冠詞。</li><li>「Linden（リンデン）」→ リンデンの木（Linde）の複数形。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">ベルリンの中心を東西に貫く大通りの名。直訳すると「菩提樹たちの下で」。</div><div class="card-naze"><span class="card-naze-title">🤔 いったん訳してみせて、結局カタカナで書く</span><br>冒頭の「菩提樹下と訳するときは」は、この通りの名を<b>もし日本語に訳したら</b>、という話だった。訳すと静かな場所に聞こえる。けれども実物はそうではない。そこで鷗外は、訳語を捨てて<b>カタカナの「ウンテル、デン、リンデン」</b>と書く。日本語の訳語では、この通りの本当の姿をとらえきれない——そういう判断がこの表記に表れている。<br><br>表記の工夫も見ておこう。三つの単語を<b>読点「、」</b>で区切っている。今なら「ウンテル・デン・リンデン」と中黒で書くところで、明治の文章では読点が単語の切れめを示す役を果たしていた。</div><div class="card-note">ちくま文庫の注によると、西のパリ広場（ブランデンブルク門の前）から、東のツォイクハウス（武器庫）前までの大通り。沿道にはベルリン大学（現在のフンボルト大学）などもあり、東西分断の時代には東ベルリン側に属した。</div><div class="card-link">💡 第６回「ブリンヂイシイ」も同じカタカナ表記。第14回「欧羅巴」（漢字の当て字）と比べると、鷗外が外国の名前をどう書き分けているかがわかる。通りの西の端に立つ「ブランデンブルク門」は、この次の文に登場する</div></div>
+        <div class="card" id="k15-card-kite"><div class="card-word">に来て</div><div class="card-read">にきて</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「に」→ 到着点を示す格助詞。</li><li>「来」→ <b>カ行変格活用</b>の動詞「来（く）」の<b>連用形</b>「来（き）」。</li><li>「て」→ 接続助詞。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「（ウンテル・デン・リンデン）にやって来て」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 「来て」の主語は誰か</span><br>まず読み方。カ変「来」は<b>こ・き・く・くる・くれ・こ（こよ）</b>と活用する。接続助詞「て」は連用形に付くので、ここは「<b>き</b>て」と読む。第13回「来ぬ」と同じ連用形である。<br><br>では、ここに「来る」のは誰だろうか。文末は「見よ」という命令形である。命令は相手に向けて言うものだから、「来て……見よ」は<b>「（あなたも）このウンテル・デン・リンデンに来て、……を見てごらん」</b>という<b>読者への呼びかけ</b>として読める。第13回で「ベルリンの都に来ぬ」と自分がやって来た豊太郎が、今度は<b>読者をこの通りに連れて来ている</b>のである。</div><div class="card-note">カ変動詞は「来」一語だけ。「来ぬ」（きぬ／こぬ）、「来し」（こし／きし）など、読み方で意味や形が変わるので、いつも活用形から読みを決める習慣をつけたい。</div><div class="card-link">💡 第13回「ベルリンの都に来ぬ」（連用形「き」＋完了「ぬ」）と同じ読み。助動詞まとめ「ぬ」の識別もあわせて確認しよう</div></div>
+        <div class="card" id="k15-card-ryouhen"><div class="card-word">両辺なる</div><div class="card-read">りやうへんなる</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「両辺」→ 両側。通りの左右。</li><li>「なる」→ 助動詞「なり」の連体形。ここは断定ではなく<b>存在（所在）</b>で「〜にある」。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「（通りの）両側<b>にある</b>」ということ。「両側である」ではないので注意。</div><div class="card-naze"><span class="card-naze-title">🤔 第13回「故郷なる母」の復習——存在の「なり」</span><br>第13回で「故郷<b>なる</b>母」＝「故郷<b>にいる</b>母」を学んだ。「なり」はもともと「〜に＋あり」が縮まってできた語なので、<b>上の体言が場所を表しているとき</b>は「〜にある・〜にいる」という存在の意味になる。<br><br>「両辺」は場所を表す語である。だから「両辺なる石だたみ」は「両側<b>にある</b>石だたみ」。「両側である石だたみ」と訳すと日本語として通らない。<b>訳してみて通らなければ存在を疑う</b>——これが一番確実な見分け方である。<br><br>これで第15回の「なる」が三つそろった。<br>　・幽静<b>なる</b>境 → 形容動詞の活用語尾<br>　・境<b>なる</b>べく → 断定「〜である」<br>　・両辺<b>なる</b> → 存在「〜にある」<br>三つを並べて、それぞれ訳し分けられるか確かめてみよう。</div><div class="card-note">存在の「なる」は、ほとんどが連体形「なる」の形で、下に名詞が続く（都なる人・山なる寺・両辺なる石だたみ）。</div><div class="card-link">💡 第13回「故郷なる母」と同じ用法（助動詞まとめ「なり（なる）」）</div></div>
+        <div class="card" id="k15-card-ishidatami"><div class="card-word">石だたみの人道</div><div class="card-read">いしだたみのじんだう</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「石だたみ」→ 平らな石を敷きつめた舗装。</li><li>「の」→ 連体修飾の格助詞。</li><li>「人道」→「じんどう」。<b>人が歩く道＝歩道</b>。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「石を敷きつめた歩道」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 「人道」は「人の道」ではない</span><br>現代語の「人道」は「人として守るべき道」という意味で、「人道的」「人道支援」のように使う。しかしここの「人道」は<b>人が歩くための道、つまり歩道</b>のことである。すぐ次の文には「<b>車道</b>の土瀝青（アスファルト）の上を」という言葉が出てくる。<b>人道（歩道）と車道</b>——人と馬車の通る道がきちんと分けられているのが、当時のベルリンの大通りだった。<br><br>明治の日本では、石やアスファルトで舗装し、歩道と車道を分けた道路はまだ珍しかった。「石だたみの人道」という何気ない言葉の中に、日本から来た青年が目を見張った<b>近代都市の仕組み</b>が映っている。</div><div class="card-note">ちくま文庫の訳では、ここは単に「石だたみの道」となっている。「人道」を現代語の意味で読まないよう、原文では特に注意したい。</div><div class="card-link">💡 第14回「新大都」で「新しい大都市」と呼ばれたベルリンの具体的な姿が、ここから描かれ始める。次の文の「車道」と対にして覚えよう</div></div>
+        <div class="card" id="k15-card-yuku"><div class="card-word">を行く</div><div class="card-read">をゆく</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「を」→ 格助詞。ここは動作の対象ではなく<b>通過する場所</b>「〜を通って」。</li><li>「行く」→ カ行四段動詞「行く」の<b>連体形</b>。下の「隊々の士女」にかかる。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「（歩道）を歩いていく」ということ。</div><div class="card-naze"><span class="card-naze-title">🤔 長い連体修飾をほどいてみよう</span><br>まず「を」。「道<b>を</b>行く」「空<b>を</b>飛ぶ」「橋<b>を</b>渡る」のように、<b>移動を表す動詞</b>と一緒に使われる「を」は、その場所を通過することを示す。これは現代語と同じ使い方である。<br><br>次に文の形。「行く」は連体形で、下の「士女」にかかっている。つまり<br>　<b>両辺なる石だたみの人道を行く</b> → 隊々の士女<br>という長いまとまりが、まるごと「士女」を説明している。修飾部分を取り払うと、この文の骨組みは<br>　<b>（ウンテル、デン、リンデンに来て）士女を見よ。</b><br>というとても短い形になる。長い文に出会ったら、まず<b>骨組み（主語・目的語・述語）を探し、残りを修飾として外していく</b>と読みやすくなる。</div><div class="card-note">「行く」は古文では「ゆく」と読むことが多い。ちくま文庫の訳では「歩いている」となっている。</div><div class="card-link">💡 格助詞「を」は助詞まとめ㉓。第14回「我目を射む」「我心を迷はさむ」は動作の対象の「を」だった。今回の通過の「を」と比べてみよう</div></div>
+        <div class="card" id="k15-card-kumigumi"><div class="card-word">隊々の士女</div><div class="card-read">くみぐみのしぢよ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「隊々」→「くみぐみ」と読む。いくつもの組・グループごとに。</li><li>「の」→ 連体修飾の格助詞。</li><li>「士女」→「しじょ」。<b>男性と女性</b>。特に身なりのよい紳士と淑女。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「連れ立って行き交う男女の群れ」ということ。ちくま文庫は「三々五々、連れ立って歩いている士官や娘たち」と訳している。</div><div class="card-naze"><span class="card-naze-title">🤔 なぜ「組々」ではなく「隊々」と書くのか</span><br>「くみぐみ」なら「組々」と書いてもよいはずだが、鷗外は<b>「隊」</b>の字を当てている。「隊」は軍隊・隊列の隊である。人々がまるで隊列を組んで行進するように、まとまって通りを行き来する——そんな印象がこの一字から生まれる。<br><br>しかもすぐ次の文では「胸張り肩聳えたる<b>士官</b>」、つまり軍人が描かれる。当時のベルリンは、軍の力で統一を成し遂げたプロイセンを中心とする帝国の首都だった。<b>「隊」の字が、軍人の行き交う街の空気を先取りしている</b>のである。<br><br>また「士女」の「士」と「女」は、次の文で「<b>士</b>官」と「少<b>女</b>」として一人ずつ詳しく描かれていく。ちくま文庫が「士官や娘たち」と訳しているのは、この続きを見越した訳である。静かな「幽静なる境」を想像した読者の目の前に、<b>にぎやかな人の群れ</b>が現れる。</div><div class="card-note">「女」は歴史的仮名遣いでは「ぢよ」と書く。読みは「しじょ」。新潮文庫は「隊々」に「くみぐみ」とルビを振っている。</div><div class="card-link">💡 次の文の「胸張り肩聳えたる士官」「妍き少女」が、この「士女」の中身。第14回「新大都」とあわせて、ドイツ帝国の首都の姿として読もう</div></div>
+        <div class="card" id="k15-card-miyo"><div class="card-word">見よ</div><div class="card-read">みよ</div><hr class="card-divider"><div class="card-label">語句の分解</div><div class="card-body"><ul><li>「見よ」→ マ行<b>上一段</b>動詞「見る」の<b>命令形</b>。</li></ul></div><div class="card-label">意味をまとめると</div><div class="card-body">「見よ（見てごらん）」ということ。読者に向けた呼びかけ。</div><div class="card-naze"><span class="card-naze-title">🤔 過去の回想の中で、突然読者に命令する</span><br>第12回から、豊太郎は自分の過去を「〜き」「〜ぬ」「〜たり」と<b>過去の形</b>で語ってきた。ところがここで突然、<b>命令形「見よ」</b>が現れる。<br><br>語り手は何年も前のベルリンを思い出しているはずなのに、「見よ」と言った瞬間、読者は<b>今まさにその通りに立たされる</b>。第14回の「何等の光彩ぞ」という感嘆に続いて、今度は呼びかけ——初めてベルリンの街に立ったときの興奮が、<b>回想という語りの形を突き破って</b>しまっている。この「見よ」を合図に、次の文からはきらびやかな街の描写が一気に流れ出す。<br><br>文法も確認しておこう。命令形の形は活用の種類で変わる。<br>　・<b>四段</b>：行く→行け　思ふ→思へ<br>　・<b>上一段</b>：見る→<b>見よ</b>　着る→着よ　射る→射よ<br>　・<b>下二段</b>：取り調ぶ→<b>取り調べよ</b>（第13回）<br>上一段・上二段・下二段の命令形には「よ」が付く、と覚えておくとよい。</div><div class="card-note">上一段動詞は数が少ないので、「ひ・い・き・に・み・ゐる」（干る・射る・着る・似る・見る・居る など）の語呂で覚えるのが定番。第14回「射る」もこの仲間。</div><div class="card-link">💡 第13回「取り調べよとの命」（下二段の命令形）と比べよう。あちらは官からの命令、こちらは豊太郎から読者への呼びかけ——同じ命令形でも向きがまったく違う</div></div>
+        <div class="trans-box"><div class="trans-label">現代語訳</div>ここはまっすぐに伸び走っているウンテル・デン・リンデンの大通り。菩提樹（ぼだいじゅ）の下と訳すと、幽静な場所と思われそうであるが、両側の石だたみの道を三々五々、連れ立って歩いている士官や娘たちを見よ。</div>
+      </div>
+    </div>
+  </div>
+
   <!-- 助動詞まとめ -->
   <div class="tab-content" id="jodoshi">
-    <div class="hint">第１回〜第１４回に登場した助動詞を出現順にまとめています。クロスリファレンスで本文中の場所を確認できます。</div>
+    <div class="hint">第１回〜第１５回に登場した助動詞を出現順にまとめています。クロスリファレンスで本文中の場所を確認できます。</div>
     <div class="jodoshi-section">
 
       <div class="jodoshi-entry">
@@ -891,7 +929,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <span class="jodoshi-kaku">断定の助動詞</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">「〜である」という断定を表す。連体形「なる」は後ろの名詞を修飾したり、「なるは」の形で「〜であるということは」と後ろの理由説明につなぐ。未然形「なら」＋「ば」で仮定、已然形「なれ」＋「ば」で理由を表す。第1回から第13回まで、この節で最も幅広い形で登場する助動詞。★第１３回「故郷<strong>なる</strong>母」は、断定ではなく<strong>存在（所在）</strong>の用法で「故郷<strong>にいる</strong>母」の意。もともと「〜に＋あり」が縮まってできた形で、<strong>上の体言が場所を表しているとき</strong>にこの意味になる。「都なる人」「山なる寺」も同じ。「故郷である母」と訳すと意味が通らないので、訳し分けの練習にちょうどよい。</div>
+          <div class="jodoshi-imi">「〜である」という断定を表す。連体形「なる」は後ろの名詞を修飾したり、「なるは」の形で「〜であるということは」と後ろの理由説明につなぐ。未然形「なら」＋「ば」で仮定、已然形「なれ」＋「ば」で理由を表す。第1回から第13回まで、この節で最も幅広い形で登場する助動詞。★第１３回「故郷<strong>なる</strong>母」は、断定ではなく<strong>存在（所在）</strong>の用法で「故郷<strong>にいる</strong>母」の意。もともと「〜に＋あり」が縮まってできた形で、<strong>上の体言が場所を表しているとき</strong>にこの意味になる。「都なる人」「山なる寺」も同じ。「故郷である母」と訳すと意味が通らないので、訳し分けの練習にちょうどよい。★第１５回は一文に「なる」が三つある。「幽静<strong>なる</strong>境」は形容動詞「幽静なり」の活用語尾（助動詞ではない）、「境<strong>なる</strong>べく」は<strong>断定</strong>（「べし」はラ変型には連体形に付くので「なる＋べし」）、「両辺<strong>なる</strong>」は<strong>存在</strong>（両側にある）。上に「とても」が付けば形容動詞、上が場所なら存在、と見分けるとよい。</div>
           <div class="jodoshi-rei">第１回：余一人のみ<span class="rei-hl">なれば</span></div>
           <div class="jodoshi-rei">第２回：五年前の事<span class="rei-hl">なり</span>しか、</div>
           <div class="jodoshi-rei">第４回：白紙のまま<span class="rei-hl">なる</span>は、</div>
@@ -901,6 +939,8 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第10回：外の恨<span class="rei-hl">なり</span>せば、</div>
           <div class="jodoshi-rei">第１３回：またなき名誉<span class="rei-hl">なり</span>と人にも言はれ（断定：〜である）</div>
           <div class="jodoshi-rei">第１３回：故郷<span class="rei-hl">なる</span>母を都に呼び迎へ（<strong>存在</strong>：故郷<strong>にいる</strong>母）</div>
+          <div class="jodoshi-rei">第１５回：幽静なる境<span class="rei-hl">なる</span>べく思はるれど（<strong>断定</strong>：〜である）</div>
+          <div class="jodoshi-rei">第１５回：両辺<span class="rei-hl">なる</span>石だたみの人道（<strong>存在</strong>：両側<strong>にある</strong>）</div>
           <div class="cross-tags">
             <span class="cross-tag">第１回「のみなれば」</span>
             <span class="cross-tag">第２回「なりしか」</span>
@@ -913,6 +953,8 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <span class="cross-tag">第10回「なりせば」</span>
             <span class="cross-tag">第１３回「名誉なり」＝断定</span>
             <span class="cross-tag">第１３回「故郷なる母」＝存在</span>
+            <span class="cross-tag">第１５回「境なるべく」＝断定</span>
+            <span class="cross-tag">第１５回「両辺なる」＝存在</span>
           </div>
         </div>
       </div>
@@ -1032,20 +1074,22 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
       <div class="jodoshi-entry">
         <div class="jodoshi-entry-head">
           <span class="jodoshi-term">る・らる</span>
-          <span class="jodoshi-kaku">受身の助動詞</span>
+          <span class="jodoshi-kaku">受身・自発の助動詞</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">「〜される」という受身を表す。「れ」「られ」の形で動詞に付く。自分の意志ではなく他から作用を受けることを示す。第１２回「一級の首にしるさ<strong>れ</strong>たりしに」は、首席になったのは豊太郎自身の結果であるのに、文法上は「名」が誰かによって<strong>記される</strong>という受身で書かれている。第８回「われに負はせ」（使役）、第10回「彫りつけられ」（受身）、第１２回「しるされ」（受身）と、<strong>豊太郎を「される側」に置く構文</strong>が回想の最初の段落からすでに始まっている。</div>
+          <div class="jodoshi-imi">「〜される」という受身を表す。「れ」「られ」の形で動詞に付く。自分の意志ではなく他から作用を受けることを示す。第１２回「一級の首にしるさ<strong>れ</strong>たりしに」は、首席になったのは豊太郎自身の結果であるのに、文法上は「名」が誰かによって<strong>記される</strong>という受身で書かれている。第８回「われに負はせ」（使役）、第10回「彫りつけられ」（受身）、第１２回「しるされ」（受身）と、<strong>豊太郎を「される側」に置く構文</strong>が回想の最初の段落からすでに始まっている。★「る・らる」には<strong>受身・尊敬・可能・自発</strong>の四つの意味がある。第１４回まではすべて受身だったが、第１５回「思は<strong>るれ</strong>ど」で初めて<strong>自発</strong>（自然と〜される）が出てくる。「思ふ・偲ぶ・嘆く・泣く」など<strong>心の動きを表す動詞</strong>に付いたら自発を疑うとよい。</div>
           <div class="jodoshi-rei">第３回：新聞に載せ<span class="rei-hl">られ</span>て ／ もてはやさ<span class="rei-hl">れ</span>しかど、</div>
           <div class="jodoshi-rei">第10回：彫りつけ<span class="rei-hl">られ</span>たれば</div>
           <div class="jodoshi-rei">第１２回：一級の首にしるさ<span class="rei-hl">れ</span>たりしに</div>
           <div class="jodoshi-rei">第１３回：またなき名誉なりと人にも言は<span class="rei-hl">れ</span>（人に言われて）</div>
+          <div class="jodoshi-rei">第１５回：幽静なる境なるべく思は<span class="rei-hl">るれ</span>ど（<strong>自発</strong>：自然と思われるけれども。已然形「るれ」）</div>
           <div class="cross-tags">
             <span class="cross-tag">第３回「載せられて」</span>
             <span class="cross-tag">第３回「もてはやされし」</span>
             <span class="cross-tag">第10回「彫りつけられ」</span>
             <span class="cross-tag">第１２回「しるされ」</span>
             <span class="cross-tag">第１３回「言はれ」</span>
+            <span class="cross-tag">第１５回「思はるれど」＝自発</span>
           </div>
         </div>
       </div>
@@ -1074,12 +1118,14 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <span class="jodoshi-kaku">推量・当然の助動詞</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">「〜だろう・〜にちがいない・〜すべきだ」という推量・当然・可能などを表す。連体形「べき」、已然形「べけれ」。現代語にも「〜すべき」の形で残っている。第８回「いふべき惨痛」の「べき」は<strong>当然・適当</strong>（〜と言うのがふさわしい・〜と言ってよいほどの）の用法で、連体形として下の「惨痛」に係る。第11回「あるべければ」は<strong>推量</strong>（あるはずなので）の用法。同じ「べし」でも文脈で意味が変わる代表例として対比しておくとよい。</div>
+          <div class="jodoshi-imi">「〜だろう・〜にちがいない・〜すべきだ」という推量・当然・可能などを表す。連体形「べき」、已然形「べけれ」。現代語にも「〜すべき」の形で残っている。第８回「いふべき惨痛」の「べき」は<strong>当然・適当</strong>（〜と言うのがふさわしい・〜と言ってよいほどの）の用法で、連体形として下の「惨痛」に係る。第11回「あるべければ」は<strong>推量</strong>（あるはずなので）の用法。同じ「べし」でも文脈で意味が変わる代表例として対比しておくとよい。第１５回「境<strong>なるべく</strong>」は推量の<strong>連用形</strong>「べく」。「べし」は終止形接続だが、<strong>ラ変型の語（あり・なり など）には連体形に付く</strong>ので「ある＋べし」「なる＋べし」になる。現代語の副詞「なるべく（できるだけ）」とは別物なので注意。</div>
           <div class="jodoshi-rei">第８回：九廻すともいふ<span class="rei-hl">べき</span>惨痛（当然・適当：〜と言うのがふさわしいほどの）</div>
           <div class="jodoshi-rei">第11回：猶程もある<span class="rei-hl">べければ</span>、</div>
+          <div class="jodoshi-rei">第１５回：幽静なる境なる<span class="rei-hl">べく</span>思はるれど（推量・連用形：静かな場所であるだろうと）</div>
           <div class="cross-tags">
             <span class="cross-tag">第８回「いふべき」</span>
             <span class="cross-tag">第11回「あるべければ」</span>
+            <span class="cross-tag">第１５回「なるべく」</span>
           </div>
         </div>
       </div>
@@ -1090,12 +1136,14 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <span class="jodoshi-kaku">比況の助動詞</span>
         </div>
         <div class="jodoshi-body">
-          <div class="jodoshi-imi">「〜のようだ」というたとえ（比況）を表す。連用形「ごとく」・連体形「ごとき」。<strong>「体言＋の＋ごとし」</strong>または「連体形＋が＋ごとし」の形で接続する。本文ではいずれも連用形「如く」で下へ続く形。第８回では悩みの始まりを「一抹の雲」に、第９回では懐旧の情の起こり方を「鏡に映る影」「声に応ずる響（こだま）」にたとえている。<strong>雲（軽く流れ去るもの）→鏡・こだま（必ず自動的に起こる反射）</strong>という、たとえの質の変化がそのまま悩みの深化を表している点まで読めると、比喩と内容が連動する鷗外の文体がよくわかる。</div>
+          <div class="jodoshi-imi">「〜のようだ」というたとえ（比況）を表す。連用形「ごとく」・連体形「ごとき」。<strong>「体言＋の＋ごとし」</strong>または「連体形＋が＋ごとし」の形で接続する。第８・９回はいずれも連用形「如く」で下へ続く形で、第１５回「大道髪の<strong>如き</strong>ウンテル、デン、リンデン」で初めて<strong>連体形「如き」</strong>が名詞にかかる。第８回では悩みの始まりを「一抹の雲」に、第９回では懐旧の情の起こり方を「鏡に映る影」「声に応ずる響（こだま）」にたとえている。<strong>雲（軽く流れ去るもの）→鏡・こだま（必ず自動的に起こる反射）</strong>という、たとえの質の変化がそのまま悩みの深化を表している点まで読めると、比喩と内容が連動する鷗外の文体がよくわかる。</div>
           <div class="jodoshi-rei">第８回：一抹の雲の<span class="rei-hl">如く</span>我心を掠めて</div>
           <div class="jodoshi-rei">第９回：鏡に映る影、声に応ずる響の<span class="rei-hl">如く</span></div>
+          <div class="jodoshi-rei">第１５回：この大道髪の<span class="rei-hl">如き</span>ウンテル、デン、リンデン（連体形：大通りが髪のようにまっすぐな）</div>
           <div class="cross-tags">
             <span class="cross-tag">第８回「雲の如く」</span>
             <span class="cross-tag">第９回「影・響の如く」</span>
+            <span class="cross-tag">第１５回「髪の如き」＝連体形</span>
           </div>
         </div>
       </div>
@@ -1175,8 +1223,8 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <tr>
               <td class="t-jterm">なり（なる）</td>
               <td>断定「〜である」<br><span style="font-size:11px;color:#aaa;">なら＋ば＝仮定／なれ＋ば＝理由／なる＝連体形</span></td>
-              <td>のみなれば／なりしか／ままなるは／我ならず／縁故なる／ならば／なるに／たればなり／なりせば</td>
-              <td class="t-cross">第１・２・４〜７・10・13回</td>
+              <td>のみなれば／なりしか／ままなるは／我ならず／縁故なる／ならば／なるに／たればなり／なりせば／境なるべく／両辺なる（存在）</td>
+              <td class="t-cross">第１・２・４〜７・10・13・15回</td>
             </tr>
             <tr>
               <td class="t-jterm">たり</td>
@@ -1216,9 +1264,9 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             </tr>
             <tr>
               <td class="t-jterm">る・らる</td>
-              <td>受身「〜される」</td>
-              <td>載せられて／もてはやされし／彫りつけられ</td>
-              <td class="t-cross">第３・10・12・13回</td>
+              <td>受身「〜される」<br><span style="font-size:11px;color:#aaa;">心の動きを表す動詞に付くと自発「自然と〜される」</span></td>
+              <td>載せられて／もてはやされし／彫りつけられ／しるされ／言はれ／思はるれど（自発）</td>
+              <td class="t-cross">第３・10・12・13・15回</td>
             </tr>
             <tr>
               <td class="t-jterm">り</td>
@@ -1229,14 +1277,14 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <tr>
               <td class="t-jterm">べし</td>
               <td>推量・当然「〜だろう・〜すべきだ」<br><span style="font-size:11px;color:#aaa;">連体形「べき」・已然形「べけれ」。「いふべき」は当然・適当（〜と言うのがふさわしい）、「あるべければ」は推量</span></td>
-              <td>いふべき／あるべければ</td>
-              <td class="t-cross">第８・11回</td>
+              <td>いふべき／あるべければ／境なるべく</td>
+              <td class="t-cross">第８・11・15回</td>
             </tr>
             <tr>
               <td class="t-jterm">ごとし</td>
               <td>比況「〜のようだ」<br><span style="font-size:11px;color:#aaa;">連用形「ごとく」・連体形「ごとき」。体言＋の＋ごとし の形で接続</span></td>
-              <td>雲の如く／影・響の如く</td>
-              <td class="t-cross">第８・９回</td>
+              <td>雲の如く／影・響の如く／髪の如き</td>
+              <td class="t-cross">第８・９・15回</td>
             </tr>
             <tr>
               <td class="t-jterm">す・さす</td>
@@ -1258,7 +1306,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
   </div>
 
   <div class="tab-content" id="joshi">
-    <div class="hint">第１回〜第１４回に登場した助詞を出現順にまとめています。係り結び・「ば」の仮定と確定・逆接の「に」など、現代語と違う使い方に特に注目してください。</div>
+    <div class="hint">第１回〜第１５回に登場した助詞を出現順にまとめています。係り結び・「ば」の仮定と確定・逆接の「に」など、現代語と違う使い方に特に注目してください。</div>
     <div class="jodoshi-section">
 
       <!-- ① をば -->
@@ -1585,11 +1633,13 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第９回：一点の翳とのみなりたれ<span class="rei-hl">ど</span>（なってしまったけれど）</div>
           <div class="jodoshi-rei">第10回：さはあらじと思へ<span class="rei-hl">ど</span>（そうはなるまいと思うけれど）</div>
           <div class="jodoshi-rei">第１２回：父をば早く喪ひつれ<span class="rei-hl">ど</span>（父を早くに亡くしてしまったけれど）</div>
+          <div class="jodoshi-rei">第１５回：幽静なる境なるべく思はるれ<span class="rei-hl">ど</span>（静かな場所だろうと思われるけれども。予想と現実をひっくり返す「ど」）</div>
           <div class="cross-tags">
             <span class="cross-tag">第３回「しかど」</span>
             <span class="cross-tag">第９回「なりたれど」</span>
             <span class="cross-tag">第10回「思へど」</span>
             <span class="cross-tag">第１２回「喪ひつれど」</span>
+            <span class="cross-tag">第１５回「思はるれど」</span>
           </div>
         </div>
       </div>
@@ -1609,6 +1659,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第１２回：太田豊太郎<span class="rei-hl">と</span>いふ名（〜という名。引用の「と」＋「いふ」）</div>
           <div class="jodoshi-rei">第１３回：またなき名誉なり<span class="rei-hl">と</span>人にも言はれ ／ 取り調べよ<span class="rei-hl">と</span>の命 ／ 今ぞ<span class="rei-hl">と</span>おもふ（いずれも引用）</div>
           <div class="jodoshi-rei">第１４回：功名の念<span class="rei-hl">と</span>、検束に慣れたる勉強力<span class="rei-hl">と</span>を持ちて（<strong>並列</strong>：AとBとを）</div>
+          <div class="jodoshi-rei">第１５回：菩提樹下<span class="rei-hl">と</span>訳するときは（引用：訳語の内容を受ける）</div>
           <div class="cross-tags">
             <span class="cross-tag">第８回「すともいふべき」</span>
             <span class="cross-tag">第９回「翳とのみ」</span>
@@ -1616,6 +1667,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <span class="cross-tag">第１２回「豊太郎といふ名」</span>
             <span class="cross-tag">第１３回「なりと」「よとの命」「今ぞと」</span>
             <span class="cross-tag">第１４回「念と〜力とを」＝並列</span>
+            <span class="cross-tag">第１５回「菩提樹下と訳する」</span>
           </div>
         </div>
       </div>
@@ -1718,6 +1770,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
           <div class="jodoshi-rei">第１２回：厳しき庭の訓<span class="rei-hl">を</span>受けし ／ 一人子の我<span class="rei-hl">を</span>力になして ／ 世<span class="rei-hl">を</span>渡る母</div>
           <div class="jodoshi-rei">第１３回：我名<span class="rei-hl">を</span>成さむ ／ 我家<span class="rei-hl">を</span>興さむ ／ 五十<span class="rei-hl">を</span>踰えし母 ／ 家<span class="rei-hl">を</span>離れて</div>
           <div class="jodoshi-rei">第１４回：我目<span class="rei-hl">を</span>射むとする ／ 我心<span class="rei-hl">を</span>迷はさむとする（どちらも他動詞の対象）</div>
+          <div class="jodoshi-rei">第１５回：石だたみの人道<span class="rei-hl">を</span>行く（<strong>通過する場所</strong>：歩道を通って行く） ／ 隊々の士女<span class="rei-hl">を</span>見よ（対象）</div>
           <div class="cross-tags">
             <span class="cross-tag">第８回「此恨を」</span>
             <span class="cross-tag">第９回「我心を」</span>
@@ -1725,6 +1778,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <span class="cross-tag">第１２回「訓を」「我を」「世を」</span>
             <span class="cross-tag">第１３回「我名を」「我家を」「家を」</span>
             <span class="cross-tag">第１４回「我目を」「我心を」</span>
+            <span class="cross-tag">第１５回「人道を行く」＝通過</span>
           </div>
         </div>
       </div>
@@ -1780,7 +1834,7 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <tr>
               <td class="t-jterm">を（格助詞）</td>
               <td>格助詞：対象「〜を」<br><span style="font-size:11px;color:#aaa;">「をば」＝を＋は／「をも」＝を＋も（〜をさえも）。「我心を苦しむ」の「苦しむ」は他動詞用法（苦しめる）→本文㉓参照</span></td>
-              <td>石炭をば ／ 父をば ／ 我心を苦しむ ／ 世を渡る母 ／ 我名を成さむ ／ 別るるをも</td>
+              <td>石炭をば ／ 父をば ／ 我心を苦しむ ／ 世を渡る母 ／ 我名を成さむ ／ 別るるをも ／ 人道を行く（通過）</td>
               <td class="t-cross">全回</td>
             </tr>
             <tr>
@@ -1804,8 +1858,8 @@ table.ichiran td.t-cross { color: #888; font-size: 11px; }
             <tr>
               <td class="t-jterm">と（格）</td>
               <td>格助詞：引用・比喩・結果「〜と」</td>
-              <td>雲の如く ／ さはあらじと思へど ／ 豊太郎といふ名 ／ 念と力と（並列）</td>
-              <td class="t-cross">第８〜10回・第12〜14回</td>
+              <td>雲の如く ／ さはあらじと思へど ／ 豊太郎といふ名 ／ 念と力と（並列） ／ 菩提樹下と訳する</td>
+              <td class="t-cross">第８〜10回・第12〜15回</td>
             </tr>
             <tr>
               <td class="t-jterm">から・より（比較）</td>
@@ -1915,7 +1969,8 @@ function switchTab(id, btn) {
     k11: ['koyoi','atarini','bodo','kite','denki','hodomo','ide','sonogairyaku','gairyaku','funi','tsuduri'],
     k12: ['osanaki','niwa','ukeshi','chichiwoba','ushinai','gakumonno','susami','kyuhan','arishi','yobiko','kayoishi','daigaku','irishi','ota','ikkyu','shirusare','hitorigo','chikara','yowowataru','nagusami'],
     k13: ['juku','gakushi','daigakuno','matanaki','iware','boushou','kokyonaru','yobimukae','mitose','kanchou','kotonari','yoko','torishirabeyo','nasamu','imazo','kokorono','koeshi','wakaruru','samade','harubaru','kinu'],
-    k14: ['moko','koumyou','kensoku','naretaru','toowo','tachimachi','yoroppa','shindaito','tateri','nanra','imu','shikitaku','mayowasamu']
+    k14: ['moko','koumyou','kensoku','naretaru','toowo','tachimachi','yoroppa','shindaito','tateri','nanra','imu','shikitaku','mayowasamu'],
+    k15: ['bodaijuka','yakusuru','yuusei','narubeku','omowarure','taidou','unter','kite','ryouhen','ishidatami','yuku','kumigumi','miyo']
   };
   // 第14回：区切り表示の語をクリックしても同じカードを開く
   (function() {
